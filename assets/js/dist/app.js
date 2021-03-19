@@ -47,5 +47,6 @@ window.onload = function () {
     editor.addEventListener('touchmove', touchWhile_drag);
     editor.addEventListener('mouseup', stop_drag);
     editor.addEventListener('touchend', stop_drag);
-    editor.onwheel = zoom;
+    editor.addEventListener('mousewheel', zoom);
+    editor.addEventListener('touchmove', zoom);
 };
