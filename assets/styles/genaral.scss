@@ -1,0 +1,30 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    font-family: 'Mulish', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+:root {
+    --animation-speed: 300ms;
+}
+
+
+html, body,main {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+main{
+    display: flex;
+}

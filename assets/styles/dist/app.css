@@ -1,0 +1,135 @@
+@import '/assets/lib/modern-normalize/modern-normalize.min.css';
+@import '/assets/lib/font-awesome/css/all.min.css';
+@import "https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap";
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: 0;
+  outline: 0;
+  text-decoration: none;
+  font-family: "Mulish", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+:root {
+  --animation-speed: 300ms;
+}
+
+html, body, main {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+}
+
+:root {
+  --TURQUOISE:#1ABC9C;
+  --GREENSEA:#16A085;
+  --EMERALD:#2ECC71;
+  --NEPHRITIS:#27AE60;
+  --PETERRIVER:#3498DB;
+  --BELIZEHOLE:#2980B9;
+  --AMETHYST:#9B59B6;
+  --WISTERIA:#8E44AD;
+  --WETASPHALT:#34495E;
+  --MIDNIGHTBLUE:#2C3E50;
+  --SUNFLOWER:#F1C40F;
+  --ORANGE:#F39C12;
+  --CARROT:#E67E22;
+  --PUMPKIN:#D35400;
+  --ALIZARIN:#E74C3C;
+  --POMEGRANATE:#C0392B;
+  --CLOUDS:#ECF0F1;
+  --SILVER:#BDC3C7;
+  --CONCRETE:#95A5A6;
+  --ASBESTOS:#7F8C8D;
+  --Primary:#0275d8;
+  --Success:#5cb85c;
+  --Info:#5bc0de;
+  --Warning:#f0ad4e;
+  --Danger:#d9534f;
+  --Dark:#292b2c;
+  --Faded:#f7f7f7;
+}
+
+header {
+  height: 75px;
+  background-color: var(--SILVER);
+  display: flex;
+  justify-self: center;
+  align-items: center;
+}
+header .logo {
+  height: inherit;
+}
+header .logo img {
+  height: inherit;
+  width: auto;
+}
+header .title {
+  text-align: center;
+  flex: 1;
+}
+
+main nav {
+  height: 100%;
+  width: 75px;
+  background-color: var(--MIDNIGHTBLUE);
+}
+main nav ul.menu li {
+  padding: 10px;
+  border-bottom: 1px solid var(--CLOUDS);
+}
+main nav ul.menu li:last-child {
+  border-bottom: 0;
+}
+main nav ul.menu li a {
+  display: block;
+  text-align: center;
+  color: var(--Faded);
+}
+main nav ul.menu li a:hover {
+  color: var(--CLOUDS);
+}
+main nav ul.menu li a i {
+  font-size: 38px;
+}
+main nav ul.menu li a p {
+  margin-top: 10px;
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
+.editor {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--CLOUDS);
+}
+.editor .wrapper {
+  position: absolute;
+  height: auto;
+  width: auto;
+  left: 50%;
+  top: 50%;
+  cursor: move;
+  transform: translate(-50%, -50%);
+}
+.editor .wrapper .floor img {
+  height: 100%;
+  width: auto;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* Medium devices (landscape tablets, 768px and up) */
+/* Large devices (laptops/desktops, 992px and up) */
+/* Extra large devices (large laptops and desktops, 1200px and up) */

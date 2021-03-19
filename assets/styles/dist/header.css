@@ -1,0 +1,18 @@
+header {
+  height: 75px;
+  background-color: var(--SILVER);
+  display: flex;
+  justify-self: center;
+  align-items: center;
+}
+header .logo {
+  height: inherit;
+}
+header .logo img {
+  height: inherit;
+  width: auto;
+}
+header .title {
+  text-align: center;
+  flex: 1;
+}

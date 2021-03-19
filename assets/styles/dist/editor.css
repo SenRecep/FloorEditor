@@ -1,0 +1,19 @@
+.editor {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--CLOUDS);
+}
+.editor .wrapper {
+  position: absolute;
+  height: auto;
+  width: auto;
+  left: 50%;
+  top: 50%;
+  cursor: move;
+  transform: translate(-50%, -50%);
+}
+.editor .wrapper .floor img {
+  height: 100%;
+  width: auto;
+}
