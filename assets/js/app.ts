@@ -15,7 +15,8 @@ window.onload = function () {
     function zoom(event:any) {
         event.preventDefault();
         scale += event.deltaY * -0.01;
-        scale = Math.min(Math.max(.125, scale), 4);
+        console.log(event);
+        scale = Math.min(Math.max(.125, scale),8);
         wrapper.style.transform = `scale(${scale})`;
     }
 
@@ -69,8 +70,7 @@ window.onload = function () {
     editor.addEventListener('mouseup', stop_drag);
     editor.addEventListener('touchend', stop_drag);
     
-    editor.addEventListener('mousewheel', zoom);
-    editor.addEventListener('touchmove', zoom);
+    editor.addEventListener('wheel', zoom);
 }
 
 
