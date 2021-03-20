@@ -5,7 +5,6 @@ window.onload = function () {
     function zoom(event) {
         event.preventDefault();
         scale += event.deltaY * -0.01;
-        console.log(event);
         scale = Math.min(Math.max(.125, scale), 8);
         wrapper.style.transform = "scale(" + scale + ")";
     }
@@ -26,14 +25,19 @@ window.onload = function () {
         }
     }
     function touchWhile_drag() {
-        // if (isDrag) {
-        //     var event:TouchEvent=<TouchEvent>window.event; 
-        //     var evemtData= event.changedTouches[0];
-        //     x_cursor = evemtData.clientX;
-        //     y_cursor = evemtData.clientY;
-        //     wrapper.style.left = (x_cursor - x_wrapper) + 'px';
-        //     wrapper.style.top = (y_cursor - y_wrapper) + 'px';
-        // }
+        if (isDrag) {
+            var event = window.event;
+            var evemtDatas = event.changedTouches;
+            if (evemtDatas.length == 1) {
+                var evemtData = evemtDatas[0];
+                x_cursor = evemtData.clientX;
+                y_cursor = evemtData.clientY;
+                wrapper.style.left = (x_cursor - x_wrapper) + 'px';
+                wrapper.style.top = (y_cursor - y_wrapper) + 'px';
+            }
+            else if (evemtDatas.length == 2) {
+            }
+        }
     }
     function touchstart() {
         var event = window.event;
@@ -48,5 +52,5 @@ window.onload = function () {
     editor.addEventListener('touchmove', touchWhile_drag);
     editor.addEventListener('mouseup', stop_drag);
     editor.addEventListener('touchend', stop_drag);
-    wrapper.addEventListener('wheel', zoom);
+    editor.addEventListener('mousewheel', zoom);
 };
