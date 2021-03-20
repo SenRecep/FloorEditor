@@ -43,14 +43,14 @@ window.onload = function () {
 
 
     function touchWhile_drag() {
-        if (isDrag) {
-            var event:TouchEvent=<TouchEvent>window.event; 
-            var evemtData= event.changedTouches[0];
-            x_cursor = evemtData.clientX;
-            y_cursor = evemtData.clientY;
-            wrapper.style.left = (x_cursor - x_wrapper) + 'px';
-            wrapper.style.top = (y_cursor - y_wrapper) + 'px';
-        }
+        // if (isDrag) {
+        //     var event:TouchEvent=<TouchEvent>window.event; 
+        //     var evemtData= event.changedTouches[0];
+        //     x_cursor = evemtData.clientX;
+        //     y_cursor = evemtData.clientY;
+        //     wrapper.style.left = (x_cursor - x_wrapper) + 'px';
+        //     wrapper.style.top = (y_cursor - y_wrapper) + 'px';
+        // }
     }
 
     function touchstart(){
