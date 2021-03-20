@@ -70,7 +70,7 @@ window.onload = function () {
     editor.addEventListener('mouseup', stop_drag);
     editor.addEventListener('touchend', stop_drag);
     
-    editor.addEventListener('wheel', zoom);
+    wrapper.addEventListener('wheel', zoom);
 }
 
 
