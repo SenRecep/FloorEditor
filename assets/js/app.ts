@@ -44,15 +44,17 @@ window.onload = function () {
     function touchWhile_drag() {
         if (isDrag) {
             var event:TouchEvent=<TouchEvent>window.event; 
-            var evemtDatas= event.changedTouches;
-            if(evemtDatas.length==1){
-                var evemtData=evemtDatas[0];
+            var eventDatas= event.changedTouches;
+            if(eventDatas.length==1){
+                var evemtData=eventDatas[0];
                 x_cursor = evemtData.clientX;
                 y_cursor = evemtData.clientY;
                 wrapper.style.left = (x_cursor - x_wrapper) + 'px';
                 wrapper.style.top = (y_cursor - y_wrapper) + 'px';
             }
-            else if(evemtDatas.length==2){
+            else if(eventDatas.length==2){
+                var f1=eventDatas[0];
+                var f2=eventDatas[1];
                 
             }
         }
