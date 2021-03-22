@@ -54,6 +54,14 @@
             </ul>
         </nav>
         <div id="editor" class="editor">
+            <div class="controller">
+                <button class="btn btn-center"><i class="far fa-circle"></i></button>
+                <button class="btn btn-zoomin"><i class="fas fa-plus"></i></button>
+                <button class="btn btn-zoomout"><i class="fas fa-minus"></i></button>
+                <span class="status zoom"><span id="zoom-satus">0</span><small>%</small></span>
+                <button class="btn btn-flip"><i class="fas fa-sync-alt"></i></button>
+                <span class="status flip">flip</span>
+            </div>
             <div id="wrapper" class="wrapper" ondragstart="return false">
                 <div class="floor">
                     <img src="/assets/img/floor-1.svg" alt="">
@@ -63,6 +71,7 @@
         
     </main>
     <script src="assets/js/dist/app.js"></script>
+    <script src="assets/js/dist/editor.js"></script>
 </body>
 
 </html>

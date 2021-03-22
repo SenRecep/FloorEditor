@@ -4,6 +4,38 @@
   overflow: hidden;
   background-color: var(--CLOUDS);
 }
+.editor .controller {
+  position: absolute;
+  right: 10px;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+.editor .controller .btn {
+  width: 40px;
+  height: 40px;
+  background-color: var(--MIDNIGHTBLUE);
+  color: var(--Faded);
+  border: 0;
+  outline: 0;
+  border-radius: 0;
+}
+.editor .controller .btn-center,
+.editor .controller .zoom {
+  margin-bottom: 10px;
+}
+.editor .controller .btn-zoomin {
+  margin-bottom: 1px;
+}
+.editor .controller .status {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 5px 0;
+  font-size: 12px;
+  color: var(--Faded);
+  background-color: var(--WETASPHALT);
+}
 .editor .wrapper {
   position: absolute;
   height: auto;
@@ -12,6 +44,10 @@
   top: 50%;
   cursor: move;
   transform: translate(-50%, -50%);
+}
+.editor .wrapper .floor {
+  height: auto;
+  width: auto;
 }
 .editor .wrapper .floor img {
   height: 100%;
