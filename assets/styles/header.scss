@@ -6,9 +6,11 @@ header{
     align-items: center;
     .logo{
         height: inherit;
+        display: flex;
+        align-items: center;
         img{
-            height: inherit;
-            width: auto;
+            height: auto;
+            width: 75px;
         }
     }
     .title{

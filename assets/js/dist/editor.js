@@ -5,6 +5,7 @@ window.onload = function () {
     var btnZoomOut = document.getElementsByClassName("btn-zoomout")[0];
     var btnZoomIn = document.getElementsByClassName("btn-zoomin")[0];
     var btnFlip = document.getElementsByClassName("btn-flip")[0];
+    var zoomSatus = document.getElementById('zoom-satus');
     var x_cursor = 0, y_cursor = 0, x_wrapper = 0, y_wrapper = 0, scale = 1, isDrag = false, isFlip = false;
     function zoom(direction) {
         scale += direction ? -(scale * 0.3) : 1;
@@ -58,6 +59,8 @@ window.onload = function () {
     function centerWrapperOnTheScreen(isCenterBtn) {
         if (isCenterBtn)
             scale = 1;
+        var val = (scale * 100).toFixed(0);
+        zoomSatus.innerHTML = "" + val;
         wrapper.style.transform = "translate(-50%,-50%) scaleX(" + scale + ") scaleY(" + scale + ")";
     }
     btnCenter.addEventListener("click", function () {

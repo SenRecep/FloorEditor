@@ -70,10 +70,12 @@ header {
 }
 header .logo {
   height: inherit;
+  display: flex;
+  align-items: center;
 }
 header .logo img {
-  height: inherit;
-  width: auto;
+  height: auto;
+  width: 75px;
 }
 header .title {
   text-align: center;
