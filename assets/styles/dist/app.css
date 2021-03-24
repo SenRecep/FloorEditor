@@ -26,6 +26,9 @@ body {
   display: flex;
   flex-direction: column;
 }
+body center {
+  display: none;
+}
 
 main {
   display: flex;
@@ -135,6 +138,7 @@ main nav ul.menu li a p {
   border-radius: 0;
 }
 .editor .controller .btn-center,
+.editor .controller .btn-measurements,
 .editor .controller .zoom {
   margin-bottom: 10px;
 }
@@ -148,6 +152,9 @@ main nav ul.menu li a p {
   font-size: 12px;
   color: var(--Faded);
   background-color: var(--WETASPHALT);
+}
+.editor .controller .btn-measurements.active {
+  color: var(--POMEGRANATE);
 }
 .editor .wrapper {
   position: absolute;

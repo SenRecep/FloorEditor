@@ -23,6 +23,9 @@ body {
   display: flex;
   flex-direction: column;
 }
+body center {
+  display: none;
+}
 
 main {
   display: flex;

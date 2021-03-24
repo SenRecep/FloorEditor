@@ -24,6 +24,9 @@ html, body,main {
 body{
     display: flex;
     flex-direction: column;
+    center{
+        display: none;
+    }
 }
 main{
     display: flex;
