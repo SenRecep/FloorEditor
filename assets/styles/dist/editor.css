@@ -21,6 +21,9 @@
   outline: 0;
   border-radius: 0;
 }
+.editor .controller .btn:hover {
+  opacity: 0.8;
+}
 .editor .controller .btn-center,
 .editor .controller .btn-measurements,
 .editor .controller .zoom {
@@ -56,4 +59,18 @@
 .editor .wrapper .floor img {
   height: 100%;
   width: auto;
+}
+.editor #measurements-container {
+  height: 100%;
+  width: 100%;
+  visibility: hidden !important;
+}
+.editor #measurements {
+  stroke: var(--WETASPHALT);
+  stroke-width: 3;
+}
+.editor #measurementsText {
+  stroke: var(--SILVER);
+  font-size: 20px;
+  z-index: 10;
 }

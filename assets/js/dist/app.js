@@ -7,7 +7,29 @@ window.onload = function () {
     var btnMeasurements = document.getElementsByClassName('btn-measurements')[0];
     var btnFlip = document.getElementsByClassName("btn-flip")[0];
     var zoomSatus = document.getElementsByClassName('zoom-satus')[0];
+    var measurementContainer = document.getElementById('measurements-container');
+    var measurementLine = document.getElementById('measurements');
+    var measurementText = document.getElementById('measurementsText');
     var x_cursor = 0, y_cursor = 0, x_wrapper = 0, y_wrapper = 0, scale = 0, isDrag = false, isFlip = false;
+    var measurementMode = false, measurementSetStartPoint = false, spx = 0, spy = 0, epx = 0, epy = 0;
+    function writeStat() {
+        measurementLine.setAttribute('x1', spx);
+        measurementLine.setAttribute('y1', spy);
+        measurementLine.setAttribute('x2', epx);
+        measurementLine.setAttribute('y2', epy);
+        var dist = Math.sqrt(Math.pow((spx - epx), 2) + Math.pow((spy - epy), 2));
+        var lw = epx - spx;
+        var lh = epy - spy;
+        measurementText.innerHTML = dist.toFixed(1) + "px";
+        if (lw > 0)
+            measurementText.setAttribute('x', spx + Math.abs(lw) / 2);
+        else
+            measurementText.setAttribute('x', epx + Math.abs(lw) / 2);
+        if (lh > 0)
+            measurementText.setAttribute('y', spy + Math.abs(lh) / 2);
+        else
+            measurementText.setAttribute('y', epy + Math.abs(lh) / 2);
+    }
     function centerWrapperOnTheScreen(isCenterBtn) {
         if (isCenterBtn)
             scale = 1;
@@ -24,16 +46,37 @@ window.onload = function () {
         event.preventDefault();
         zoom(event.deltaY > 0);
     }
+    function measurementStartDrag() {
+        if (measurementMode) {
+            spx = window.event.clientX - editorElement.offsetLeft;
+            spy = window.event.clientY - editorElement.offsetTop;
+            measurementSetStartPoint = true;
+            measurementContainer.style.visibility = 'visible';
+        }
+    }
     function mouseStartDrag() {
-        isDrag = true;
-        x_wrapper = window.event.clientX - wrapperElement.offsetLeft;
-        y_wrapper = window.event.clientY - wrapperElement.offsetTop;
+        if (!measurementMode) {
+            isDrag = true;
+            x_wrapper = window.event.clientX - wrapperElement.offsetLeft;
+            y_wrapper = window.event.clientY - wrapperElement.offsetTop;
+        }
     }
     function stop_drag() {
-        isDrag = false;
+        if (measurementMode) {
+            measurementSetStartPoint = false;
+            writeStat();
+        }
+        else {
+            isDrag = false;
+        }
     }
     function mouseWhile_drag() {
-        if (isDrag) {
+        if (measurementMode && measurementSetStartPoint) {
+            epx = window.event.clientX - editorElement.offsetLeft;
+            epy = window.event.clientY - editorElement.offsetTop;
+            writeStat();
+        }
+        else if (isDrag) {
             x_cursor = window.event.clientX;
             y_cursor = window.event.clientY;
             wrapperElement.style.left = (x_cursor - x_wrapper) + 'px';
@@ -82,8 +125,9 @@ window.onload = function () {
     }
     function btnMeasurementClick() {
         var isToggle = btnMeasurements.dataset.toggle == 'true' ? true : false;
-        if (isToggle) {
-        }
+        measurementMode = !isToggle;
+        measurementSetStartPoint = false;
+        measurementContainer.style.visibility = 'hidden';
         btnMeasurements.classList.toggle('active');
         isToggle = !isToggle;
         btnMeasurements.dataset.toggle = isToggle;
@@ -95,6 +139,7 @@ window.onload = function () {
     btnFlip.addEventListener('click', btnFlipClick);
     wrapperElement.addEventListener('touchstart', touchstart);
     wrapperElement.addEventListener('mousedown', mouseStartDrag);
+    editorElement.addEventListener('mousedown', measurementStartDrag);
     editorElement.addEventListener('mousemove', mouseWhile_drag);
     editorElement.addEventListener('touchmove', touchWhile_drag);
     editorElement.addEventListener('mouseup', stop_drag);

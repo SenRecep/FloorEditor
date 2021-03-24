@@ -10,15 +10,48 @@ window.onload = function () {
 
     const zoomSatus = document.getElementsByClassName('zoom-satus')[0];
 
+    const measurementContainer=document.getElementById('measurements-container');
+    const measurementLine= <any>document.getElementById('measurements');
+    const measurementText= <any>document.getElementById('measurementsText');
+
 
     var
-     x_cursor: number = 0,
-     y_cursor: number = 0,
-     x_wrapper: number = 0,
-     y_wrapper: number = 0,
-     scale: number = 0,
-     isDrag: boolean = false,
-     isFlip: boolean = false;
+        x_cursor: number = 0,
+        y_cursor: number = 0,
+        x_wrapper: number = 0,
+        y_wrapper: number = 0,
+        scale: number = 0,
+        isDrag: boolean = false,
+        isFlip: boolean = false;
+
+    var
+        measurementMode: boolean = false,
+        measurementSetStartPoint: boolean = false,
+        spx: number = 0,
+        spy: number = 0,
+        epx: number = 0,
+        epy: number = 0;
+
+    function writeStat() {
+        measurementLine.setAttribute('x1',spx);
+        measurementLine.setAttribute('y1',spy);
+        measurementLine.setAttribute('x2',epx);
+        measurementLine.setAttribute('y2',epy);
+
+        var dist = Math.sqrt((spx - epx) ** 2 + (spy - epy) ** 2);
+        var lw=epx-spx;
+        var lh=epy-spy;
+        measurementText.innerHTML=`${dist.toFixed(1)}px`;
+        if(lw>0)
+            measurementText.setAttribute('x',spx+ Math.abs(lw)/2);
+        else
+             measurementText.setAttribute('x',epx+ Math.abs(lw)/2);
+
+        if(lh>0)
+             measurementText.setAttribute('y',spy+ Math.abs(lh)/2);
+         else
+              measurementText.setAttribute('y',epy+ Math.abs(lh)/2);
+    }
 
     function centerWrapperOnTheScreen(isCenterBtn: boolean) {
         if (isCenterBtn)
@@ -27,6 +60,7 @@ window.onload = function () {
         zoomSatus.innerHTML = `${val}`;
         wrapperElement.style.transform = `translate(-50%,-50%) scaleX(${scale}) scaleY(${scale})`;
     }
+
 
     function zoom(direction: boolean) {
         scale += direction ? -(scale * 0.3) : 1;
@@ -39,18 +73,40 @@ window.onload = function () {
         zoom(event.deltaY > 0);
     }
 
+    function measurementStartDrag() {
+        if (measurementMode) {
+            spx = (<any>window.event).clientX- editorElement.offsetLeft;
+            spy = (<any>window.event).clientY- editorElement.offsetTop;
+            measurementSetStartPoint = true;
+            measurementContainer.style.visibility='visible';
+        }
+    }
+
     function mouseStartDrag() {
-        isDrag = true;
-        x_wrapper = (<any>window.event).clientX - wrapperElement.offsetLeft;
-        y_wrapper = (<any>window.event).clientY - wrapperElement.offsetTop;
+        if (!measurementMode) {
+            isDrag = true;
+            x_wrapper = (<any>window.event).clientX - wrapperElement.offsetLeft;
+            y_wrapper = (<any>window.event).clientY - wrapperElement.offsetTop;
+        }
     }
 
     function stop_drag() {
-        isDrag = false;
+        if (measurementMode) {
+            measurementSetStartPoint = false;
+            writeStat();
+        }
+        else {
+            isDrag = false;
+        }
     }
 
     function mouseWhile_drag() {
-        if (isDrag) {
+        if (measurementMode && measurementSetStartPoint) {
+            epx = (<any>window.event).clientX- editorElement.offsetLeft;
+            epy = (<any>window.event).clientY- editorElement.offsetTop;
+            writeStat();
+        }
+        else if (isDrag) {
             x_cursor = (<any>window.event).clientX;
             y_cursor = (<any>window.event).clientY;
             wrapperElement.style.left = (x_cursor - x_wrapper) + 'px';
@@ -104,27 +160,29 @@ window.onload = function () {
         wrapperElement.style.transform = `translate(-50%,-50%) scaleX(${val}) scaleY(${scale})`;
     }
 
-    function btnMeasurementClick(){
-        var isToggle= (<any>btnMeasurements).dataset.toggle=='true'?true:false;
-        if(isToggle){
-
-        }
+    function btnMeasurementClick() {
+        var isToggle = (<any>btnMeasurements).dataset.toggle == 'true' ? true : false;
+        measurementMode = !isToggle;
+        measurementSetStartPoint = false;
+        measurementContainer.style.visibility='hidden';
         btnMeasurements.classList.toggle('active');
-        isToggle=!isToggle;
-        (<any>btnMeasurements).dataset.toggle=isToggle;
+        isToggle = !isToggle;
+        (<any>btnMeasurements).dataset.toggle = isToggle;
     }
-    
-    
-    
-    
+
+
+
+
     btnCenter.addEventListener("click", btnCenterClick);
     btnZoomOut.addEventListener("click", btnZoomOutClick);
     btnZoomIn.addEventListener("click", btnZoomInClick);
-    btnMeasurements.addEventListener("click",btnMeasurementClick);
+    btnMeasurements.addEventListener("click", btnMeasurementClick);
     btnFlip.addEventListener('click', btnFlipClick);
 
     wrapperElement.addEventListener('touchstart', touchstart);
     wrapperElement.addEventListener('mousedown', mouseStartDrag);
+
+    editorElement.addEventListener('mousedown', measurementStartDrag);
 
     editorElement.addEventListener('mousemove', mouseWhile_drag);
     editorElement.addEventListener('touchmove', touchWhile_drag);
