@@ -1,0 +1,27 @@
+{
+  "name": "flooreditor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SenRecep/FloorEditor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SenRecep/FloorEditor/issues"
+  },
+  "homepage": "https://github.com/SenRecep/FloorEditor#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-static": "^0.7.11"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.35"
+  }
+}

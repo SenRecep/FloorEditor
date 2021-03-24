@@ -1,85 +1,104 @@
-window.onload = function () {
-    var wrapper = document.getElementById("wrapper");
-    var editor = document.getElementById("editor");
-    var btnCenter = document.getElementsByClassName("btn-center")[0];
-    var btnZoomOut = document.getElementsByClassName("btn-zoomout")[0];
-    var btnZoomIn = document.getElementsByClassName("btn-zoomin")[0];
-    var btnFlip = document.getElementsByClassName("btn-flip")[0];
-    var zoomSatus = document.getElementById('zoom-satus');
-    var x_cursor = 0, y_cursor = 0, x_wrapper = 0, y_wrapper = 0, scale = 1, isDrag = false, isFlip = false;
-    function zoom(direction) {
-        scale += direction ? -(scale * 0.3) : 1;
-        scale = Math.min(Math.max(.125, scale), 8);
-        centerWrapperOnTheScreen(false);
+"use strict";
+exports.__esModule = true;
+exports.Editor = void 0;
+var Editor = /** @class */ (function () {
+    function Editor(wrapper, editor, editorController) {
+        this.x_cursor = 0;
+        this.y_cursor = 0;
+        this.x_wrapper = 0;
+        this.y_wrapper = 0;
+        this.scale = 0;
+        this.isDrag = false;
+        this.isFlip = false;
+        this._wrapper = wrapper;
+        this._editor = editor;
+        this._editorController = editorController;
     }
-    function zoomEvent(event) {
+    Editor.prototype.centerWrapperOnTheScreen = function (isCenterBtn) {
+        if (isCenterBtn)
+            this.scale = 1;
+        var val = (this.scale * 100).toFixed(0);
+        this._editorController._zoomSatus.innerHTML = "" + val;
+        this._wrapper.style.transform = "translate(-50%,-50%) scaleX(" + this.scale + ") scaleY(" + this.scale + ")";
+    };
+    Editor.prototype.zoom = function (direction) {
+        this.scale += direction ? -(this.scale * 0.3) : 1;
+        this.scale = Math.min(Math.max(.125, this.scale), 8);
+        this.centerWrapperOnTheScreen(false);
+    };
+    Editor.prototype.zoomEvent = function (event) {
         event.preventDefault();
-        zoom(event.deltaY > 0);
-    }
-    function mouseStartDrag() {
-        isDrag = true;
-        x_wrapper = window.event.clientX - wrapper.offsetLeft;
-        y_wrapper = window.event.clientY - wrapper.offsetTop;
-    }
-    function stop_drag() {
-        isDrag = false;
-    }
-    function mouseWhile_drag() {
-        if (isDrag) {
-            x_cursor = window.event.clientX;
-            y_cursor = window.event.clientY;
-            wrapper.style.left = (x_cursor - x_wrapper) + 'px';
-            wrapper.style.top = (y_cursor - y_wrapper) + 'px';
+        this.zoom(event.deltaY > 0);
+    };
+    Editor.prototype.mouseStartDrag = function () {
+        this.isDrag = true;
+        this.x_wrapper = window.event.clientX - this._wrapper.offsetLeft;
+        this.y_wrapper = window.event.clientY - this._wrapper.offsetTop;
+    };
+    Editor.prototype.stop_drag = function () {
+        this.isDrag = false;
+    };
+    Editor.prototype.mouseWhile_drag = function () {
+        if (this.isDrag) {
+            this.x_cursor = window.event.clientX;
+            this.y_cursor = window.event.clientY;
+            this._wrapper.style.left = (this.x_cursor - this.x_wrapper) + 'px';
+            this._wrapper.style.top = (this.y_cursor - this.y_wrapper) + 'px';
         }
-    }
-    function touchWhile_drag() {
-        if (isDrag) {
+    };
+    Editor.prototype.touchWhile_drag = function () {
+        if (this.isDrag) {
             var event = window.event;
             var eventDatas = event.changedTouches;
             if (eventDatas.length == 1) {
                 var evemtData = eventDatas[0];
-                x_cursor = evemtData.clientX;
-                y_cursor = evemtData.clientY;
-                wrapper.style.left = (x_cursor - x_wrapper) + 'px';
-                wrapper.style.top = (y_cursor - y_wrapper) + 'px';
+                this.x_cursor = evemtData.clientX;
+                this.y_cursor = evemtData.clientY;
+                this._wrapper.style.left = (this.x_cursor - this.x_wrapper) + 'px';
+                this._wrapper.style.top = (this.y_cursor - this.y_wrapper) + 'px';
             }
             else if (eventDatas.length == 2) {
-                var f1 = eventDatas[0];
-                var f2 = eventDatas[1];
+                // var f1=eventDatas[0];
+                // var f2=eventDatas[1];
             }
         }
-    }
-    function touchstart() {
+    };
+    Editor.prototype.touchstart = function () {
         var event = window.event;
         var evemtData = event.changedTouches[0];
-        isDrag = true;
-        x_wrapper = evemtData.clientX - wrapper.offsetLeft;
-        y_wrapper = evemtData.clientY - wrapper.offsetTop;
-    }
-    function centerWrapperOnTheScreen(isCenterBtn) {
-        if (isCenterBtn)
-            scale = 1;
-        var val = (scale * 100).toFixed(0);
-        zoomSatus.innerHTML = "" + val;
-        wrapper.style.transform = "translate(-50%,-50%) scaleX(" + scale + ") scaleY(" + scale + ")";
-    }
-    btnCenter.addEventListener("click", function () {
-        wrapper.style.left = '50%';
-        wrapper.style.top = '50%';
-        centerWrapperOnTheScreen(true);
-    });
-    btnZoomOut.addEventListener("click", function () { return zoom(true); });
-    btnZoomIn.addEventListener("click", function () { return zoom(false); });
-    btnFlip.addEventListener('click', function () {
-        isFlip = !isFlip;
-        var val = isFlip ? -scale : scale;
-        wrapper.style.transform = "translate(-50%,-50%) scaleX(" + val + ") scaleY(" + scale + ")";
-    });
-    wrapper.addEventListener('touchstart', touchstart);
-    wrapper.addEventListener('mousedown', mouseStartDrag);
-    editor.addEventListener('mousemove', mouseWhile_drag);
-    editor.addEventListener('touchmove', touchWhile_drag);
-    editor.addEventListener('mouseup', stop_drag);
-    editor.addEventListener('touchend', stop_drag);
-    editor.addEventListener('mousewheel', zoomEvent);
-};
+        this.isDrag = true;
+        this.x_wrapper = evemtData.clientX - this._wrapper.offsetLeft;
+        this.y_wrapper = evemtData.clientY - this._wrapper.offsetTop;
+    };
+    Editor.prototype.btnCenterClick = function () {
+        this._wrapper.style.left = '50%';
+        this._wrapper.style.top = '50%';
+        this.centerWrapperOnTheScreen(true);
+    };
+    Editor.prototype.btnZoomOutClick = function () {
+        this.zoom(true);
+    };
+    Editor.prototype.btnZoomInClick = function () {
+        this.zoom(false);
+    };
+    Editor.prototype.btnFlipClick = function () {
+        this.isFlip = !this.isFlip;
+        var val = this.isFlip ? -this.scale : this.scale;
+        this._wrapper.style.transform = "translate(-50%,-50%) scaleX(" + val + ") scaleY(" + this.scale + ")";
+    };
+    Editor.prototype.Init = function () {
+        this._editorController._btnCenter.addEventListener("click", this.btnCenterClick);
+        this._editorController._btnZoomOut.addEventListener("click", this.btnZoomOutClick);
+        this._editorController._btnZoomIn.addEventListener("click", this.btnZoomInClick);
+        this._editorController._btnFlip.addEventListener('click', this.btnFlipClick);
+        this._wrapper.addEventListener('touchstart', this.touchstart);
+        this._wrapper.addEventListener('mousedown', this.mouseStartDrag);
+        this._editor.addEventListener('mousemove', this.mouseWhile_drag);
+        this._editor.addEventListener('touchmove', this.touchWhile_drag);
+        this._editor.addEventListener('mouseup', this.stop_drag);
+        this._editor.addEventListener('touchend', this.stop_drag);
+        this._editor.addEventListener('mousewheel', this.zoomEvent);
+    };
+    return Editor;
+}());
+exports.Editor = Editor;

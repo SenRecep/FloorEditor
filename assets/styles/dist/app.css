@@ -1,5 +1,5 @@
-@import '/assets/lib/modern-normalize/modern-normalize.min.css';
-@import '/assets/lib/font-awesome/css/all.min.css';
+@import '/lib/modern-normalize/modern-normalize.min.css';
+@import '/lib/font-awesome/css/all.min.css';
 @import "https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap";
 * {
   padding: 0;
@@ -25,6 +25,9 @@ html, body, main {
 body {
   display: flex;
   flex-direction: column;
+}
+body center {
+  display: none;
 }
 
 main {
