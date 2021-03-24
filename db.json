@@ -1,6 +1,60 @@
 [
     {
-       "Name":"House 1",
-       "Image":"house.jpg"
+        "Name": "House 1",
+        "Image": "house1.jpg",
+        "Floors": [
+            {
+                "Name": "First Floor",
+                "Images": {
+                    "Normal": "house-1-floor-1-normal.svg",
+                    "Invers": "house-1-floor-1-invers.svg"
+                },
+                "Options": [
+                    {
+                        "Name": "With bathtub",
+                        "Images": {
+                            "Normal": "house-1-floor-1-bathtub-normal.svg",
+                            "Invers": "house-1-floor-1-bathtub-invers.svg"
+                        }
+                    }
+                ]
+            },
+            {
+                "Name": "Second Floor",
+                "Images": {
+                    "Normal": "house-1-floor-2-normal.svg",
+                    "Invers": "house-1-floor-2-invers.svg"
+                }
+            }
+        ]
+    },
+    {
+        "Name": "House 2",
+        "Image": "house2.jpg",
+        "Floors": [
+            {
+                "Name": "First Floor",
+                "Images": {
+                    "Normal": "house-2-floor-1-normal.svg",
+                    "Invers": "house-2-floor-1-invers.svg"
+                },
+                "Options": [
+                    {
+                        "Name": "With bathtub",
+                        "Images": {
+                            "Normal": "house-2-floor-1-bathtub-normal.svg",
+                            "Invers": "house-2-floor-1-bathtub-invers.svg"
+                        }
+                    }
+                ]
+            },
+            {
+                "Name": "Second Floor",
+                "Images": {
+                    "Normal": "house-2-floor-2-normal.svg",
+                    "Invers": "house-2-floor-2-invers.svg"
+                }
+            }
+        ]
     }
 ]
