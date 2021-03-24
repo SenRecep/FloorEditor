@@ -15,7 +15,7 @@ header .logo img {
   width: 75px;
 }
 header .title {
-  text-align: right;
+  text-align: center;
   flex: 1;
   align-self: flex-end;
   background-color: var(--CLOUDS);

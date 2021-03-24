@@ -1,4 +1,4 @@
-window.onload = function () {
+window.onload = async function () {
     const wrapperElement = <HTMLElement>document.getElementById("wrapper");
     const editorElement = <HTMLElement>document.getElementById("editor");
 
@@ -13,6 +13,8 @@ window.onload = function () {
     const measurementContainer=document.getElementById('measurements-container');
     const measurementLine= <any>document.getElementById('measurements');
     const measurementText= <any>document.getElementById('measurementsText');
+
+    const houses =await fetch("db.json").then(x=>x.json());
 
 
     var
@@ -31,6 +33,7 @@ window.onload = function () {
         spy: number = 0,
         epx: number = 0,
         epy: number = 0;
+
 
     function writeStat() {
         measurementLine.setAttribute('x1',spx);
@@ -63,9 +66,11 @@ window.onload = function () {
 
 
     function zoom(direction: boolean) {
-        scale += direction ? -(scale * 0.3) : 1;
-        scale = Math.min(Math.max(.125, scale), 8);
-        centerWrapperOnTheScreen(false);
+        if (!measurementMode) {
+            scale += direction ? -(scale * 0.3) : 1;
+            scale = Math.min(Math.max(.125, scale), 8);
+            centerWrapperOnTheScreen(false);
+        }
     }
 
     function zoomEvent(event: any) {
