@@ -15,6 +15,6 @@ header .logo img {
   width: 75px;
 }
 header .title {
-  text-align: center;
+  text-align: right;
   flex: 1;
 }

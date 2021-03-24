@@ -18,6 +18,9 @@
             border: 0;
             outline: 0;
             border-radius: 0;
+            &:hover{
+                opacity: 0.8;
+            }
         }
         .btn-center,
         .btn-measurements,
@@ -57,5 +60,19 @@
                 width: auto;
             }
         }
+    }
+    #measurements-container{
+        height: 100%;
+        width: 100%;
+        visibility: hidden !important;
+    }
+    #measurements{
+     stroke: var(--WETASPHALT);
+     stroke-width: 3;
+    }
+    #measurementsText{
+        stroke: var(--SILVER);
+        font-size: 20px;
+        z-index: 10;
     }
 }

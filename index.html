@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -59,19 +58,25 @@
                 <button class="btn btn-zoomin"><i class="fas fa-plus"></i></button>
                 <button class="btn btn-zoomout"><i class="fas fa-minus"></i></button>
                 <span class="status zoom"><span class="zoom-satus">100</span><small>%</small></span>
-                <button data-toggle='false' class="btn btn-toggle btn-measurements"><i class="fas fa-ruler-horizontal"></i></button>
+                <button data-toggle='false' class="btn btn-toggle btn-measurements"><i
+                        class="fas fa-ruler-horizontal"></i></button>
                 <button class="btn btn-flip"><i class="fas fa-sync-alt"></i></button>
                 <span class="status flip">flip</span>
             </div>
+            <svg id="measurements-container" >
+                <line id="measurements" ></line>
+                <text id="measurementsText"></text>
+            </svg>
+        
             <div id="wrapper" class="wrapper" ondragstart="return false">
                 <div class="floor">
                     <img src="./assets/img/floor-1.svg" alt="">
                 </div>
             </div>
         </div>
-        
+
     </main>
-    <script> var exports = {}; </script>
+    <script> var exports = {};</script>
     <script src="./assets/js/dist/app.js"></script>
 </body>
 
