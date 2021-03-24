@@ -4,6 +4,7 @@ window.onload = function () {
     var btnCenter = document.getElementsByClassName("btn-center")[0];
     var btnZoomOut = document.getElementsByClassName("btn-zoomout")[0];
     var btnZoomIn = document.getElementsByClassName("btn-zoomin")[0];
+    var btnMeasurements = document.getElementsByClassName('btn-measurements')[0];
     var btnFlip = document.getElementsByClassName("btn-flip")[0];
     var zoomSatus = document.getElementsByClassName('zoom-satus')[0];
     var x_cursor = 0, y_cursor = 0, x_wrapper = 0, y_wrapper = 0, scale = 0, isDrag = false, isFlip = false;
@@ -79,9 +80,18 @@ window.onload = function () {
         var val = isFlip ? -scale : scale;
         wrapperElement.style.transform = "translate(-50%,-50%) scaleX(" + val + ") scaleY(" + scale + ")";
     }
+    function btnMeasurementClick() {
+        var isToggle = btnMeasurements.dataset.toggle == 'true' ? true : false;
+        if (isToggle) {
+        }
+        btnMeasurements.classList.toggle('active');
+        isToggle = !isToggle;
+        btnMeasurements.dataset.toggle = isToggle;
+    }
     btnCenter.addEventListener("click", btnCenterClick);
     btnZoomOut.addEventListener("click", btnZoomOutClick);
     btnZoomIn.addEventListener("click", btnZoomInClick);
+    btnMeasurements.addEventListener("click", btnMeasurementClick);
     btnFlip.addEventListener('click', btnFlipClick);
     wrapperElement.addEventListener('touchstart', touchstart);
     wrapperElement.addEventListener('mousedown', mouseStartDrag);

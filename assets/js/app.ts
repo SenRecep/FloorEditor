@@ -5,8 +5,11 @@ window.onload = function () {
     const btnCenter = document.getElementsByClassName("btn-center")[0];
     const btnZoomOut = document.getElementsByClassName("btn-zoomout")[0];
     const btnZoomIn = document.getElementsByClassName("btn-zoomin")[0];
+    const btnMeasurements = document.getElementsByClassName('btn-measurements')[0];
     const btnFlip = document.getElementsByClassName("btn-flip")[0];
+
     const zoomSatus = document.getElementsByClassName('zoom-satus')[0];
+
 
     var
      x_cursor: number = 0,
@@ -101,11 +104,23 @@ window.onload = function () {
         wrapperElement.style.transform = `translate(-50%,-50%) scaleX(${val}) scaleY(${scale})`;
     }
 
+    function btnMeasurementClick(){
+        var isToggle= (<any>btnMeasurements).dataset.toggle=='true'?true:false;
+        if(isToggle){
 
+        }
+        btnMeasurements.classList.toggle('active');
+        isToggle=!isToggle;
+        (<any>btnMeasurements).dataset.toggle=isToggle;
+    }
+    
+    
+    
+    
     btnCenter.addEventListener("click", btnCenterClick);
     btnZoomOut.addEventListener("click", btnZoomOutClick);
     btnZoomIn.addEventListener("click", btnZoomInClick);
-
+    btnMeasurements.addEventListener("click",btnMeasurementClick);
     btnFlip.addEventListener('click', btnFlipClick);
 
     wrapperElement.addEventListener('touchstart', touchstart);
