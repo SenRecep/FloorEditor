@@ -224,7 +224,7 @@ main nav ul.menu > li .dropdown-menu li a label {
 }
 .editor .wrapper {
   position: absolute;
-  height: auto;
+  height: 100%;
   width: auto;
   left: 50%;
   top: 50%;
@@ -232,7 +232,7 @@ main nav ul.menu > li .dropdown-menu li a label {
   transform: translate(-50%, -50%);
 }
 .editor .wrapper .floor {
-  height: auto;
+  height: 100%;
   width: auto;
 }
 .editor .wrapper .floor img {

@@ -46,14 +46,14 @@
     }
     .wrapper{
         position: absolute;
-        height: auto;
+        height: 100%;
         width: auto;
         left: 50%;
         top: 50%;
         cursor: move;
         transform: translate(-50%,-50%);
         .floor{
-            height: auto;
+            height: 100%;
             width: auto;
             img{
                 height: 100%;

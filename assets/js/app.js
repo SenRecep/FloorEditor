@@ -10,8 +10,14 @@ window.onload = function () {
     var measurementContainer = document.getElementById('measurements-container');
     var measurementLine = document.getElementById('measurements');
     var measurementText = document.getElementById('measurementsText');
-    var x_cursor = 0, y_cursor = 0, x_wrapper = 0, y_wrapper = 0, scale = 0, isDrag = false, isFlip = false;
+
+    const floorBg = $('.floor img')[0];
+
+
+    var x_cursor = 0, y_cursor = 0, x_wrapper = 0, y_wrapper = 0, scale = 1, isDrag = false, isFlip = false;
     var measurementMode = false, measurementSetStartPoint = false, spx = 0, spy = 0, epx = 0, epy = 0;
+
+
     function writeStat() {
         measurementLine.setAttribute('x1', spx);
         measurementLine.setAttribute('y1', spy);
@@ -124,8 +130,26 @@ window.onload = function () {
     }
     function btnFlipClick() {
         isFlip = !isFlip;
-        var val = isFlip ? -scale : scale;
-        wrapperElement.style.transform = "translate(-50%,-50%) scaleX(" + val + ") scaleY(" + scale + ")";
+        var option = getCurrentOption();
+        var floor = getCurrentFloor();
+        if (isFlip) {
+            if (option)
+                $(floorBg).attr('src', `./assets/img/floors/${option.Images.Invers}`);
+
+            else
+                $(floorBg).attr('src', `./assets/img/floors/${floor.Images.Invers}`);
+        }
+        else  {
+            if (option)
+                $(floorBg).attr('src', `./assets/img/floors/${option.Images.Normal}`);
+
+            else
+                $(floorBg).attr('src', `./assets/img/floors/${floor.Images.Normal}`);
+        }
+
+
+        // var val = isFlip ? -scale : scale;
+        // wrapperElement.style.transform = "translate(-50%,-50%) scaleX(" + val + ") scaleY(" + scale + ")";
     }
     function btnMeasurementClick() {
         var isToggle = btnMeasurements.dataset.toggle == 'true' ? true : false;
@@ -136,6 +160,8 @@ window.onload = function () {
         isToggle = !isToggle;
         btnMeasurements.dataset.toggle = isToggle;
     }
+
+
     btnCenter.addEventListener("click", btnCenterClick);
     btnZoomOut.addEventListener("click", btnZoomOutClick);
     btnZoomIn.addEventListener("click", btnZoomInClick);

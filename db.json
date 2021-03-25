@@ -54,14 +54,6 @@
                         }
                     }
                 ]
-            },
-            {
-                "Id": 4,
-                "Name": "Second Floor",
-                "Images": {
-                    "Normal": "house-2-floor-2-normal.svg",
-                    "Invers": "house-2-floor-2-invers.svg"
-                }
             }
         ]
     },
@@ -71,7 +63,7 @@
         "Image": "house3.jpg",
         "Floors": [
             {
-                "Id": 5,
+                "Id": 4,
                 "Name": "First Floor",
                 "Images": {
                     "Normal": "house-3-floor-1-normal.svg",
@@ -87,14 +79,6 @@
                         }
                     }
                 ]
-            },
-            {
-                "Id": 6,
-                "Name": "Second Floor",
-                "Images": {
-                    "Normal": "house-3-floor-2-normal.svg",
-                    "Invers": "house-3-floor-2-invers.svg"
-                }
             }
         ]
     }
