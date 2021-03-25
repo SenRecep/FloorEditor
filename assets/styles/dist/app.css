@@ -1,6 +1,7 @@
 @import '/assets/lib/modern-normalize/modern-normalize.min.css';
 @import '/assets/lib/font-awesome/css/all.min.css';
 @import "https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap";
+@import '/assets/lib/twitter-bootstrap/css/bootstrap.min.css';
 * {
   padding: 0;
   margin: 0;
@@ -78,7 +79,7 @@ header .logo {
 }
 header .logo img {
   height: auto;
-  width: 75px;
+  width: 150px;
 }
 header .title {
   text-align: right;
@@ -190,7 +191,7 @@ main nav ul.menu li a p {
 .editor #measurements-container {
   height: 100%;
   width: 100%;
-  visibility: hidden !important;
+  visibility: hidden;
 }
 .editor #measurements {
   stroke: var(--WETASPHALT);

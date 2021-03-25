@@ -12,10 +12,10 @@ header .logo {
 }
 header .logo img {
   height: auto;
-  width: 75px;
+  width: 150px;
 }
 header .title {
-  text-align: center;
+  text-align: right;
   flex: 1;
   align-self: flex-end;
   background-color: var(--CLOUDS);
