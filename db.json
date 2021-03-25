@@ -11,6 +11,7 @@
                     "Normal": "house-1-floor-1-normal.svg",
                     "Invers": "house-1-floor-1-invers.svg"
                 },
+                "Estimate": 200000,
                 "Options": [
                     {
                         "Id": 1,
@@ -18,7 +19,8 @@
                         "Images": {
                             "Normal": "house-1-floor-1-bathtub-normal.svg",
                             "Invers": "house-1-floor-1-bathtub-invers.svg"
-                        }
+                        },
+                        "Estimate": 210000
                     }
                 ]
             },
@@ -28,7 +30,9 @@
                 "Images": {
                     "Normal": "house-1-floor-2-normal.svg",
                     "Invers": "house-1-floor-2-invers.svg"
-                }
+                },
+                "Estimate": 200000
+
             }
         ]
     },
@@ -44,6 +48,7 @@
                     "Normal": "house-2-floor-1-normal.svg",
                     "Invers": "house-2-floor-1-invers.svg"
                 },
+                "Estimate": 100000,
                 "Options": [
                     {
                         "Id": 2,
@@ -51,7 +56,8 @@
                         "Images": {
                             "Normal": "house-2-floor-1-bathtub-normal.svg",
                             "Invers": "house-2-floor-1-bathtub-invers.svg"
-                        }
+                        },
+                        "Estimate": 110000
                     }
                 ]
             }
@@ -69,6 +75,7 @@
                     "Normal": "house-3-floor-1-normal.svg",
                     "Invers": "house-3-floor-1-invers.svg"
                 },
+                "Estimate": 100000,
                 "Options": [
                     {
                         "Id": 3,
@@ -76,7 +83,8 @@
                         "Images": {
                             "Normal": "house-3-floor-1-bathtub-normal.svg",
                             "Invers": "house-3-floor-1-bathtub-invers.svg"
-                        }
+                        },
+                        "Estimate": 110000
                     }
                 ]
             }

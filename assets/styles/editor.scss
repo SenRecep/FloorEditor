@@ -3,6 +3,11 @@
     position: relative;
     overflow: hidden;
     background-color: var(--CLOUDS);
+    #Estimate{
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
     .controller{
         position: absolute;
         right: 10px;

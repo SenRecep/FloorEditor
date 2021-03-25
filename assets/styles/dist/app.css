@@ -183,6 +183,11 @@ main nav ul.menu > li .dropdown-menu li a label {
   overflow: hidden;
   background-color: var(--CLOUDS);
 }
+.editor #Estimate {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
 .editor .controller {
   position: absolute;
   right: 10px;

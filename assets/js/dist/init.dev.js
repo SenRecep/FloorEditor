@@ -1,11 +1,22 @@
 "use strict";
 
 $(document).ready(function _callee() {
-  var floorBg, houses, drawHouseElement, drawFloorElement, drawOptionElement, drawSlectedHouseFloors, drawSlectedFloorOptions, changeFloor, floorDraw, changeOption, OptionDraw;
+  var floorBg, houses, drawHouseElement, drawFloorElement, drawOptionElement, drawSlectedHouseFloors, drawSlectedFloorOptions, changeFloor, floorDraw, changeOption, OptionDraw, drawEstimate;
   return regeneratorRuntime.async(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
+          drawEstimate = function _ref10() {
+            var option = getCurrentOption();
+            var floor = getCurrentFloor();
+
+            if (option) {
+              $('#Estimate').text("Estimate: $".concat(option.Estimate));
+            } else if (floor) {
+              $('#Estimate').text("Estimate: $".concat(floor.Estimate));
+            }
+          };
+
           OptionDraw = function _ref9(option) {
             $(floorBg).attr('src', "./assets/img/floors/".concat(option.Images.Normal));
           };
@@ -18,6 +29,7 @@ $(document).ready(function _callee() {
             });
             setCurrentOption(option);
             OptionDraw(option);
+            drawEstimate();
           };
 
           floorDraw = function _ref7(floor) {
@@ -34,6 +46,7 @@ $(document).ready(function _callee() {
             setCurrentOption(null);
             drawSlectedFloorOptions();
             floorDraw(floor);
+            drawEstimate();
           };
 
           drawSlectedFloorOptions = function _ref5() {
@@ -59,6 +72,9 @@ $(document).ready(function _callee() {
             $('input[type=radio][name=floor]').change(changeFloor);
             setCurrentFloor(getCurrentHouse().Floors[0]);
             floorDraw(getCurrentFloor());
+            setCurrentOption(null);
+            drawSlectedFloorOptions();
+            drawEstimate();
           };
 
           drawOptionElement = function _ref3(option) {
@@ -74,12 +90,12 @@ $(document).ready(function _callee() {
           };
 
           floorBg = $('.floor img')[0];
-          _context.next = 12;
+          _context.next = 13;
           return regeneratorRuntime.awrap(fetch("db.json").then(function (x) {
             return x.json();
           }));
 
-        case 12:
+        case 13:
           houses = _context.sent;
           console.log(floorBg);
           setCurrentHouse(houses[0]);
@@ -101,7 +117,7 @@ $(document).ready(function _callee() {
           drawSlectedFloorOptions();
           $('input[type=radio][name=house]')[0].checked = true;
 
-        case 22:
+        case 23:
         case "end":
           return _context.stop();
       }

@@ -25,6 +25,9 @@ $(document).ready(async function () {
         $('input[type=radio][name=floor]').change(changeFloor);
         setCurrentFloor(getCurrentHouse().Floors[0]);
         floorDraw(getCurrentFloor())
+        setCurrentOption(null);
+        drawSlectedFloorOptions();
+        drawEstimate();
     }
 
     function drawSlectedFloorOptions(){
@@ -46,6 +49,7 @@ $(document).ready(async function () {
         setCurrentOption(null);
         drawSlectedFloorOptions();
         floorDraw(floor);
+        drawEstimate();
     }
 
     function floorDraw(floor){
@@ -56,12 +60,22 @@ $(document).ready(async function () {
         var option=getCurrentFloor().Options.find(x=>x.Id==this.value);
         setCurrentOption(option);
         OptionDraw(option);
+        drawEstimate();
     }
 
     function OptionDraw(option){
         $(floorBg).attr('src',`./assets/img/floors/${option.Images.Normal}`);
     }
 
+    function drawEstimate(){
+        var option = getCurrentOption();
+        var floor = getCurrentFloor();
+       if(option){
+            $('#Estimate').text(`Estimate: $${option.Estimate}`);
+       } else if(floor){
+        $('#Estimate').text(`Estimate: $${floor.Estimate}`);
+       }
+    }
    
 
     houses.forEach(house => $("#houses").append(drawHouseElement(house)));
