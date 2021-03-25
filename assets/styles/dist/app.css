@@ -190,7 +190,7 @@ main nav ul.menu li a p {
 .editor #measurements-container {
   height: 100%;
   width: 100%;
-  visibility: hidden !important;
+  visibility: hidden;
 }
 .editor #measurements {
   stroke: var(--WETASPHALT);

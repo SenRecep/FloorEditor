@@ -176,6 +176,7 @@ window.onload = function () {
                     return [4 /*yield*/, fetch("db.json").then(function (x) { return x.json(); })];
                 case 1:
                     houses = _a.sent();
+                    console.log(houses);
                     x_cursor = 0, y_cursor = 0, x_wrapper = 0, y_wrapper = 0, scale = 0, isDrag = false, isFlip = false;
                     measurementMode = false, measurementSetStartPoint = false, spx = 0, spy = 0, epx = 0, epy = 0;
                     btnCenter.addEventListener("click", btnCenterClick);

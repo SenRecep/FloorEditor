@@ -16,6 +16,7 @@ window.onload = async function () {
 
     const houses =await fetch("db.json").then(x=>x.json());
 
+    console.log(houses);
 
     var
         x_cursor: number = 0,
