@@ -11,7 +11,7 @@
                     "Normal": "house-1-floor-1-normal.svg",
                     "Invers": "house-1-floor-1-invers.svg"
                 },
-                "Estimate": 200000,
+                "Estimate": 225000,
                 "Options": [
                     {
                         "Id": 1,
@@ -20,7 +20,7 @@
                             "Normal": "house-1-floor-1-bathtub-normal.svg",
                             "Invers": "house-1-floor-1-bathtub-invers.svg"
                         },
-                        "Estimate": 210000
+                        "Estimate": 250000
                     }
                 ]
             },
@@ -31,7 +31,7 @@
                     "Normal": "house-1-floor-2-normal.svg",
                     "Invers": "house-1-floor-2-invers.svg"
                 },
-                "Estimate": 200000
+                "Estimate": 225000
 
             }
         ]
@@ -48,7 +48,7 @@
                     "Normal": "house-2-floor-1-normal.svg",
                     "Invers": "house-2-floor-1-invers.svg"
                 },
-                "Estimate": 100000,
+                "Estimate": 175000,
                 "Options": [
                     {
                         "Id": 2,
@@ -57,7 +57,7 @@
                             "Normal": "house-2-floor-1-bathtub-normal.svg",
                             "Invers": "house-2-floor-1-bathtub-invers.svg"
                         },
-                        "Estimate": 110000
+                        "Estimate": 200000
                     }
                 ]
             }
@@ -75,7 +75,7 @@
                     "Normal": "house-3-floor-1-normal.svg",
                     "Invers": "house-3-floor-1-invers.svg"
                 },
-                "Estimate": 100000,
+                "Estimate": 175000,
                 "Options": [
                     {
                         "Id": 3,
@@ -84,7 +84,7 @@
                             "Normal": "house-3-floor-1-bathtub-normal.svg",
                             "Invers": "house-3-floor-1-bathtub-invers.svg"
                         },
-                        "Estimate": 110000
+                        "Estimate": 200000
                     }
                 ]
             }
