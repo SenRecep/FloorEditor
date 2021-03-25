@@ -164,6 +164,11 @@ window.onload = function () {
     btnMeasurements.dataset.toggle = isToggle;
   }
 
+  $("#detailButton").click(function () {
+    var house = getCurrentHouse();
+    $('#houseName').text(house.Name);
+    $("#houseImage").attr('src', "./assets/img/houses/".concat(house.Image));
+  });
   btnCenter.addEventListener("click", btnCenterClick);
   btnZoomOut.addEventListener("click", btnZoomOutClick);
   btnZoomIn.addEventListener("click", btnZoomInClick);
