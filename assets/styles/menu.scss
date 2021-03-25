@@ -5,19 +5,23 @@ main {
         background-color: var(--MIDNIGHTBLUE);
 
         ul.menu {
-            li {
+            >li {
                 padding: 10px;
                 border-bottom: 1px solid var(--CLOUDS);
-                &:last-child{
+
+                &:last-child {
                     border-bottom: 0;
                 }
-                a {
+
+                >a {
                     display: block;
                     text-align: center;
                     color: var(--Faded);
-                    &:hover{
-                     color: var(--CLOUDS);
+
+                    &:hover {
+                        color: var(--CLOUDS);
                     }
+
                     i {
                         font-size: 38px;
                     }
@@ -26,6 +30,60 @@ main {
                         margin-top: 10px;
                         font-size: 9px;
                         text-transform: uppercase;
+                    }
+                }
+
+                .dropdown-menu {
+                    transform: translate3d(80px, 0px, 0px) !important;
+                    padding: 0;
+
+                    li {
+                        border-bottom: 1px solid var(--CLOUDS);
+
+                        &:last-child {
+                            border-bottom: 0;
+                        }
+
+                        a {
+                            display: flex;
+                            text-decoration: none;
+
+                            &:hover {
+                                color: var(--CLOUDS);
+                            }
+
+                            img {
+                                height: 50px;
+                                width: auto;
+                            }
+
+                            input {
+                                position: absolute;
+                                visibility: collapse;
+
+                                &:checked + label {
+                                    background-color: var(--Faded);
+                                    color: var(--MIDNIGHTBLUE);
+                                }
+                            }
+
+                            label {
+                                position: relative;
+                                display: flex;
+                                align-items: center;
+                                height: 50px;
+                                flex: 1;
+                                white-space: nowrap;
+                                padding: 0 10px;
+                                margin-bottom: 0;
+                                text-transform: uppercase;
+                                background-color: var(--MIDNIGHTBLUE);
+                                color: var(--Faded);
+                            }
+
+                           
+
+                        }
                     }
                 }
             }

@@ -1,4 +1,4 @@
-window.onload = async function () {
+window.onload =  function () {
     const wrapperElement = <HTMLElement>document.getElementById("wrapper");
     const editorElement = <HTMLElement>document.getElementById("editor");
 
@@ -14,9 +14,7 @@ window.onload = async function () {
     const measurementLine= <any>document.getElementById('measurements');
     const measurementText= <any>document.getElementById('measurementsText');
 
-    const houses =await fetch("db.json").then(x=>x.json());
-
-    console.log(houses);
+ 
 
     var
         x_cursor: number = 0,
@@ -148,9 +146,12 @@ window.onload = async function () {
     }
 
     function btnCenterClick() {
-        wrapperElement.style.left = '50%';
-        wrapperElement.style.top = '50%';
-        centerWrapperOnTheScreen(true);
+        if (!measurementMode){
+            wrapperElement.style.left = '50%';
+            wrapperElement.style.top = '50%';
+            centerWrapperOnTheScreen(true);
+        }
+       
     }
     function btnZoomOutClick() {
         zoom(true);

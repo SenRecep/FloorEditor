@@ -1,9 +1,11 @@
 [
     {
+        "Id": 1,
         "Name": "House 1",
         "Image": "house1.jpg",
         "Floors": [
             {
+                "Id": 1,
                 "Name": "First Floor",
                 "Images": {
                     "Normal": "house-1-floor-1-normal.svg",
@@ -11,6 +13,7 @@
                 },
                 "Options": [
                     {
+                        "Id": 1,
                         "Name": "With bathtub",
                         "Images": {
                             "Normal": "house-1-floor-1-bathtub-normal.svg",
@@ -20,6 +23,7 @@
                 ]
             },
             {
+                "Id": 2,
                 "Name": "Second Floor",
                 "Images": {
                     "Normal": "house-1-floor-2-normal.svg",
@@ -29,10 +33,12 @@
         ]
     },
     {
+        "Id": 2,
         "Name": "House 2",
         "Image": "house2.jpg",
         "Floors": [
             {
+                "Id": 3,
                 "Name": "First Floor",
                 "Images": {
                     "Normal": "house-2-floor-1-normal.svg",
@@ -40,6 +46,7 @@
                 },
                 "Options": [
                     {
+                        "Id": 2,
                         "Name": "With bathtub",
                         "Images": {
                             "Normal": "house-2-floor-1-bathtub-normal.svg",
@@ -49,10 +56,44 @@
                 ]
             },
             {
+                "Id": 4,
                 "Name": "Second Floor",
                 "Images": {
                     "Normal": "house-2-floor-2-normal.svg",
                     "Invers": "house-2-floor-2-invers.svg"
+                }
+            }
+        ]
+    },
+    {
+        "Id": 3,
+        "Name": "House 3",
+        "Image": "house3.jpg",
+        "Floors": [
+            {
+                "Id": 5,
+                "Name": "First Floor",
+                "Images": {
+                    "Normal": "house-3-floor-1-normal.svg",
+                    "Invers": "house-3-floor-1-invers.svg"
+                },
+                "Options": [
+                    {
+                        "Id": 3,
+                        "Name": "With bathtub",
+                        "Images": {
+                            "Normal": "house-3-floor-1-bathtub-normal.svg",
+                            "Invers": "house-3-floor-1-bathtub-invers.svg"
+                        }
+                    }
+                ]
+            },
+            {
+                "Id": 6,
+                "Name": "Second Floor",
+                "Images": {
+                    "Normal": "house-3-floor-2-normal.svg",
+                    "Invers": "house-3-floor-2-invers.svg"
                 }
             }
         ]

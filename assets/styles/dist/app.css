@@ -35,6 +35,15 @@ main {
   display: flex;
 }
 
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 :root {
   --TURQUOISE:#1ABC9C;
   --GREENSEA:#16A085;
@@ -102,28 +111,70 @@ main nav {
   width: 75px;
   background-color: var(--MIDNIGHTBLUE);
 }
-main nav ul.menu li {
+main nav ul.menu > li {
   padding: 10px;
   border-bottom: 1px solid var(--CLOUDS);
 }
-main nav ul.menu li:last-child {
+main nav ul.menu > li:last-child {
   border-bottom: 0;
 }
-main nav ul.menu li a {
+main nav ul.menu > li > a {
   display: block;
   text-align: center;
   color: var(--Faded);
 }
-main nav ul.menu li a:hover {
+main nav ul.menu > li > a:hover {
   color: var(--CLOUDS);
 }
-main nav ul.menu li a i {
+main nav ul.menu > li > a i {
   font-size: 38px;
 }
-main nav ul.menu li a p {
+main nav ul.menu > li > a p {
   margin-top: 10px;
   font-size: 9px;
   text-transform: uppercase;
+}
+main nav ul.menu > li .dropdown-menu {
+  transform: translate3d(80px, 0px, 0px) !important;
+  padding: 0;
+}
+main nav ul.menu > li .dropdown-menu li {
+  border-bottom: 1px solid var(--CLOUDS);
+}
+main nav ul.menu > li .dropdown-menu li:last-child {
+  border-bottom: 0;
+}
+main nav ul.menu > li .dropdown-menu li a {
+  display: flex;
+  text-decoration: none;
+}
+main nav ul.menu > li .dropdown-menu li a:hover {
+  color: var(--CLOUDS);
+}
+main nav ul.menu > li .dropdown-menu li a img {
+  height: 50px;
+  width: auto;
+}
+main nav ul.menu > li .dropdown-menu li a input {
+  position: absolute;
+  visibility: collapse;
+}
+main nav ul.menu > li .dropdown-menu li a input:checked + label {
+  background-color: var(--Faded);
+  color: var(--MIDNIGHTBLUE);
+}
+main nav ul.menu > li .dropdown-menu li a label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  flex: 1;
+  white-space: nowrap;
+  padding: 0 10px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  background-color: var(--MIDNIGHTBLUE);
+  color: var(--Faded);
 }
 
 .editor {
