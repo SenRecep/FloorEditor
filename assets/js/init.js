@@ -3,7 +3,7 @@ $(document).ready(async function () {
     const floorBg = $('.floor img')[0];
 
     const houses = await fetch("db.json").then(x => x.json());
-    console.log(floorBg);
+    
      setCurrentHouse(houses[0]);
      setCurrentFloor(getCurrentHouse().Floors[0]);
      setCurrentOption(null);
@@ -15,7 +15,7 @@ $(document).ready(async function () {
         return `<li> <a href="#"> <input id="floor-${floor.Id}" type="radio" value="${floor.Id}" name="floor" > <label for="floor-${floor.Id}">${floor.Name}</label> </a> </li>`;
     }
     function drawOptionElement(option) {
-        return `<li> <a href="#"> <input id="option-${option.Id}" type="radio" value="${option.Id}" name="option" > <label for="option-${option.Id}">${option.Name}</label> </a> </li>`;
+        return `<li> <a href="#"> <input id="option-${option.Id}" type="checkbox" value="${option.Id}" name="option" > <label for="option-${option.Id}">${option.Name}</label> </a> </li>`;
     }
 
     function drawSlectedHouseFloors(){
@@ -35,7 +35,7 @@ $(document).ready(async function () {
         if(getCurrentFloor().Options)
         {
             getCurrentFloor().Options.forEach(option => $("#options").append(drawOptionElement(option)));
-            $('input[type=radio][name=option]').change(changeOption);
+            $('input[type=checkbox][name=option]').change(changeOption);
             $('#menu-options').show();
         }
         else{
@@ -57,10 +57,24 @@ $(document).ready(async function () {
     }
 
     function changeOption(){
-        var option=getCurrentFloor().Options.find(x=>x.Id==this.value);
-        setCurrentOption(option);
-        OptionDraw(option);
-        drawEstimate();
+        //Demo
+        document.querySelectorAll('input[name="option"]').forEach(input=>{
+            if(this !==input)
+              input.checked=false;
+        });
+        //Demo
+        if(this.checked){
+            var option=getCurrentFloor().Options.find(x=>x.Id==this.value);
+            setCurrentOption(option);
+            OptionDraw(option);
+            drawEstimate();
+        }else{
+            setCurrentOption(null);
+            var floor= getCurrentFloor();
+            floorDraw(floor);
+            drawEstimate();
+        }
+        
     }
 
     function OptionDraw(option){

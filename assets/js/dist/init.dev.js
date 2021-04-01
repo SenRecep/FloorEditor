@@ -24,12 +24,24 @@ $(document).ready(function _callee() {
           changeOption = function _ref8() {
             var _this2 = this;
 
-            var option = getCurrentFloor().Options.find(function (x) {
-              return x.Id == _this2.value;
-            });
-            setCurrentOption(option);
-            OptionDraw(option);
-            drawEstimate();
+            //Demo
+            document.querySelectorAll('input[name="option"]').forEach(function (input) {
+              if (_this2 !== input) input.checked = false;
+            }); //Demo
+
+            if (this.checked) {
+              var option = getCurrentFloor().Options.find(function (x) {
+                return x.Id == _this2.value;
+              });
+              setCurrentOption(option);
+              OptionDraw(option);
+              drawEstimate();
+            } else {
+              setCurrentOption(null);
+              var floor = getCurrentFloor();
+              floorDraw(floor);
+              drawEstimate();
+            }
           };
 
           floorDraw = function _ref7(floor) {
@@ -56,7 +68,7 @@ $(document).ready(function _callee() {
               getCurrentFloor().Options.forEach(function (option) {
                 return $("#options").append(drawOptionElement(option));
               });
-              $('input[type=radio][name=option]').change(changeOption);
+              $('input[type=checkbox][name=option]').change(changeOption);
               $('#menu-options').show();
             } else {
               $('#menu-options').hide();
@@ -78,7 +90,7 @@ $(document).ready(function _callee() {
           };
 
           drawOptionElement = function _ref3(option) {
-            return "<li> <a href=\"#\"> <input id=\"option-".concat(option.Id, "\" type=\"radio\" value=\"").concat(option.Id, "\" name=\"option\" > <label for=\"option-").concat(option.Id, "\">").concat(option.Name, "</label> </a> </li>");
+            return "<li> <a href=\"#\"> <input id=\"option-".concat(option.Id, "\" type=\"checkbox\" value=\"").concat(option.Id, "\" name=\"option\" > <label for=\"option-").concat(option.Id, "\">").concat(option.Name, "</label> </a> </li>");
           };
 
           drawFloorElement = function _ref2(floor) {
@@ -97,7 +109,6 @@ $(document).ready(function _callee() {
 
         case 13:
           houses = _context.sent;
-          console.log(floorBg);
           setCurrentHouse(houses[0]);
           setCurrentFloor(getCurrentHouse().Floors[0]);
           setCurrentOption(null);
@@ -117,7 +128,7 @@ $(document).ready(function _callee() {
           drawSlectedFloorOptions();
           $('input[type=radio][name=house]')[0].checked = true;
 
-        case 23:
+        case 22:
         case "end":
           return _context.stop();
       }
