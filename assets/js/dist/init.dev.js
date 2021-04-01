@@ -1,67 +1,74 @@
 "use strict";
 
 $(document).ready(function _callee() {
-  var floorBg, houses, drawHouseElement, drawFloorElement, drawOptionElement, drawSlectedHouseFloors, drawSlectedFloorOptions, changeFloor, floorDraw, changeOption, OptionDraw, drawEstimate;
+  var floorBg, optionsLayer, houses, drawHouseElement, drawFloorElement, drawOptionElement, drawOptionItemElement, drawSlectedHouseFloors, drawSlectedFloorOptions, changeFloor, floorDraw, changeOption, OptionDraw, OptionDelete, drawEstimate;
   return regeneratorRuntime.async(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
-          drawEstimate = function _ref10() {
-            var option = getCurrentOption();
+          drawEstimate = function _ref12() {
+            var totalOptionEstimate = getOptions().reduce(function (tot, item) {
+              return tot + item.Estimate;
+            }, 0);
             var floor = getCurrentFloor();
-
-            if (option) {
-              $('#Estimate').text("Estimate: $".concat(option.Estimate));
-            } else if (floor) {
-              $('#Estimate').text("Estimate: $".concat(floor.Estimate));
-            }
+            var total = floor.Estimate + totalOptionEstimate;
+            $('#Estimate').text("Estimate: $".concat(total));
           };
 
-          OptionDraw = function _ref9(option) {
-            $(floorBg).attr('src', "./assets/img/floors/".concat(option.Images.Normal));
+          OptionDelete = function _ref11(option) {
+            var element = $("#option-item-".concat(option.Id))[0];
+            $(element).remove();
           };
 
-          changeOption = function _ref8() {
+          OptionDraw = function _ref10(option) {
+            var element = drawOptionItemElement(option);
+            $(optionsLayer).append(element);
+          };
+
+          changeOption = function _ref9() {
             var _this2 = this;
 
-            //Demo
-            document.querySelectorAll('input[name="option"]').forEach(function (input) {
-              if (_this2 !== input) input.checked = false;
-            }); //Demo
+            var option = getCurrentFloor().Options.find(function (x) {
+              return x.Id == _this2.value;
+            });
 
             if (this.checked) {
-              var option = getCurrentFloor().Options.find(function (x) {
-                return x.Id == _this2.value;
-              });
-              setCurrentOption(option);
+              var options = getOptions();
+              options.push(option);
+              setOptions(options);
               OptionDraw(option);
               drawEstimate();
             } else {
-              setCurrentOption(null);
-              var floor = getCurrentFloor();
-              floorDraw(floor);
+              var options = getOptions();
+              var index = options.map(function (item) {
+                return item.Id;
+              }).indexOf(option.Id);
+              options.splice(index, 1);
+              setOptions(options);
+              OptionDelete(option);
               drawEstimate();
             }
           };
 
-          floorDraw = function _ref7(floor) {
+          floorDraw = function _ref8(floor) {
             $(floorBg).attr('src', "./assets/img/floors/".concat(floor.Images.Normal));
           };
 
-          changeFloor = function _ref6() {
+          changeFloor = function _ref7() {
             var _this = this;
 
             var floor = getCurrentHouse().Floors.find(function (x) {
               return x.Id == _this.value;
             });
             setCurrentFloor(floor);
-            setCurrentOption(null);
+            setOptions([]);
+            $(optionsLayer).empty();
             drawSlectedFloorOptions();
             floorDraw(floor);
             drawEstimate();
           };
 
-          drawSlectedFloorOptions = function _ref5() {
+          drawSlectedFloorOptions = function _ref6() {
             $("#options").empty();
 
             if (getCurrentFloor().Options) {
@@ -75,7 +82,7 @@ $(document).ready(function _callee() {
             }
           };
 
-          drawSlectedHouseFloors = function _ref4() {
+          drawSlectedHouseFloors = function _ref5() {
             $("#floors").empty();
             getCurrentHouse().Floors.forEach(function (floor) {
               return $("#floors").append(drawFloorElement(floor));
@@ -84,9 +91,14 @@ $(document).ready(function _callee() {
             $('input[type=radio][name=floor]').change(changeFloor);
             setCurrentFloor(getCurrentHouse().Floors[0]);
             floorDraw(getCurrentFloor());
-            setCurrentOption(null);
+            setOptions([]);
+            $(optionsLayer).empty();
             drawSlectedFloorOptions();
             drawEstimate();
+          };
+
+          drawOptionItemElement = function _ref4(option) {
+            return "<div id=\"option-item-".concat(option.Id, "\" class=\"option-item\" style=\"top: ").concat(option.Normal.Location.Top, ";left: ").concat(option.Normal.Location.Left, ";right: ").concat(option.Normal.Location.Right, ";bottom: ").concat(option.Normal.Location.Bottom, ";height: ").concat(option.Size.Height, "; width: ").concat(option.Size.Width, ";\"> <img src=\"/assets/img/Options/").concat(option.Normal.Image, "\" alt=\"").concat(option.Name, "\"> </div>");
           };
 
           drawOptionElement = function _ref3(option) {
@@ -102,16 +114,17 @@ $(document).ready(function _callee() {
           };
 
           floorBg = $('.floor img')[0];
-          _context.next = 13;
+          optionsLayer = $('#options-layer');
+          _context.next = 16;
           return regeneratorRuntime.awrap(fetch("db.json").then(function (x) {
             return x.json();
           }));
 
-        case 13:
+        case 16:
           houses = _context.sent;
           setCurrentHouse(houses[0]);
           setCurrentFloor(getCurrentHouse().Floors[0]);
-          setCurrentOption(null);
+          setOptions([]);
           houses.forEach(function (house) {
             return $("#houses").append(drawHouseElement(house));
           });
@@ -128,7 +141,7 @@ $(document).ready(function _callee() {
           drawSlectedFloorOptions();
           $('input[type=radio][name=house]')[0].checked = true;
 
-        case 22:
+        case 25:
         case "end":
           return _context.stop();
       }

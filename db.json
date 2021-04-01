@@ -15,12 +15,30 @@
                 "Options": [
                     {
                         "Id": 1,
-                        "Name": "With bathtub",
-                        "Images": {
-                            "Normal": "house-1-floor-1-bathtub-normal.svg",
-                            "Invers": "house-1-floor-1-bathtub-invers.svg"
+                        "Name": "Ex Outdoor living",
+                        "Normal":{
+                            "Image":"house-1-floor-1-option-1-normal.svg",
+                            "Location":{
+                                "Top":"12.32%",
+                                "Left":"auto",
+                                "Right":"5.5%",
+                                "Bottom":"auto"
+                            }
                         },
-                        "Estimate": 250000
+                        "Invers":{
+                            "Image":"house-1-floor-1-option-1-invers.svg",
+                            "Location":{
+                                "Top":"12.32%",
+                                "Left":"5.5%",
+                                "Right":"auto",
+                                "Bottom":"auto"
+                            }
+                        },
+                        "Size":{
+                            "Height":"auto",
+                            "Width":"11%"
+                        },
+                        "Estimate": 25000
                     }
                 ]
             },
@@ -57,6 +75,16 @@
                             "Normal": "house-2-floor-1-bathtub-normal.svg",
                             "Invers": "house-2-floor-1-bathtub-invers.svg"
                         },
+                        "Location":{
+                            "top":"auto",
+                            "left":"auto",
+                            "right":"auto",
+                            "bottom":"auto"
+                        },
+                        "Size":{
+                            "height":"auto",
+                            "width":"auto"
+                        },
                         "Estimate": 200000
                     }
                 ]
@@ -83,6 +111,16 @@
                         "Images": {
                             "Normal": "house-3-floor-1-bathtub-normal.svg",
                             "Invers": "house-3-floor-1-bathtub-invers.svg"
+                        },
+                        "Location":{
+                            "top":"auto",
+                            "left":"auto",
+                            "right":"auto",
+                            "bottom":"auto"
+                        },
+                        "Size":{
+                            "height":"auto",
+                            "width":"auto"
                         },
                         "Estimate": 200000
                     }

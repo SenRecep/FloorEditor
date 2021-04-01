@@ -2,11 +2,13 @@ $(document).ready(async function () {
 
     const floorBg = $('.floor img')[0];
 
+    const optionsLayer=$('#options-layer');
+    
     const houses = await fetch("db.json").then(x => x.json());
     
      setCurrentHouse(houses[0]);
      setCurrentFloor(getCurrentHouse().Floors[0]);
-     setCurrentOption(null);
+     setOptions([]);
 
     function drawHouseElement(house) {
         return `<li> <a href="#"> <img src="./assets/img/houses/${house.Image}" alt="${house.Name}"/> <input id="house-${house.Id}" type="radio" value="${house.Id}" name="house"> <label for="house-${house.Id}">${house.Name}</label> </a> </li>`;
@@ -18,6 +20,10 @@ $(document).ready(async function () {
         return `<li> <a href="#"> <input id="option-${option.Id}" type="checkbox" value="${option.Id}" name="option" > <label for="option-${option.Id}">${option.Name}</label> </a> </li>`;
     }
 
+    function drawOptionItemElement(option) {
+        return `<div id="option-item-${option.Id}" class="option-item" style="top: ${option.Normal.Location.Top};left: ${option.Normal.Location.Left};right: ${option.Normal.Location.Right};bottom: ${option.Normal.Location.Bottom};height: ${option.Size.Height}; width: ${option.Size.Width};"> <img src="/assets/img/Options/${option.Normal.Image}" alt="${option.Name}"> </div>`;
+    }
+
     function drawSlectedHouseFloors(){
         $("#floors").empty();
         getCurrentHouse().Floors.forEach(floor => $("#floors").append(drawFloorElement(floor)));
@@ -25,7 +31,8 @@ $(document).ready(async function () {
         $('input[type=radio][name=floor]').change(changeFloor);
         setCurrentFloor(getCurrentHouse().Floors[0]);
         floorDraw(getCurrentFloor())
-        setCurrentOption(null);
+        setOptions([]);
+        $(optionsLayer).empty();
         drawSlectedFloorOptions();
         drawEstimate();
     }
@@ -46,7 +53,8 @@ $(document).ready(async function () {
     function changeFloor(){
         var floor=getCurrentHouse().Floors.find(x=>x.Id==this.value);
         setCurrentFloor(floor);
-        setCurrentOption(null);
+        setOptions([]);
+        $(optionsLayer).empty();
         drawSlectedFloorOptions();
         floorDraw(floor);
         drawEstimate();
@@ -57,38 +65,38 @@ $(document).ready(async function () {
     }
 
     function changeOption(){
-        //Demo
-        document.querySelectorAll('input[name="option"]').forEach(input=>{
-            if(this !==input)
-              input.checked=false;
-        });
-        //Demo
+        var option=getCurrentFloor().Options.find(x=>x.Id==this.value);
         if(this.checked){
-            var option=getCurrentFloor().Options.find(x=>x.Id==this.value);
-            setCurrentOption(option);
+            var options= getOptions();
+            options.push(option);
+            setOptions(options);
             OptionDraw(option);
             drawEstimate();
         }else{
-            setCurrentOption(null);
-            var floor= getCurrentFloor();
-            floorDraw(floor);
+            var options= getOptions();
+            var index= options.map((item)=>item.Id).indexOf(option.Id);
+            options.splice(index,1);
+            setOptions(options);
+            OptionDelete(option);
             drawEstimate();
         }
-        
     }
 
     function OptionDraw(option){
-        $(floorBg).attr('src',`./assets/img/floors/${option.Images.Normal}`);
+        var element = drawOptionItemElement(option);
+        $(optionsLayer).append(element);
+    }
+    function OptionDelete(option){
+        var element= $(`#option-item-${option.Id}`)[0];
+        $(element).remove();
     }
 
+
     function drawEstimate(){
-        var option = getCurrentOption();
+        var totalOptionEstimate=getOptions().reduce((tot,item)=>tot+item.Estimate,0);
         var floor = getCurrentFloor();
-       if(option){
-            $('#Estimate').text(`Estimate: $${option.Estimate}`);
-       } else if(floor){
-        $('#Estimate').text(`Estimate: $${floor.Estimate}`);
-       }
+        var total= floor.Estimate+totalOptionEstimate;
+        $('#Estimate').text(`Estimate: $${total}`);
     }
    
 
