@@ -235,6 +235,7 @@ main nav ul.menu > li .dropdown-menu li a label {
   top: 50%;
   cursor: move;
   transform: translate(-50%, -50%);
+  z-index: 2;
 }
 .editor .wrapper .floor {
   height: 100%;
@@ -270,6 +271,7 @@ main nav ul.menu > li .dropdown-menu li a label {
   height: 100%;
   width: 100%;
   visibility: hidden;
+  z-index: 5;
 }
 .editor #measurements {
   stroke: var(--WETASPHALT);

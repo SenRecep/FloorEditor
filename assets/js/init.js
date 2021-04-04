@@ -17,7 +17,7 @@ $(document).ready(async function () {
         return `<li> <a href="#"> <input id="floor-${floor.Id}" type="radio" value="${floor.Id}" name="floor" > <label for="floor-${floor.Id}">${floor.Name}</label> </a> </li>`;
     }
     function drawOptionElement(option) {
-        return `<li> <a href="#"> <input id="option-${option.Id}" type="checkbox" value="${option.Id}" name="option" > <label for="option-${option.Id}">${option.Name}</label> </a> </li>`;
+        return `<li> <a href="#"> <input id="option-${option.Id}"  type="checkbox" value="${option.Id}" name="option" > <label for="option-${option.Id}">${option.Name}</label> </a> </li>`;
     }
 
     function drawOptionItemElement(option) {
@@ -43,6 +43,36 @@ $(document).ready(async function () {
         {
             getCurrentFloor().Options.forEach(option => $("#options").append(drawOptionElement(option)));
             $('input[type=checkbox][name=option]').change(changeOption);
+            $("#options li").hover(function() {
+                let input=$(this).children().children('input')[0];
+                $(input).prop("checked", !$(input).prop("checked"));
+                $(input).trigger("change");
+              });
+            // $(`#options li`).on('mouseover',function(){
+            //     let input=$(this).children().children('input')[0];
+            //     if(!input.checked){
+            //         input.checked=true;
+            //         input.dataset.activeTemp=true;
+            //         $(input).trigger("change");
+            //     }
+            // });
+            // $(`#options li`).on('mouseout',function(){
+            //       let input=$(this).children().children('input')[0];
+            //       if(input.dataset.activeTemp){
+            //         input.checked=false;
+            //         input.dataset.activeTemp=false;
+            //         $(input).trigger("change");
+            //       }
+                
+            // });
+            
+            // $(`#options li`).on('click',function(){
+            //     let input=$(this).children().children('input')[0];
+            //     console.log(input);
+            //     if(input.dataset.activeTemp)
+            //        input.dataset.activeTemp=false;
+            // });
+
             $('#menu-options').show();
         }
         else{
@@ -108,9 +138,11 @@ $(document).ready(async function () {
         drawSlectedHouseFloors();
     });
     drawSlectedHouseFloors();
-    drawSlectedFloorOptions();
 
     $('input[type=radio][name=house]')[0].checked = true;
+
+
+
 
 
 });

@@ -39,6 +39,33 @@
                             "Width":"11%"
                         },
                         "Estimate": 25000
+                    },
+                    {
+                        "Id": 2,
+                        "Name": "With bathtub",
+                        "Normal":{
+                            "Image":"house-1-floor-1-option-2-normal.svg",
+                            "Location":{
+                                "Top":"auto",
+                                "Left":"56.4%",
+                                "Right":"auto",
+                                "Bottom":"26.5%"
+                            }
+                        },
+                        "Invers":{
+                            "Image":"house-1-floor-1-option-2-invers.svg",
+                            "Location":{
+                                "Top":"12.32%",
+                                "Left":"6.7%",
+                                "Right":"auto",
+                                "Bottom":"auto"
+                            }
+                        },
+                        "Size":{
+                            "Height":"auto",
+                            "Width":"6.8%"
+                        },
+                        "Estimate": 25000
                     }
                 ]
             },
@@ -68,25 +95,7 @@
                 },
                 "Estimate": 175000,
                 "Options": [
-                    {
-                        "Id": 2,
-                        "Name": "With bathtub",
-                        "Images": {
-                            "Normal": "house-2-floor-1-bathtub-normal.svg",
-                            "Invers": "house-2-floor-1-bathtub-invers.svg"
-                        },
-                        "Location":{
-                            "top":"auto",
-                            "left":"auto",
-                            "right":"auto",
-                            "bottom":"auto"
-                        },
-                        "Size":{
-                            "height":"auto",
-                            "width":"auto"
-                        },
-                        "Estimate": 200000
-                    }
+                  
                 ]
             }
         ]
@@ -105,25 +114,7 @@
                 },
                 "Estimate": 175000,
                 "Options": [
-                    {
-                        "Id": 3,
-                        "Name": "With bathtub",
-                        "Images": {
-                            "Normal": "house-3-floor-1-bathtub-normal.svg",
-                            "Invers": "house-3-floor-1-bathtub-invers.svg"
-                        },
-                        "Location":{
-                            "top":"auto",
-                            "left":"auto",
-                            "right":"auto",
-                            "bottom":"auto"
-                        },
-                        "Size":{
-                            "height":"auto",
-                            "width":"auto"
-                        },
-                        "Estimate": 200000
-                    }
+                   
                 ]
             }
         ]

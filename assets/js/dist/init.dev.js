@@ -75,7 +75,35 @@ $(document).ready(function _callee() {
               getCurrentFloor().Options.forEach(function (option) {
                 return $("#options").append(drawOptionElement(option));
               });
-              $('input[type=checkbox][name=option]').change(changeOption);
+              $('input[type=checkbox][name=option]').change(changeOption); // $("#options li").hover(function() {
+              //     let input=$(this).children().children('input')[0];
+              //     $(input).prop("checked", !$(input).prop("checked"));
+              //     $(input).trigger("change");
+              //   });
+
+              $("#options li").on('mouseover', function () {
+                var input = $(this).children().children('input')[0];
+
+                if (!input.checked) {
+                  input.checked = true;
+                  input.dataset.activeTemp = true;
+                  $(input).trigger("change");
+                }
+              });
+              $("#options li").on('mouseout', function () {
+                var input = $(this).children().children('input')[0];
+
+                if (input.dataset.activeTemp) {
+                  input.checked = false;
+                  input.dataset.activeTemp = false;
+                  $(input).trigger("change");
+                }
+              });
+              $("#options li").on('click', function () {
+                var input = $(this).children().children('input')[0];
+                console.log(input);
+                if (input.dataset.activeTemp) input.dataset.activeTemp = false;
+              });
               $('#menu-options').show();
             } else {
               $('#menu-options').hide();
@@ -102,7 +130,7 @@ $(document).ready(function _callee() {
           };
 
           drawOptionElement = function _ref3(option) {
-            return "<li> <a href=\"#\"> <input id=\"option-".concat(option.Id, "\" type=\"checkbox\" value=\"").concat(option.Id, "\" name=\"option\" > <label for=\"option-").concat(option.Id, "\">").concat(option.Name, "</label> </a> </li>");
+            return "<li> <a href=\"#\"> <input id=\"option-".concat(option.Id, "\"  type=\"checkbox\" value=\"").concat(option.Id, "\" name=\"option\" > <label for=\"option-").concat(option.Id, "\">").concat(option.Name, "</label> </a> </li>");
           };
 
           drawFloorElement = function _ref2(floor) {
@@ -138,10 +166,9 @@ $(document).ready(function _callee() {
             drawSlectedHouseFloors();
           });
           drawSlectedHouseFloors();
-          drawSlectedFloorOptions();
           $('input[type=radio][name=house]')[0].checked = true;
 
-        case 25:
+        case 24:
         case "end":
           return _context.stop();
       }
