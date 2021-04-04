@@ -95,7 +95,60 @@
                 },
                 "Estimate": 175000,
                 "Options": [
-                  
+                    {
+                        "Id": 3,
+                        "Name": "Ex Outdoor living",
+                        "Normal":{
+                            "Image":"house-1-floor-1-option-1-normal.svg",
+                            "Location":{
+                                "Top":"12.32%",
+                                "Left":"auto",
+                                "Right":"5.5%",
+                                "Bottom":"auto"
+                            }
+                        },
+                        "Invers":{
+                            "Image":"house-1-floor-1-option-1-invers.svg",
+                            "Location":{
+                                "Top":"12.32%",
+                                "Left":"5.5%",
+                                "Right":"auto",
+                                "Bottom":"auto"
+                            }
+                        },
+                        "Size":{
+                            "Height":"auto",
+                            "Width":"11%"
+                        },
+                        "Estimate": 25000
+                    },
+                    {
+                        "Id": 4,
+                        "Name": "With bathtub",
+                        "Normal":{
+                            "Image":"house-1-floor-1-option-2-normal.svg",
+                            "Location":{
+                                "Top":"auto",
+                                "Left":"56.4%",
+                                "Right":"auto",
+                                "Bottom":"26.5%"
+                            }
+                        },
+                        "Invers":{
+                            "Image":"house-1-floor-1-option-2-invers.svg",
+                            "Location":{
+                                "Top":"12.32%",
+                                "Left":"6.7%",
+                                "Right":"auto",
+                                "Bottom":"auto"
+                            }
+                        },
+                        "Size":{
+                            "Height":"auto",
+                            "Width":"6.8%"
+                        },
+                        "Estimate": 25000
+                    }
                 ]
             }
         ]
@@ -114,7 +167,60 @@
                 },
                 "Estimate": 175000,
                 "Options": [
-                   
+                    {
+                        "Id": 5,
+                        "Name": "Ex Outdoor living",
+                        "Normal":{
+                            "Image":"house-1-floor-1-option-1-normal.svg",
+                            "Location":{
+                                "Top":"12.32%",
+                                "Left":"auto",
+                                "Right":"5.5%",
+                                "Bottom":"auto"
+                            }
+                        },
+                        "Invers":{
+                            "Image":"house-1-floor-1-option-1-invers.svg",
+                            "Location":{
+                                "Top":"12.32%",
+                                "Left":"5.5%",
+                                "Right":"auto",
+                                "Bottom":"auto"
+                            }
+                        },
+                        "Size":{
+                            "Height":"auto",
+                            "Width":"11%"
+                        },
+                        "Estimate": 25000
+                    },
+                    {
+                        "Id": 6,
+                        "Name": "With bathtub",
+                        "Normal":{
+                            "Image":"house-1-floor-1-option-2-normal.svg",
+                            "Location":{
+                                "Top":"auto",
+                                "Left":"56.4%",
+                                "Right":"auto",
+                                "Bottom":"26.5%"
+                            }
+                        },
+                        "Invers":{
+                            "Image":"house-1-floor-1-option-2-invers.svg",
+                            "Location":{
+                                "Top":"12.32%",
+                                "Left":"6.7%",
+                                "Right":"auto",
+                                "Bottom":"auto"
+                            }
+                        },
+                        "Size":{
+                            "Height":"auto",
+                            "Width":"6.8%"
+                        },
+                        "Estimate": 25000
+                    }
                 ]
             }
         ]
