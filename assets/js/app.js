@@ -14,7 +14,7 @@ window.onload = function () {
     const floorBg = $('.floor img')[0];
 
 
-    var x_cursor = 0, y_cursor = 0, x_wrapper = 0, y_wrapper = 0, scale = 1, isDrag = false, isFlip = false;
+    var x_cursor = 0, y_cursor = 0, x_wrapper = 0, y_wrapper = 0, scale = 1, isDrag = false;
     var measurementMode = false, measurementSetStartPoint = false, spx = 0, spy = 0, epx = 0, epy = 0;
 
 
@@ -129,24 +129,18 @@ window.onload = function () {
         zoom(false);
     }
     function btnFlipClick() {
-        isFlip = !isFlip;
-        var option = getCurrentOption();
+        setFlip(!getFlip());
         var floor = getCurrentFloor();
-        if (isFlip) {
-            if (option)
-                $(floorBg).attr('src', `./assets/img/floors/${option.Images.Invers}`);
+        var isFlip=getFlip();
 
-            else
-                $(floorBg).attr('src', `./assets/img/floors/${floor.Images.Invers}`);
-        }
-        else  {
-            if (option)
-                $(floorBg).attr('src', `./assets/img/floors/${option.Images.Normal}`);
-
-            else
-                $(floorBg).attr('src', `./assets/img/floors/${floor.Images.Normal}`);
-        }
-
+        if (isFlip) 
+            $(floorBg).attr('src', `./assets/img/floors/${floor.Images.Invers}`);
+        else 
+            $(floorBg).attr('src', `./assets/img/floors/${floor.Images.Normal}`);
+        
+        getOptions().forEach(item=>{
+            drawDirectionOption(item,isFlip);
+        });
 
         // var val = isFlip ? -scale : scale;
         // wrapperElement.style.transform = "translate(-50%,-50%) scaleX(" + val + ") scaleY(" + scale + ")";
@@ -161,8 +155,8 @@ window.onload = function () {
         btnMeasurements.dataset.toggle = isToggle;
     }
 
-    $("#detailButton").click(function(){
-        var house=getCurrentHouse();
+    $("#detailButton").click(function () {
+        var house = getCurrentHouse();
         $('#houseName').text(house.Name);
         $("#houseImage").attr('src', `./assets/img/houses/${house.Image}`);
     });

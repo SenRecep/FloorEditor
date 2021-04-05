@@ -29,7 +29,7 @@
                             "Image":"house-1-floor-1-option-1-invers.svg",
                             "Location":{
                                 "Top":"12.32%",
-                                "Left":"5.5%",
+                                "Left":"7.7%",
                                 "Right":"auto",
                                 "Bottom":"auto"
                             }
@@ -55,10 +55,10 @@
                         "Invers":{
                             "Image":"house-1-floor-1-option-2-invers.svg",
                             "Location":{
-                                "Top":"12.32%",
-                                "Left":"6.7%",
-                                "Right":"auto",
-                                "Bottom":"auto"
+                                "Top":"auto",
+                                "Left":"39%",
+                                "Right":"0",
+                                "Bottom":"26.5%"
                             }
                         },
                         "Size":{
@@ -111,7 +111,7 @@
                             "Image":"house-1-floor-1-option-1-invers.svg",
                             "Location":{
                                 "Top":"12.32%",
-                                "Left":"5.5%",
+                                "Left":"7.7%",
                                 "Right":"auto",
                                 "Bottom":"auto"
                             }
@@ -137,10 +137,10 @@
                         "Invers":{
                             "Image":"house-1-floor-1-option-2-invers.svg",
                             "Location":{
-                                "Top":"12.32%",
-                                "Left":"6.7%",
-                                "Right":"auto",
-                                "Bottom":"auto"
+                                "Top":"auto",
+                                "Left":"39%",
+                                "Right":"0",
+                                "Bottom":"26.5%"
                             }
                         },
                         "Size":{
@@ -183,7 +183,7 @@
                             "Image":"house-1-floor-1-option-1-invers.svg",
                             "Location":{
                                 "Top":"12.32%",
-                                "Left":"5.5%",
+                                "Left":"7.7%",
                                 "Right":"auto",
                                 "Bottom":"auto"
                             }
@@ -209,10 +209,10 @@
                         "Invers":{
                             "Image":"house-1-floor-1-option-2-invers.svg",
                             "Location":{
-                                "Top":"12.32%",
-                                "Left":"6.7%",
-                                "Right":"auto",
-                                "Bottom":"auto"
+                                "Top":"auto",
+                                "Left":"39%",
+                                "Right":"0",
+                                "Bottom":"26.5%"
                             }
                         },
                         "Size":{

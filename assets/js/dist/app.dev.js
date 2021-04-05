@@ -18,8 +18,7 @@ window.onload = function () {
       x_wrapper = 0,
       y_wrapper = 0,
       scale = 1,
-      isDrag = false,
-      isFlip = false;
+      isDrag = false;
   var measurementMode = false,
       measurementSetStartPoint = false,
       spx = 0,
@@ -141,17 +140,14 @@ window.onload = function () {
   }
 
   function btnFlipClick() {
-    isFlip = !isFlip;
-    var option = getCurrentOption();
+    setFlip(!getFlip());
     var floor = getCurrentFloor();
-
-    if (isFlip) {
-      if (option) $(floorBg).attr('src', "./assets/img/floors/".concat(option.Images.Invers));else $(floorBg).attr('src', "./assets/img/floors/".concat(floor.Images.Invers));
-    } else {
-      if (option) $(floorBg).attr('src', "./assets/img/floors/".concat(option.Images.Normal));else $(floorBg).attr('src', "./assets/img/floors/".concat(floor.Images.Normal));
-    } // var val = isFlip ? -scale : scale;
+    var isFlip = getFlip();
+    if (isFlip) $(floorBg).attr('src', "./assets/img/floors/".concat(floor.Images.Invers));else $(floorBg).attr('src', "./assets/img/floors/".concat(floor.Images.Normal));
+    getOptions().forEach(function (item) {
+      drawDirectionOption(item, isFlip);
+    }); // var val = isFlip ? -scale : scale;
     // wrapperElement.style.transform = "translate(-50%,-50%) scaleX(" + val + ") scaleY(" + scale + ")";
-
   }
 
   function btnMeasurementClick() {

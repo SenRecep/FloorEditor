@@ -12,6 +12,10 @@ function setOptions(val) {
     localStorage.setItem("Options", JSON.stringify(val));
 }
 
+function setFlip(val) {
+    localStorage.setItem("Flip", JSON.stringify(val));
+}
+
 
 
 
@@ -25,4 +29,8 @@ function getCurrentFloor() {
 
 function getOptions() {
     return JSON.parse(localStorage.getItem("Options"));
+}
+
+function getFlip() {
+    return JSON.parse(localStorage.getItem("Flip"));
 }
