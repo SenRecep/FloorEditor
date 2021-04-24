@@ -1,3 +1,28 @@
+li.c-dropdown {
+  position: relative;
+}
+li.c-dropdown a.c-dropdown-toggle {
+  white-space: nowrap;
+}
+li.c-dropdown ul.c-dropdown-menu {
+  position: absolute;
+  top: 0;
+  left: 78px;
+  z-index: 1000;
+  display: none;
+  min-width: 10rem;
+  padding: 0;
+  margin: 3px 0 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+}
+
 main nav {
   height: 100%;
   width: 75px;
@@ -26,36 +51,32 @@ main nav ul.menu > li > a p {
   font-size: 9px;
   text-transform: uppercase;
 }
-main nav ul.menu > li .dropdown-menu {
-  transform: translate3d(80px, 0px, 0px) !important;
-  padding: 0;
-}
-main nav ul.menu > li .dropdown-menu li {
+main nav ul.menu > li ul li {
   border-bottom: 1px solid var(--CLOUDS);
 }
-main nav ul.menu > li .dropdown-menu li:last-child {
+main nav ul.menu > li ul li:last-child {
   border-bottom: 0;
 }
-main nav ul.menu > li .dropdown-menu li a {
+main nav ul.menu > li ul li a {
   display: flex;
   text-decoration: none;
 }
-main nav ul.menu > li .dropdown-menu li a:hover {
+main nav ul.menu > li ul li a:hover {
   color: var(--CLOUDS);
 }
-main nav ul.menu > li .dropdown-menu li a img {
+main nav ul.menu > li ul li a img {
   height: 50px;
   width: auto;
 }
-main nav ul.menu > li .dropdown-menu li a input {
+main nav ul.menu > li ul li a input {
   position: absolute;
   visibility: collapse;
 }
-main nav ul.menu > li .dropdown-menu li a input:checked + label {
+main nav ul.menu > li ul li a input:checked + label {
   background-color: var(--Faded);
   color: var(--MIDNIGHTBLUE);
 }
-main nav ul.menu > li .dropdown-menu li a label {
+main nav ul.menu > li ul li a label {
   position: relative;
   display: flex;
   align-items: center;
