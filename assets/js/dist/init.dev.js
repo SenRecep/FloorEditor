@@ -4,15 +4,15 @@ var floorBg = $('.floor img')[0];
 var optionsLayer = $('#options-layer');
 
 function drawHouseElement(house) {
-  return "<li> <a href=\"#\"> <img src=\"./assets/img/houses/".concat(house.Image, "\" alt=\"").concat(house.Name, "\"/> <input id=\"house-").concat(house.Id, "\" type=\"radio\" value=\"").concat(house.Id, "\" name=\"house\"> <label for=\"house-").concat(house.Id, "\">").concat(house.Name, "</label> </a> </li>");
+  return "<li> <span> <a href=\"./assets/img/houses/".concat(house.Image, "\" data-lightbox=\"roadtrip\"><img src=\"./assets/img/houses/").concat(house.Image, "\" alt=\"").concat(house.Name, "\" data-lightbox=\"roadtrip\"/></a> <input id=\"house-").concat(house.Id, "\" type=\"radio\" value=\"").concat(house.Id, "\" name=\"house\"> <label for=\"house-").concat(house.Id, "\">").concat(house.Name, "</label> </span> </li>");
 }
 
 function drawFloorElement(floor) {
-  return "<li> <a href=\"#\"> <input id=\"floor-".concat(floor.Id, "\" type=\"radio\" value=\"").concat(floor.Id, "\" name=\"floor\" > <label for=\"floor-").concat(floor.Id, "\">").concat(floor.Name, "</label> </a> </li>");
+  return "<li> <span> <input id=\"floor-".concat(floor.Id, "\" type=\"radio\" value=\"").concat(floor.Id, "\" name=\"floor\" > <label for=\"floor-").concat(floor.Id, "\">").concat(floor.Name, "</label> </span> </li>");
 }
 
 function drawOptionElement(option) {
-  return "<li> <a href=\"#\"> <input id=\"option-".concat(option.Id, "\"  type=\"checkbox\" value=\"").concat(option.Id, "\" name=\"option\" > <label for=\"option-").concat(option.Id, "\">").concat(option.Name, "</label> </a> </li>");
+  return "<li> <span> <input id=\"option-".concat(option.Id, "\"  type=\"checkbox\" value=\"").concat(option.Id, "\" name=\"option\" > <label for=\"option-").concat(option.Id, "\">").concat(option.Name, "</label> </span> </li>");
 }
 
 function drawOptionItemElement(option) {
@@ -189,4 +189,8 @@ $(document).ready(function _callee() {
       }
     }
   });
+});
+lightbox.option({
+  'resizeDuration': 200,
+  'wrapAround': true
 });

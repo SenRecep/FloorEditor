@@ -69,7 +69,7 @@ main {
                             border-bottom: 0;
                         }
 
-                        a {
+                        >span {
                             display: flex;
                             text-decoration: none;
 
@@ -77,11 +77,17 @@ main {
                                 color: var(--CLOUDS);
                             }
 
-                            img {
-                                height: 50px;
-                                width: auto;
+                            a{
+                                z-index: 10;
+                                img {
+                                    height: 50px;
+                                    width: auto;
+                                }
+                                img:hover {
+                                    transform: scale(1.2);
+                                }
                             }
-
+                            
                             input {
                                 position: absolute;
                                 visibility: collapse;
@@ -89,6 +95,9 @@ main {
                                 &:checked+label {
                                     background-color: var(--Faded);
                                     color: var(--MIDNIGHTBLUE);
+                                }
+                                &:checked+label::after {
+                                    content: "\2713";
                                 }
                             }
 

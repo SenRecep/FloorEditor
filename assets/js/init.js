@@ -3,13 +3,13 @@ const floorBg = $('.floor img')[0];
 const optionsLayer=$('#options-layer');
 
 function drawHouseElement(house) {
-    return `<li> <a href="#"> <img src="./assets/img/houses/${house.Image}" alt="${house.Name}"/> <input id="house-${house.Id}" type="radio" value="${house.Id}" name="house"> <label for="house-${house.Id}">${house.Name}</label> </a> </li>`;
+    return `<li> <span> <a href="./assets/img/houses/${house.Image}" data-lightbox="roadtrip"><img src="./assets/img/houses/${house.Image}" alt="${house.Name}" data-lightbox="roadtrip"/></a> <input id="house-${house.Id}" type="radio" value="${house.Id}" name="house"> <label for="house-${house.Id}">${house.Name}</label> </span> </li>`;
 }
 function drawFloorElement(floor) {
-    return `<li> <a href="#"> <input id="floor-${floor.Id}" type="radio" value="${floor.Id}" name="floor" > <label for="floor-${floor.Id}">${floor.Name}</label> </a> </li>`;
+    return `<li> <span> <input id="floor-${floor.Id}" type="radio" value="${floor.Id}" name="floor" > <label for="floor-${floor.Id}">${floor.Name}</label> </span> </li>`;
 }
 function drawOptionElement(option) {
-    return `<li> <a href="#"> <input id="option-${option.Id}"  type="checkbox" value="${option.Id}" name="option" > <label for="option-${option.Id}">${option.Name}</label> </a> </li>`;
+    return `<li> <span> <input id="option-${option.Id}"  type="checkbox" value="${option.Id}" name="option" > <label for="option-${option.Id}">${option.Name}</label> </span> </li>`;
 }
 
 function drawOptionItemElement(option) {
@@ -162,3 +162,8 @@ $(document).ready(async function () {
      
      $('input[type=radio][name=house]')[0].checked = true;
 });
+
+lightbox.option({
+    'resizeDuration': 200,
+    'wrapAround': true
+  })
