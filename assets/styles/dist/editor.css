@@ -18,8 +18,8 @@
   z-index: 3;
 }
 .editor .controller .btn {
-  width: 40px;
-  height: 40px;
+  width: 54px;
+  height: 50px;
   background-color: var(--MIDNIGHTBLUE);
   color: var(--Faded);
   border: 0;

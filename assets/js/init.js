@@ -130,12 +130,25 @@ function OptionDelete(option){
     $(element).remove();
 }
 
+function AllOptionDelete(){
+    $("input[name='option']:checked").each(function ()
+    {
+      $(this).prop('checked', false); // Unchecks it)); 
+    });
+    let options=getOptions();
+    options.forEach(item=>{
+      OptionDelete(item);
+    });
+    
+}
+
+
 
 function drawEstimate(){
     var totalOptionEstimate=getOptions().reduce((tot,item)=>tot+item.Estimate,0);
     var floor = getCurrentFloor();
     var total= floor.Estimate+totalOptionEstimate;
-    $('#Estimate').text(`Estimate: $${total}`);
+    //$('#Estimate').text(`Estimate: $${total}`);
 }
 
 
@@ -167,3 +180,19 @@ lightbox.option({
     'resizeDuration': 200,
     'wrapAround': true
   })
+  function printDiv() 
+  {
+  
+    var divToPrint=document.getElementById('wrapper');
+  
+    var newWin=window.open('','Print-Window');
+  
+    newWin.document.open();
+  
+    newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+  
+    newWin.document.close();
+  
+    setTimeout(function(){newWin.close();},10);
+  
+  }

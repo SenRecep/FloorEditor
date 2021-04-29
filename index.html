@@ -15,9 +15,8 @@
             <img src="./assets/img/tricoast_logo-2.png" alt="logo">
         </div>
         <div class="title">
-            <button class="btn"><i class="fa fa-sync"></i> RESET</button>
-            <button class="btn"><i class="fa fa-share"></i> SHARE</button>
-            <button class="btn"><i class="fa fa-print"></i> PRINT</button>
+            <button class="btn" onclick="AllOptionDelete()"><i class="fa fa-sync"></i> RESET</button> 
+            <button class="btn" onclick="printDiv()" ><i class="fa fa-print"></i> PRINT</button>
             <button class="btn" data-toggle="modal" data-target="#saveModal"><i class="fa fa-save"></i> SAVE</button>
         </div>
 
@@ -47,7 +46,7 @@
                     <ul id="options" class="c-dropdown-menu"></ul>
 
                 </li>
-                <li>
+                <!-- <li>
                     <a href="#">
                         <i class="fas fa-couch"></i>
                         <p>Furnished</p>
@@ -58,30 +57,30 @@
                         <i class="far fa-clipboard"></i>
                         <p>Notes</p>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </nav>
 
         <div id="editor" class="editor">
             <div class="controller">
-                <button class="btn btn-center"><i class="far fa-circle"></i></button>
+                <button class="btn btn-center"><i class="far fa-compass fa-2x"></i></button>
                 <button class="btn btn-zoomin"><i class="fas fa-plus"></i></button>
                 <button class="btn btn-zoomout"><i class="fas fa-minus"></i></button>
                 <span class="status zoom"><span class="zoom-satus">100</span><small>%</small></span>
                 <button data-toggle='false' class="btn btn-toggle btn-measurements"><i
                         class="fas fa-ruler-horizontal"></i></button>
-                <button class="btn btn-flip"><i class="fas fa-sync-alt"></i></button>
+                <button class="btn btn-flip"><i class="fas fa-exchange-alt"></i></button>
                 <span class="status flip">flip</span>
             </div>
 
-            <h6 id="Estimate">Estimate: $0</h6>
+            <!-- <h6 id="Estimate">Estimate: $0</h6> -->
             <svg id="measurements-container">
                 <line id="measurements"></line>
                 <text id="measurementsText" class="noselect"></text>
             </svg>
 
             <div id="wrapper" class="wrapper noselect" ondragstart="return false">
-                <button id="detailButton" class="btn btn-primary" data-toggle="modal" data-target="#detailModal">+</button>
+                <!-- <button id="detailButton" class="btn btn-primary" data-toggle="modal" data-target="#detailModal">+</button> -->
                 <div class="floor">
                     <img src="./assets/img/floors/house-1-floor-1-normal.svg" alt="floor bg">
                     <div id="options-layer" class="options">

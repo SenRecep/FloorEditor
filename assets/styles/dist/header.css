@@ -1,0 +1,30 @@
+header {
+  height: 75px;
+  background-color: var(--SILVER);
+  display: flex;
+  justify-self: center;
+  align-items: center;
+}
+header .logo {
+  height: inherit;
+  display: flex;
+  align-items: center;
+}
+header .logo img {
+  height: auto;
+  width: 150px;
+}
+header .title {
+  text-align: right;
+  align-self: flex-end;
+  background-color: var(--CLOUDS);
+  max-width: 300px;
+  border: 1px solid #E5E5E5;
+  margin-left: auto;
+}
+header .title .btn {
+  border-right: 1px solid #E5E5E5;
+  padding: 9px;
+  font-size: 12px;
+  cursor: pointer;
+}
