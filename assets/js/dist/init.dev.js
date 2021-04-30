@@ -4,7 +4,7 @@ var floorBg = $('.floor img')[0];
 var optionsLayer = $('#options-layer');
 
 function drawHouseElement(house) {
-  return "<li> <span> <a href=\"./assets/img/houses/".concat(house.Image, "\" data-lightbox=\"roadtrip\"><img src=\"./assets/img/houses/").concat(house.Image, "\" alt=\"").concat(house.Name, "\" data-lightbox=\"roadtrip\"/></a> <input id=\"house-").concat(house.Id, "\" type=\"radio\" value=\"").concat(house.Id, "\" name=\"house\"> <label for=\"house-").concat(house.Id, "\">").concat(house.Name, "</label> </span> </li>");
+  return "<li> <span> <a href=\"./assets/img/houses/".concat(house.Image, "\" data-lightbox=\"roadtrip\"><img src=\"./assets/img/houses/").concat(house.Image, "\" alt=\"").concat(house.Name, "\" /></a> <input id=\"house-").concat(house.Id, "\" type=\"radio\" value=\"").concat(house.Id, "\" name=\"house\"> <label for=\"house-").concat(house.Id, "\">").concat(house.Name, "</label> </span> </li>");
 }
 
 function drawFloorElement(floor) {

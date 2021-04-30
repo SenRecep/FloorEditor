@@ -5,16 +5,16 @@ $(function () {
         if (expandedMenuIndex == -1)
             expandedMenuIndex = index;
         else if (expandedMenuIndex == index) {
-            $(this).next('ul.c-dropdown-menu').hide();
+            $(this).next('div.c-dropdown-menu').hide();
             expandedMenuIndex = -1;
         }
         else if (expandedMenuIndex != index) {
             let oldElementTest = $('li.c-dropdown')[expandedMenuIndex];
-            let oldElementUlTag = $(oldElementTest).children('ul.c-dropdown-menu')[0];
+            let oldElementUlTag = $(oldElementTest).children('div.c-dropdown-menu')[0];
             $(oldElementUlTag).hide();
             expandedMenuIndex = index;
         }
         if (expandedMenuIndex == index) 
-            $(this).next('ul.c-dropdown-menu').show();
+            $(this).next('div.c-dropdown-menu').show();
     });
 });

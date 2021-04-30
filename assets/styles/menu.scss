@@ -1,12 +1,14 @@
 $nav-width:75px;
 $dropdownMenu-left:$nav-width+3px;
 
-li.c-dropdown{
+li.c-dropdown {
     position: relative;
-    a.c-dropdown-toggle{
+
+    a.c-dropdown-toggle {
         white-space: nowrap;
     }
-    ul.c-dropdown-menu{
+
+    div.c-dropdown-menu {
         position: absolute;
         top: 0;
         left: $dropdownMenu-left;
@@ -18,11 +20,12 @@ li.c-dropdown{
         font-size: 1rem;
         color: #212529;
         text-align: left;
-        list-style: none;
         background-color: #fff;
         background-clip: padding-box;
-        border: 1px solid rgba(0,0,0,.15);
-        border-radius: .25rem;
+
+        ul {
+            list-style: none;
+        }
     }
 }
 
@@ -36,6 +39,7 @@ main {
             >li {
                 padding: 10px;
                 border-bottom: 1px solid var(--CLOUDS);
+
                 &:last-child {
                     border-bottom: 0;
                 }
@@ -60,59 +64,148 @@ main {
                     }
                 }
 
-                ul {
+                div {
+                    width: 305px;
 
-                    li {
-                        border-bottom: 1px solid var(--CLOUDS);
+                    div.header {
+                        $headerHeight: 40px;
+                        background-color: var(--MIDNIGHTBLUE);
+                        color: var(--Faded);
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 10px;
+                        margin-bottom: 1px;
 
-                        &:last-child {
-                            border-bottom: 0;
+                        h4 {
+                            line-height: $headerHeight;
+                            margin-bottom: 0;
+                            text-transform: uppercase;
                         }
 
-                        >span {
-                            display: flex;
-                            text-decoration: none;
+                        i {
+                            display: block;
+                            width: $headerHeight;
+                            text-align: center;
+                            font-size: 1.5rem;
 
                             &:hover {
                                 color: var(--CLOUDS);
+                                cursor: pointer;
+                            }
+                        }
+
+                    }
+
+                    div.image-viewer {
+                        margin-bottom: 1px;
+
+                        a {
+                            display: block;
+                            position: relative;
+                            height: 100%;
+                            width: 100%;
+                            img {
+                                width: 100%;
+                                height: auto;
                             }
 
-                            a{
-                                z-index: 10;
-                                img {
-                                    height: 50px;
-                                    width: auto;
-                                }
-                                img:hover {
-                                    transform: scale(1.2);
-                                }
-                            }
-                            
-                            input {
+                            .overlay {
                                 position: absolute;
-                                visibility: collapse;
-
-                                &:checked+label {
-                                    background-color: var(--Faded);
-                                    color: var(--MIDNIGHTBLUE);
-                                }
-                                &:checked+label::after {
-                                    content: "\2713";
+                                top: 0;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                height: 100%;
+                                width: 100%;
+                                opacity: 0;
+                                transition: .3s ease;
+                                background-color: rgba($color: #000000, $alpha: 0.5);
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                i{
+                                    color: var(--Faded);
+                                    font-size: 40px;
                                 }
                             }
 
-                            label {
-                                position: relative;
+                            &:hover .overlay {
+                                opacity: 1;
+                            }
+                        }
+                    }
+
+                    div.footer {
+                        background-color: var(--MIDNIGHTBLUE);
+                        color: var(--Faded);
+                        text-align: center;
+                        padding: 10px;
+                        margin-top: 1px;
+
+                        p {
+                            font-size: 11px;
+                            margin-bottom: 0;
+                        }
+                    }
+
+                    ul {
+
+                        li {
+                            border-bottom: 1px solid var(--CLOUDS);
+
+                            &:last-child {
+                                border-bottom: 0;
+                            }
+
+                            >span {
                                 display: flex;
-                                align-items: center;
-                                height: 50px;
-                                flex: 1;
-                                white-space: nowrap;
-                                padding: 0 10px;
-                                margin-bottom: 0;
-                                text-transform: uppercase;
-                                background-color: var(--MIDNIGHTBLUE);
-                                color: var(--Faded);
+                                text-decoration: none;
+
+                                &:hover {
+                                    color: var(--CLOUDS);
+                                }
+
+                                a {
+                                    z-index: 10;
+
+                                    img {
+                                        height: 50px;
+                                        width: auto;
+                                    }
+
+                                    img:hover {
+                                        transform: scale(1.2);
+                                    }
+                                }
+
+                                input {
+                                    position: absolute;
+                                    visibility: collapse;
+
+                                    &:checked+label {
+                                        background-color: var(--Faded);
+                                        color: var(--MIDNIGHTBLUE);
+                                    }
+
+                                    &:checked+label::after {
+                                        content: "\2713";
+                                    }
+                                }
+
+                                label {
+                                    position: relative;
+                                    display: flex;
+                                    align-items: center;
+                                    height: 50px;
+                                    flex: 1;
+                                    white-space: nowrap;
+                                    padding: 0 10px;
+                                    margin-bottom: 0;
+                                    text-transform: uppercase;
+                                    background-color: var(--MIDNIGHTBLUE);
+                                    color: var(--Faded);
+                                }
                             }
                         }
                     }
@@ -121,5 +214,3 @@ main {
         }
     }
 }
-
-
