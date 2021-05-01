@@ -1,4 +1,3 @@
-@charset "UTF-8";
 li.c-dropdown {
   position: relative;
 }
@@ -155,9 +154,6 @@ main nav ul.menu > li div ul li > span input {
 main nav ul.menu > li div ul li > span input:checked + label {
   background-color: var(--Faded);
   color: var(--MIDNIGHTBLUE);
-}
-main nav ul.menu > li div ul li > span input:checked + label::after {
-  content: "✓";
 }
 main nav ul.menu > li div ul li > span label {
   position: relative;

@@ -188,9 +188,9 @@ main {
                                         color: var(--MIDNIGHTBLUE);
                                     }
 
-                                    &:checked+label::after {
-                                        content: "\2713";
-                                    }
+                                    // &:checked+label::after {
+                                    //     content: "\2713";
+                                    // }
                                 }
 
                                 label {

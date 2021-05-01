@@ -12,7 +12,7 @@ function drawFloorElement(floor) {
 }
 
 function drawOptionElement(option) {
-  return "<li> <span> <input id=\"option-".concat(option.Id, "\"  type=\"checkbox\" value=\"").concat(option.Id, "\" name=\"option\" > <label for=\"option-").concat(option.Id, "\">").concat(option.Name, "</label> </span> </li>");
+  return "<li> <span> <div class=\"custom-control custom-switch\"> <input class=\"custom-control-input\" id=\"option-".concat(option.Id, "\" type=\"checkbox\" value=\"").concat(option.Id, "\" name=\"option\" /> <label for=\"option-").concat(option.Id, "\"class=\"custom-control-label\" >").concat(option.Name, "</label> </div> </span> </li>");
 }
 
 function drawOptionItemElement(option) {
@@ -43,7 +43,7 @@ function drawSlectedFloorOptions() {
     });
     $('input[type=checkbox][name=option]').change(changeOption);
     $("#options li").hover(function () {
-      var input = $(this).children().children('input')[0];
+      var input = $(this).children().children().children('input')[0];
       $(input).prop("checked", !$(input).prop("checked"));
       $(input).trigger("change");
     }); // $(`#options li`).on('mouseover',function(){

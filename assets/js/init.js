@@ -3,13 +3,15 @@ const floorBg = $('.floor img')[0];
 const optionsLayer=$('#options-layer');
 
 function drawHouseElement(house) {
+    
     return `<li> <span> <a href="./assets/img/houses/${house.Image}" data-lightbox="roadtrip"><img src="./assets/img/houses/${house.Image}" alt="${house.Name}" /></a> <input id="house-${house.Id}" type="radio" value="${house.Id}" name="house"> <label for="house-${house.Id}">${house.Name}</label> </span> </li>`;
 }
 function drawFloorElement(floor) {
     return `<li> <span> <input id="floor-${floor.Id}" type="radio" value="${floor.Id}" name="floor" > <label for="floor-${floor.Id}">${floor.Name}</label> </span> </li>`;
 }
 function drawOptionElement(option) {
-    return `<li> <span> <input id="option-${option.Id}"  type="checkbox" value="${option.Id}" name="option" > <label for="option-${option.Id}">${option.Name}</label> </span> </li>`;
+    
+    return `<li> <span> <div class="custom-control custom-switch"> <input class="custom-control-input" id="option-${option.Id}" type="checkbox" value="${option.Id}" name="option" /> <label for="option-${option.Id}"class="custom-control-label" >${option.Name}</label> </div> </span> </li>`;
 }
 
 function drawOptionItemElement(option) {
@@ -38,7 +40,7 @@ function drawSlectedFloorOptions(){
         getCurrentFloor().Options.forEach(option => $("#options").append(drawOptionElement(option)));
         $('input[type=checkbox][name=option]').change(changeOption);
         $("#options li").hover(function() {
-            let input=$(this).children().children('input')[0];
+            let input=$(this).children().children().children('input')[0];
             $(input).prop("checked", !$(input).prop("checked"));
             $(input).trigger("change");
           });
