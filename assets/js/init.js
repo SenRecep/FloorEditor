@@ -1,16 +1,16 @@
 const floorBg = $('.floor img')[0];
 
-const optionsLayer=$('#options-layer');
+const optionsLayer = $('#options-layer');
 
 function drawHouseElement(house) {
-    
-    return `<li> <span> <a href="./assets/img/houses/${house.Image}" data-lightbox="roadtrip"><img src="./assets/img/houses/${house.Image}" alt="${house.Name}" /></a> <input id="house-${house.Id}" type="radio" value="${house.Id}" name="house"> <label for="house-${house.Id}">${house.Name}</label> </span> </li>`;
+
+    return `<li> <span> <a href="./assets/img/houses/${house.Image}" class="lightbox"><img src="./assets/img/houses/${house.Image}" alt="${house.Name}" /></a> <input id="house-${house.Id}" type="radio" value="${house.Id}" name="house"> <label for="house-${house.Id}">${house.Name}</label> </span> </li>`;
 }
 function drawFloorElement(floor) {
     return `<li> <span> <input id="floor-${floor.Id}" type="radio" value="${floor.Id}" name="floor" > <label for="floor-${floor.Id}">${floor.Name}</label> </span> </li>`;
 }
 function drawOptionElement(option) {
-    
+
     return `<li> <span> <div class="custom-control custom-switch"> <input class="custom-control-input" id="option-${option.Id}" type="checkbox" value="${option.Id}" name="option" /> <label for="option-${option.Id}"class="custom-control-label" >${option.Name}</label> </div> </span> </li>`;
 }
 
@@ -19,7 +19,7 @@ function drawOptionItemElement(option) {
 }
 
 
-function drawSlectedHouseFloors(){
+function drawSlectedHouseFloors() {
     $("#floors").empty();
     getCurrentHouse().Floors.forEach(floor => $("#floors").append(drawFloorElement(floor)));
     $('input[type=radio][name=floor]')[0].checked = true;
@@ -33,17 +33,16 @@ function drawSlectedHouseFloors(){
 }
 
 
-function drawSlectedFloorOptions(){
+function drawSlectedFloorOptions() {
     $("#options").empty();
-    if(getCurrentFloor().Options)
-    {
+    if (getCurrentFloor().Options) {
         getCurrentFloor().Options.forEach(option => $("#options").append(drawOptionElement(option)));
         $('input[type=checkbox][name=option]').change(changeOption);
-        $("#options li").hover(function() {
-            let input=$(this).children().children().children('input')[0];
+        $("#options li").hover(function () {
+            let input = $(this).children().children().children('input')[0];
             $(input).prop("checked", !$(input).prop("checked"));
             $(input).trigger("change");
-          });
+        });
         // $(`#options li`).on('mouseover',function(){
         //     let input=$(this).children().children('input')[0];
         //     if(!input.checked){
@@ -59,9 +58,9 @@ function drawSlectedFloorOptions(){
         //         input.dataset.activeTemp=false;
         //         $(input).trigger("change");
         //       }
-            
+
         // });
-        
+
         // $(`#options li`).on('click',function(){
         //     let input=$(this).children().children('input')[0];
         //     console.log(input);
@@ -71,13 +70,13 @@ function drawSlectedFloorOptions(){
 
         $('#menu-options').show();
     }
-    else{
+    else {
         $('#menu-options').hide();
     }
 }
 
-function changeFloor(){
-    var floor=getCurrentHouse().Floors.find(x=>x.Id==this.value);
+function changeFloor() {
+    var floor = getCurrentHouse().Floors.find(x => x.Id == this.value);
     setCurrentFloor(floor);
     setOptions([]);
     $(optionsLayer).empty();
@@ -86,115 +85,139 @@ function changeFloor(){
     drawEstimate();
 }
 
-function floorDraw(floor){
-    $(floorBg).attr('src',`./assets/img/floors/${floor.Images.Normal}`);
+function floorDraw(floor) {
+    $(floorBg).attr('src', `./assets/img/floors/${floor.Images.Normal}`);
 }
 
-function changeOption(){
-    var option=getCurrentFloor().Options.find(x=>x.Id==this.value);
-    if(this.checked){
-        var options= getOptions();
+function changeOption() {
+    var option = getCurrentFloor().Options.find(x => x.Id == this.value);
+    if (this.checked) {
+        var options = getOptions();
         options.push(option);
         setOptions(options);
         OptionDraw(option);
         drawEstimate();
-    }else{
-        var options= getOptions();
-        var index= options.map((item)=>item.Id).indexOf(option.Id);
-        options.splice(index,1);
+    } else {
+        var options = getOptions();
+        var index = options.map((item) => item.Id).indexOf(option.Id);
+        options.splice(index, 1);
         setOptions(options);
         OptionDelete(option);
         drawEstimate();
     }
 }
 
-function OptionDraw(option){
+function OptionDraw(option) {
     var element = drawOptionItemElement(option);
     $(optionsLayer).append(element);
-    drawDirectionOption(option,getFlip());
+    drawDirectionOption(option, getFlip());
 }
 
-function drawDirectionOption(option,isFlip){
-    var element= $(`#option-item-${option.Id}`)[0];
-    var img=$(element).children()[0];
-    var prop=isFlip?"Invers":"Normal";
-    img.setAttribute('src',`/assets/img/Options/${option[prop].Image}`);
-    element.style.top=option[prop].Location.Top;
-    element.style.left=option[prop].Location.Left;
-    element.style.right=option[prop].Location.Right;
-    element.style.bottom=option[prop].Location.Bottom;
-    element.style.height=option.Size.Height;
-    element.style.width=option.Size.Width;
+function drawDirectionOption(option, isFlip) {
+    var element = $(`#option-item-${option.Id}`)[0];
+    var img = $(element).children()[0];
+    var prop = isFlip ? "Invers" : "Normal";
+    img.setAttribute('src', `/assets/img/Options/${option[prop].Image}`);
+    element.style.top = option[prop].Location.Top;
+    element.style.left = option[prop].Location.Left;
+    element.style.right = option[prop].Location.Right;
+    element.style.bottom = option[prop].Location.Bottom;
+    element.style.height = option.Size.Height;
+    element.style.width = option.Size.Width;
 }
 
-function OptionDelete(option){
-    var element= $(`#option-item-${option.Id}`);
+function OptionDelete(option) {
+    var element = $(`#option-item-${option.Id}`);
     $(element).remove();
 }
 
-function AllOptionDelete(){
-    $("input[name='option']:checked").each(function ()
-    {
-      $(this).prop('checked', false); // Unchecks it)); 
+function AllOptionDelete() {
+    $("input[name='option']:checked").each(function () {
+        $(this).prop('checked', false); // Unchecks it)); 
     });
-    let options=getOptions();
-    options.forEach(item=>{
-      OptionDelete(item);
+    let options = getOptions();
+    options.forEach(item => {
+        OptionDelete(item);
     });
-    
+
 }
 
 
 
-function drawEstimate(){
-    var totalOptionEstimate=getOptions().reduce((tot,item)=>tot+item.Estimate,0);
+function drawEstimate() {
+    var totalOptionEstimate = getOptions().reduce((tot, item) => tot + item.Estimate, 0);
     var floor = getCurrentFloor();
-    var total= floor.Estimate+totalOptionEstimate;
+    var total = floor.Estimate + totalOptionEstimate;
     //$('#Estimate').text(`Estimate: $${total}`);
 }
 
 
+function setImageViewer(houses, house, viewer) {
+    var index = houses.indexOf(house);
+    viewer.dataset.selectedhouse = index;
+    var img=$(viewer).children('img');
+    $(img).attr('src', `./assets/img/houses/${house.Image}`);
+    $(img).attr('alt', `./assets/img/houses/${house.Name}`);
+}
 
+
+function changeSliderImage(slideIndex){
+    var radioButton = $('input[type=radio][name=house]')[slideIndex - 1];
+    radioButton.checked = true;
+    $(radioButton).trigger("change");
+}
 
 
 $(document).ready(async function () {
     const houses = await fetch("db.json").then(x => x.json());
-    
-     setCurrentHouse(houses[0]);
-     setCurrentFloor(getCurrentHouse().Floors[0]);
-     setOptions([]);
-     setFlip(false);
+    const viewer = document.querySelector("div.image-viewer a");
+    viewer.dataset.selectedhouse = 0;
 
-    
-     houses.forEach(house => $("#houses").append(drawHouseElement(house)));
+    setCurrentHouse(houses[0]);
+    setCurrentFloor(getCurrentHouse().Floors[0]);
+    setOptions([]);
+    setFlip(false);
 
-     $('input[type=radio][name=house]').change(function () {
-         var house=houses.find(x=>x.Id==this.value);
-         setCurrentHouse(house);
-         drawSlectedHouseFloors();
-     });
-     drawSlectedHouseFloors();
-     
-     $('input[type=radio][name=house]')[0].checked = true;
+
+    houses.forEach(house => $("#houses").append(drawHouseElement(house)));
+
+    $('input[type=radio][name=house]').change(function () {
+        var house = houses.find(x => x.Id == this.value);
+        setImageViewer(houses, house, viewer);
+        setCurrentHouse(house);
+        drawSlectedHouseFloors();
+    });
+    drawSlectedHouseFloors();
+
+    changeSliderImage(1);
+    
+
+    const tobii = new Tobii({
+        counter: false,
+        zoom: false,
+        captions: false
+    });
+
+    tobii.on("open", function () {
+        if (tobii.slidesIndex() == 0) {
+            var selectedHouse = viewer.dataset.selectedhouse;
+            tobii.select(parseInt(selectedHouse) + 1);
+        }
+    });
+
+
+
+    tobii.on("previous", function () {
+        if (tobii.slidesIndex() == 0)
+            tobii.select(1);
+        changeSliderImage(tobii.slidesIndex());
+    });
+
+
+    tobii.on("next", function () {
+        changeSliderImage(tobii.slidesIndex());
+    })
 });
 
-lightbox.option({
-    'resizeDuration': 200,
-    'wrapAround': true
-  })
-  function printDiv() 
-  {
-  
-    var divToPrint=document.getElementById('wrapper');
-  
-    var newWin=window.open('','Print-Window');
-  
-    newWin.document.open();
-  
-    newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
-  
-    newWin.document.close();
-  
-    setTimeout(function(){newWin.close();},10);
-  
-  }
+
+

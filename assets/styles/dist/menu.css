@@ -133,6 +133,7 @@ main nav ul.menu > li div ul li:last-child {
 main nav ul.menu > li div ul li > span {
   display: flex;
   text-decoration: none;
+  background-color: var(--MIDNIGHTBLUE);
 }
 main nav ul.menu > li div ul li > span:hover {
   color: var(--CLOUDS);
@@ -165,6 +166,5 @@ main nav ul.menu > li div ul li > span label {
   padding: 0 10px;
   margin-bottom: 0;
   text-transform: uppercase;
-  background-color: var(--MIDNIGHTBLUE);
   color: var(--Faded);
 }

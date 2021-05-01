@@ -4,7 +4,7 @@ var floorBg = $('.floor img')[0];
 var optionsLayer = $('#options-layer');
 
 function drawHouseElement(house) {
-  return "<li> <span> <a href=\"./assets/img/houses/".concat(house.Image, "\" data-lightbox=\"roadtrip\"><img src=\"./assets/img/houses/").concat(house.Image, "\" alt=\"").concat(house.Name, "\" /></a> <input id=\"house-").concat(house.Id, "\" type=\"radio\" value=\"").concat(house.Id, "\" name=\"house\"> <label for=\"house-").concat(house.Id, "\">").concat(house.Name, "</label> </span> </li>");
+  return "<li> <span> <a href=\"./assets/img/houses/".concat(house.Image, "\" class=\"lightbox\"><img src=\"./assets/img/houses/").concat(house.Image, "\" alt=\"").concat(house.Name, "\" /></a> <input id=\"house-").concat(house.Id, "\" type=\"radio\" value=\"").concat(house.Id, "\" name=\"house\"> <label for=\"house-").concat(house.Id, "\">").concat(house.Name, "</label> </span> </li>");
 }
 
 function drawFloorElement(floor) {
@@ -160,8 +160,22 @@ function drawEstimate() {
   var total = floor.Estimate + totalOptionEstimate; //$('#Estimate').text(`Estimate: $${total}`);
 }
 
+function setImageViewer(houses, house, viewer) {
+  var index = houses.indexOf(house);
+  viewer.dataset.selectedhouse = index;
+  var img = $(viewer).children('img');
+  $(img).attr('src', "./assets/img/houses/".concat(house.Image));
+  $(img).attr('alt', "./assets/img/houses/".concat(house.Name));
+}
+
+function changeSliderImage(slideIndex) {
+  var radioButton = $('input[type=radio][name=house]')[slideIndex - 1];
+  radioButton.checked = true;
+  $(radioButton).trigger("change");
+}
+
 $(document).ready(function _callee() {
-  var houses;
+  var houses, viewer, tobii;
   return regeneratorRuntime.async(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
@@ -173,6 +187,8 @@ $(document).ready(function _callee() {
 
         case 2:
           houses = _context.sent;
+          viewer = document.querySelector("div.image-viewer a");
+          viewer.dataset.selectedhouse = 0;
           setCurrentHouse(houses[0]);
           setCurrentFloor(getCurrentHouse().Floors[0]);
           setOptions([]);
@@ -186,31 +202,35 @@ $(document).ready(function _callee() {
             var house = houses.find(function (x) {
               return x.Id == _this3.value;
             });
+            setImageViewer(houses, house, viewer);
             setCurrentHouse(house);
             drawSlectedHouseFloors();
           });
           drawSlectedHouseFloors();
-          $('input[type=radio][name=house]')[0].checked = true;
+          changeSliderImage(1);
+          tobii = new Tobii({
+            counter: false,
+            zoom: false,
+            captions: false
+          });
+          tobii.on("open", function () {
+            if (tobii.slidesIndex() == 0) {
+              var selectedHouse = viewer.dataset.selectedhouse;
+              tobii.select(parseInt(selectedHouse) + 1);
+            }
+          });
+          tobii.on("previous", function () {
+            if (tobii.slidesIndex() == 0) tobii.select(1);
+            changeSliderImage(tobii.slidesIndex());
+          });
+          tobii.on("next", function () {
+            changeSliderImage(tobii.slidesIndex());
+          });
 
-        case 11:
+        case 17:
         case "end":
           return _context.stop();
       }
     }
   });
 });
-lightbox.option({
-  'resizeDuration': 200,
-  'wrapAround': true
-});
-
-function printDiv() {
-  var divToPrint = document.getElementById('wrapper');
-  var newWin = window.open('', 'Print-Window');
-  newWin.document.open();
-  newWin.document.write('<html><body onload="window.print()">' + divToPrint.innerHTML + '</body></html>');
-  newWin.document.close();
-  setTimeout(function () {
-    newWin.close();
-  }, 10);
-}

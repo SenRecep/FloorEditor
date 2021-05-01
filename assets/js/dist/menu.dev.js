@@ -15,4 +15,19 @@ $(function () {
     }
     if (expandedMenuIndex == index) $(this).next('div.c-dropdown-menu').show();
   });
+  $('.menu-close-btn').click(function () {
+    $(this).parent().parent().hide();
+    expandedMenuIndex = -1;
+  });
 });
+
+function printDiv() {
+  var divToPrint = document.getElementById('wrapper');
+  var newWin = window.open('', 'Print-Window');
+  newWin.document.open();
+  newWin.document.write('<html><body onload="window.print()">' + divToPrint.innerHTML + '</body></html>');
+  newWin.document.close();
+  setTimeout(function () {
+    newWin.close();
+  }, 10);
+}
