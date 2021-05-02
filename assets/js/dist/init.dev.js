@@ -1,7 +1,15 @@
 "use strict";
 
 var floorBg = $('.floor img')[0];
-var optionsLayer = $('#options-layer');
+var optionsLayer = $('#options-layer')[0];
+
+function setOptionLayerProperties() {
+  optionsLayer.style.position = "absolute";
+  optionsLayer.style.width = "100%";
+  optionsLayer.style.height = "100%";
+  optionsLayer.style.left = 0;
+  optionsLayer.style.top = 0;
+}
 
 function drawHouseElement(house) {
   return "<li> <span> <a href=\"./assets/img/houses/".concat(house.Image, "\" class=\"lightbox\"><img src=\"./assets/img/houses/").concat(house.Image, "\" alt=\"").concat(house.Name, "\" /></a> <input id=\"house-").concat(house.Id, "\" type=\"radio\" value=\"").concat(house.Id, "\" name=\"house\"> <label for=\"house-").concat(house.Id, "\">").concat(house.Name, "</label> </span> </li>");
@@ -129,6 +137,7 @@ function drawDirectionOption(option, isFlip) {
   var img = $(element).children()[0];
   var prop = isFlip ? "Invers" : "Normal";
   img.setAttribute('src', "/assets/img/Options/".concat(option[prop].Image));
+  element.style.position = "absolute";
   element.style.top = option[prop].Location.Top;
   element.style.left = option[prop].Location.Left;
   element.style.right = option[prop].Location.Right;
@@ -208,6 +217,7 @@ $(document).ready(function _callee() {
           });
           drawSlectedHouseFloors();
           changeSliderImage(1);
+          setOptionLayerProperties();
           tobii = new Tobii({
             counter: false,
             zoom: false,
@@ -227,7 +237,7 @@ $(document).ready(function _callee() {
             changeSliderImage(tobii.slidesIndex());
           });
 
-        case 17:
+        case 18:
         case "end":
           return _context.stop();
       }

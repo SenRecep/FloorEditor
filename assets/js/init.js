@@ -1,6 +1,14 @@
 const floorBg = $('.floor img')[0];
 
-const optionsLayer = $('#options-layer');
+const optionsLayer = $('#options-layer')[0];
+
+function setOptionLayerProperties(){
+    optionsLayer.style.position="absolute";
+    optionsLayer.style.width="100%";
+    optionsLayer.style.height="100%";
+    optionsLayer.style.left=0;
+    optionsLayer.style.top=0;
+}
 
 function drawHouseElement(house) {
 
@@ -75,6 +83,7 @@ function drawSlectedFloorOptions() {
     }
 }
 
+
 function changeFloor() {
     var floor = getCurrentHouse().Floors.find(x => x.Id == this.value);
     setCurrentFloor(floor);
@@ -118,6 +127,7 @@ function drawDirectionOption(option, isFlip) {
     var img = $(element).children()[0];
     var prop = isFlip ? "Invers" : "Normal";
     img.setAttribute('src', `/assets/img/Options/${option[prop].Image}`);
+    element.style.position = "absolute";
     element.style.top = option[prop].Location.Top;
     element.style.left = option[prop].Location.Left;
     element.style.right = option[prop].Location.Right;
@@ -190,6 +200,8 @@ $(document).ready(async function () {
     drawSlectedHouseFloors();
 
     changeSliderImage(1);
+
+    setOptionLayerProperties();
     
 
     const tobii = new Tobii({

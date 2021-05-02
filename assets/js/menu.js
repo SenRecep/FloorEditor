@@ -30,6 +30,8 @@ function printDiv() {
 
     var divToPrint = document.getElementById('wrapper');
 
+    console.log(divToPrint);
+
     var newWin = window.open('', 'Print-Window');
 
     newWin.document.open();
