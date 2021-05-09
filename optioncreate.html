@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./assets/styles/dist/imports.css"> -->
+    <style>
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+        .wrapper{
+            height: 500px;
+            width: 500px;
+            background-color: pink;
+            position: relative;
+        }
+        .item{
+            background-color: black;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+       .resize-drag {
+  width: 120px;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #29e;
+  color: white;
+  font-size: 20px;
+  font-family: sans-serif;
+
+  touch-action: none;
+
+  /* This makes things *much* easier */
+  box-sizing: border-box;
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div id="testitem" class="item"></div>
+        <div id="item" class="resize-drag">
+            <p> You can drag one element </p>
+          </div>
+
+
+          <div class="resize-drag">
+            <p> You can drag one element </p>
+          </div>
+    </div>
+
+    <button id="save">Save</button>
+  
+    <!-- <script src="./assets/lib/jquery/jquery.min.js"></script> -->
+    <!-- <script src="./assets/lib/twitter-bootstrap/js/bootstrap.min.js"></script> -->
+    <script type="module" src="/assets/js/optioncreate.js"></script>
+
+</body>
+
+</html>
