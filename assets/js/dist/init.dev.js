@@ -12,11 +12,11 @@ function setOptionLayerProperties() {
 }
 
 function drawHouseElement(house) {
-  return "<li> <span> <a href=\"./assets/img/houses/".concat(house.Image, "\" class=\"lightbox\"><img src=\"./assets/img/houses/").concat(house.Image, "\" alt=\"").concat(house.Name, "\" /></a> <input id=\"house-").concat(house.Id, "\" type=\"radio\" value=\"").concat(house.Id, "\" name=\"house\"> <label for=\"house-").concat(house.Id, "\">").concat(house.Name, "</label> </span> </li>");
+  return "<li> <span> <a href=\"./assets/img/houses/".concat(house.Image, "\" class=\"lightbox\"><img src=\"./assets/img/houses/").concat(house.Image, "\" alt=\"").concat(house.Name, "\" /></a> <input id=\"house-").concat(house.Id, "\" type=\"radio\" value=\"").concat(house.Id, "\" name=\"house\"> <label for=\"house-").concat(house.Id, "\">").concat(house.Name, "</label> <i class=\"fas fa-check\"></i> </span> </li>");
 }
 
 function drawFloorElement(floor) {
-  return "<li> <span> <input id=\"floor-".concat(floor.Id, "\" type=\"radio\" value=\"").concat(floor.Id, "\" name=\"floor\" > <label for=\"floor-").concat(floor.Id, "\">").concat(floor.Name, "</label> </span> </li>");
+  return "<li> <span> <input id=\"floor-".concat(floor.Id, "\" type=\"radio\" value=\"").concat(floor.Id, "\" name=\"floor\" > <label for=\"floor-").concat(floor.Id, "\">").concat(floor.Name, "</label>  <i class=\"fas fa-check\"></i> </span> </li>");
 }
 
 function drawOptionElement(option) {
@@ -46,7 +46,6 @@ function optionHoverEvent() {
   var input = $(this).children().children().children('input')[0];
   $(input).prop("checked", !$(input).prop("checked"));
   $(input).trigger("change");
-  console.log('hover');
 }
 
 function drawSlectedFloorOptions() {
@@ -66,11 +65,12 @@ function drawSlectedFloorOptions() {
           e.preventDefault();
           li.dataset.hoverevent = 'false';
           $(li).unbind();
-          console.log('unbind');
         } else {
-          li.dataset.hoverevent = 'true';
-          $(li).hover(optionHoverEvent);
-          console.log('bind');
+          $('#options li').on('mouseleave', function () {
+            li.dataset.hoverevent = 'true';
+            $(this).unbind();
+            $(this).hover(optionHoverEvent);
+          });
         }
       }
     });

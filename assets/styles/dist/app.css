@@ -261,6 +261,9 @@ main nav ul.menu > li div ul li > span input:checked + label {
   background-color: var(--Faded);
   color: var(--MIDNIGHTBLUE);
 }
+main nav ul.menu > li div ul li > span input:checked + label + i {
+  display: flex;
+}
 main nav ul.menu > li div ul li > span label {
   position: relative;
   display: flex;
@@ -272,6 +275,14 @@ main nav ul.menu > li div ul li > span label {
   margin-bottom: 0;
   text-transform: uppercase;
   color: var(--Faded);
+}
+main nav ul.menu > li div ul li > span i {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  background-color: var(--Faded);
+  color: var(--MIDNIGHTBLUE);
 }
 
 .editor {

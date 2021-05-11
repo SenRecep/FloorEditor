@@ -188,6 +188,9 @@ main {
                                         background-color: var(--Faded);
                                         color: var(--MIDNIGHTBLUE);
                                     }
+                                    &:checked+label+ i {
+                                       display: flex;
+                                    }
 
                                     // &:checked+label::after {
                                     //     content: "\2713";
@@ -207,6 +210,14 @@ main {
                                     
                                     color: var(--Faded);
                                     
+                                }
+                                i{
+                                    display: none;
+                                    justify-content: center;
+                                    align-items: center;
+                                    padding: 0 10px;
+                                    background-color: var(--Faded);
+                                    color: var(--MIDNIGHTBLUE);
                                 }
                             }
                         }
