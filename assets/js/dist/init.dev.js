@@ -20,7 +20,7 @@ function drawFloorElement(floor) {
 }
 
 function drawOptionElement(option) {
-  return "<li> <span> <div class=\"custom-control custom-switch\"> <input class=\"custom-control-input\" id=\"option-".concat(option.Id, "\" type=\"checkbox\" value=\"").concat(option.Id, "\" name=\"option\" /> <label for=\"option-").concat(option.Id, "\"class=\"custom-control-label\" >").concat(option.Name, "</label> </div> </span> </li>");
+  return "<li data-hoverevent='true'> <span> <div class=\"custom-control custom-switch\"> <input class=\"custom-control-input\" id=\"option-".concat(option.Id, "\" type=\"checkbox\" value=\"").concat(option.Id, "\" name=\"option\" /> <label for=\"option-").concat(option.Id, "\"class=\"custom-control-label\" >").concat(option.Name, "</label> </div> </span> </li>");
 }
 
 function drawOptionItemElement(option) {
@@ -42,6 +42,13 @@ function drawSlectedHouseFloors() {
   drawEstimate();
 }
 
+function optionHoverEvent() {
+  var input = $(this).children().children().children('input')[0];
+  $(input).prop("checked", !$(input).prop("checked"));
+  $(input).trigger("change");
+  console.log('hover');
+}
+
 function drawSlectedFloorOptions() {
   $("#options").empty();
 
@@ -50,33 +57,24 @@ function drawSlectedFloorOptions() {
       return $("#options").append(drawOptionElement(option));
     });
     $('input[type=checkbox][name=option]').change(changeOption);
-    $("#options li").hover(function () {
-      var input = $(this).children().children().children('input')[0];
-      $(input).prop("checked", !$(input).prop("checked"));
-      $(input).trigger("change");
-    }); // $(`#options li`).on('mouseover',function(){
-    //     let input=$(this).children().children('input')[0];
-    //     if(!input.checked){
-    //         input.checked=true;
-    //         input.dataset.activeTemp=true;
-    //         $(input).trigger("change");
-    //     }
-    // });
-    // $(`#options li`).on('mouseout',function(){
-    //       let input=$(this).children().children('input')[0];
-    //       if(input.dataset.activeTemp){
-    //         input.checked=false;
-    //         input.dataset.activeTemp=false;
-    //         $(input).trigger("change");
-    //       }
-    // });
-    // $(`#options li`).on('click',function(){
-    //     let input=$(this).children().children('input')[0];
-    //     console.log(input);
-    //     if(input.dataset.activeTemp)
-    //        input.dataset.activeTemp=false;
-    // });
+    $('input[type=checkbox][name=option]').click(function (e) {
+      var li = $(this).parent().parent().parent().get(0);
+      console.log(this.checked);
 
+      if (this.checked == false) {
+        if (li.dataset.hoverevent == 'true') {
+          e.preventDefault();
+          li.dataset.hoverevent = 'false';
+          $(li).unbind();
+          console.log('unbind');
+        } else {
+          li.dataset.hoverevent = 'true';
+          $(li).hover(optionHoverEvent);
+          console.log('bind');
+        }
+      }
+    });
+    $("#options li").hover(optionHoverEvent);
     $('#menu-options').show();
   } else {
     $('#menu-options').hide();

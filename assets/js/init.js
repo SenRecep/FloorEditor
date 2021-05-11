@@ -2,12 +2,12 @@ const floorBg = $('.floor img')[0];
 
 const optionsLayer = $('#options-layer')[0];
 
-function setOptionLayerProperties(){
-    optionsLayer.style.position="absolute";
-    optionsLayer.style.width="100%";
-    optionsLayer.style.height="100%";
-    optionsLayer.style.left=0;
-    optionsLayer.style.top=0;
+function setOptionLayerProperties() {
+    optionsLayer.style.position = "absolute";
+    optionsLayer.style.width = "100%";
+    optionsLayer.style.height = "100%";
+    optionsLayer.style.left = 0;
+    optionsLayer.style.top = 0;
 }
 
 function drawHouseElement(house) {
@@ -19,7 +19,7 @@ function drawFloorElement(floor) {
 }
 function drawOptionElement(option) {
 
-    return `<li> <span> <div class="custom-control custom-switch"> <input class="custom-control-input" id="option-${option.Id}" type="checkbox" value="${option.Id}" name="option" /> <label for="option-${option.Id}"class="custom-control-label" >${option.Name}</label> </div> </span> </li>`;
+    return `<li data-hoverevent='true'> <span> <div class="custom-control custom-switch"> <input class="custom-control-input" id="option-${option.Id}" type="checkbox" value="${option.Id}" name="option" /> <label for="option-${option.Id}"class="custom-control-label" >${option.Name}</label> </div> </span> </li>`;
 }
 
 function drawOptionItemElement(option) {
@@ -41,41 +41,37 @@ function drawSlectedHouseFloors() {
 }
 
 
+function optionHoverEvent() {
+    let input = $(this).children().children().children('input')[0];
+    $(input).prop("checked", !$(input).prop("checked"));
+    $(input).trigger("change");
+    console.log('hover');
+}
+
 function drawSlectedFloorOptions() {
     $("#options").empty();
     if (getCurrentFloor().Options) {
         getCurrentFloor().Options.forEach(option => $("#options").append(drawOptionElement(option)));
         $('input[type=checkbox][name=option]').change(changeOption);
-        $("#options li").hover(function () {
-            let input = $(this).children().children().children('input')[0];
-            $(input).prop("checked", !$(input).prop("checked"));
-            $(input).trigger("change");
+        $('input[type=checkbox][name=option]').click(function (e) {
+            var li=  $(this).parent().parent().parent().get(0);
+            console.log(this.checked);
+            if (this.checked == false) {
+                if (li.dataset.hoverevent=='true'){
+                   e.preventDefault();
+                    li.dataset.hoverevent='false';
+                    $(li).unbind();
+                    console.log('unbind');
+                }
+                else{
+                    li.dataset.hoverevent='true';
+                    $(li).hover(optionHoverEvent);
+                    console.log('bind');
+                }
+             
+            }
         });
-        // $(`#options li`).on('mouseover',function(){
-        //     let input=$(this).children().children('input')[0];
-        //     if(!input.checked){
-        //         input.checked=true;
-        //         input.dataset.activeTemp=true;
-        //         $(input).trigger("change");
-        //     }
-        // });
-        // $(`#options li`).on('mouseout',function(){
-        //       let input=$(this).children().children('input')[0];
-        //       if(input.dataset.activeTemp){
-        //         input.checked=false;
-        //         input.dataset.activeTemp=false;
-        //         $(input).trigger("change");
-        //       }
-
-        // });
-
-        // $(`#options li`).on('click',function(){
-        //     let input=$(this).children().children('input')[0];
-        //     console.log(input);
-        //     if(input.dataset.activeTemp)
-        //        input.dataset.activeTemp=false;
-        // });
-
+        $("#options li").hover(optionHoverEvent);
         $('#menu-options').show();
     }
     else {
@@ -165,13 +161,13 @@ function drawEstimate() {
 function setImageViewer(houses, house, viewer) {
     var index = houses.indexOf(house);
     viewer.dataset.selectedhouse = index;
-    var img=$(viewer).children('img');
+    var img = $(viewer).children('img');
     $(img).attr('src', `./assets/img/houses/${house.Image}`);
     $(img).attr('alt', `./assets/img/houses/${house.Name}`);
 }
 
 
-function changeSliderImage(slideIndex){
+function changeSliderImage(slideIndex) {
     var radioButton = $('input[type=radio][name=house]')[slideIndex - 1];
     radioButton.checked = true;
     $(radioButton).trigger("change");
@@ -202,7 +198,7 @@ $(document).ready(async function () {
     changeSliderImage(1);
 
     setOptionLayerProperties();
-    
+
 
     const tobii = new Tobii({
         counter: false,

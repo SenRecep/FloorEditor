@@ -94,6 +94,7 @@ window.dragMoveListener = dragMoveListener
 
 var item = document.getElementById('item');
 var testitem = document.getElementById('testitem');
+var wrapper= document.getElementById('wrapper');
 
 
 document.getElementById('save').addEventListener('click', function () {
@@ -102,15 +103,31 @@ document.getElementById('save').addEventListener('click', function () {
     var x = item.dataset.x;
     var y = item.dataset.y;
 
-    testitem.style.left = `${x}px`;
-    testitem.style.top = `${y}px`;
+    var left= x/wrapper.offsetWidth*100;
+    var top= y/wrapper.offsetHeight*100;
 
+    testitem.style.left = `${left}%`;
+    testitem.style.top = `${top}%`;
+
+
+
+   
 
     testitem.style.height = height;
     testitem.style.width = width;
 
-
     console.clear();
+
+
+    console.log({
+       left: testitem.style.left,
+        top:testitem.style.top
+    });
+
+    console.log({
+        h:wrapper.offsetHeight,
+        w:wrapper.offsetWidth
+    });
 
     console.log({
         height,
