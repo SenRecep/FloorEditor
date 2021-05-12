@@ -1,8 +1,8 @@
-@import './assets/lib/modern-normalize/modern-normalize.min.css';
-@import './assets/lib/font-awesome/css/all.min.css';
+@import '/assets/lib/modern-normalize/modern-normalize.min.css';
+@import '/assets/lib/font-awesome/css/all.min.css';
 @import "https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap";
-@import './assets/lib/twitter-bootstrap/css/bootstrap.min.css';
-@import './assets/lib/tobii-lightbox/tobii.min.css';
+@import '/assets/lib/twitter-bootstrap/css/bootstrap.min.css';
+@import '/assets/lib/tobii-lightbox/tobii.min.css';
 * {
   padding: 0;
   margin: 0;
