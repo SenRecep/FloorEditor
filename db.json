@@ -11,6 +11,10 @@
                     "Normal": "house-1-floor-1-normal.svg",
                     "Invers": "house-1-floor-1-invers.svg"
                 },
+                "Size":{
+                    "Height":1200,
+                    "Width":1600
+                },
                 "Estimate": 225000,
                 "Options": [
                     {
@@ -76,6 +80,10 @@
                     "Normal": "house-1-floor-2-normal.svg",
                     "Invers": "house-1-floor-2-invers.svg"
                 },
+                "Size":{
+                    "Height":800,
+                    "Width":1000
+                },
                 "Estimate": 225000
 
             }
@@ -92,6 +100,10 @@
                 "Images": {
                     "Normal": "house-2-floor-1-normal.svg",
                     "Invers": "house-2-floor-1-invers.svg"
+                },
+                "Size":{
+                    "Height":1200,
+                    "Width":1600
                 },
                 "Estimate": 175000,
                 "Options": [
@@ -164,6 +176,10 @@
                 "Images": {
                     "Normal": "house-3-floor-1-normal.svg",
                     "Invers": "house-3-floor-1-invers.svg"
+                },
+                "Size":{
+                    "Height":1200,
+                    "Width":1600
                 },
                 "Estimate": 175000,
                 "Options": [

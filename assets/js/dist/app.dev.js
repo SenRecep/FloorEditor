@@ -26,15 +26,54 @@ window.onload = function () {
       epx = 0,
       epy = 0;
 
+  function getWrapperSize() {
+    return {
+      Height: wrapperElement.offsetHeight * scale,
+      Width: wrapperElement.offsetWidth * scale
+    };
+  }
+
+  function pxSizeToInch(size) {
+    return {
+      Height: pxToInch(size.Height),
+      Width: pxToInch(size.Width)
+    };
+  }
+
+  function pxToInch(px) {
+    return px * 0.010416667;
+  }
+
+  function measureRealLengthCalculator(size) {
+    var wrapperSize = pxSizeToInch(getWrapperSize());
+    var floorSize = getCurrentFloor().Size;
+    size = pxSizeToInch(size);
+    size.Height = floorSize.Height * size.Height / wrapperSize.Height;
+    size.Width = floorSize.Width * size.Width / wrapperSize.Width;
+    return size;
+  }
+
+  function measureTextCalculator(dist) {
+    // return dist.toFixed(1) + "inch";
+    var val = dist / 12;
+    var feat = parseInt(val);
+    var inch = Math.round((val - feat) * 10);
+    return "".concat(feat, "' ").concat(inch, "\"");
+  }
+
   function writeStat() {
     measurementLine.setAttribute('x1', spx);
     measurementLine.setAttribute('y1', spy);
     measurementLine.setAttribute('x2', epx);
     measurementLine.setAttribute('y2', epy);
-    var dist = Math.sqrt(Math.pow(spx - epx, 2) + Math.pow(spy - epy, 2));
     var lw = epx - spx;
     var lh = epy - spy;
-    measurementText.innerHTML = dist.toFixed(1) + "px";
+    var size = measureRealLengthCalculator({
+      Height: Math.abs(lh),
+      Width: Math.abs(lw)
+    });
+    dist = Math.sqrt(Math.pow(size.Height, 2) + Math.pow(size.Width, 2));
+    measurementText.innerHTML = measureTextCalculator(dist);
     if (lw > 0) measurementText.setAttribute('x', spx + Math.abs(lw) / 2);else measurementText.setAttribute('x', epx + Math.abs(lw) / 2);
     if (lh > 0) measurementText.setAttribute('y', spy + Math.abs(lh) / 2);else measurementText.setAttribute('y', epy + Math.abs(lh) / 2);
   }

@@ -58,7 +58,6 @@ function drawSlectedFloorOptions() {
     $('input[type=checkbox][name=option]').change(changeOption);
     $('input[type=checkbox][name=option]').click(function (e) {
       var li = $(this).parent().parent().parent().get(0);
-      console.log(this.checked);
 
       if (this.checked == false) {
         if (li.dataset.hoverevent == 'true') {
@@ -219,7 +218,7 @@ $(document).ready(function _callee() {
           tobii = new Tobii({
             counter: false,
             zoom: false,
-            captions: false
+            captions: true
           });
           tobii.on("open", function () {
             if (tobii.slidesIndex() == 0) {
