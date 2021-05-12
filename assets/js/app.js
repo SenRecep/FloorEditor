@@ -13,20 +13,60 @@ window.onload = function () {
 
     const floorBg = $('.floor img')[0];
 
-
     var x_cursor = 0, y_cursor = 0, x_wrapper = 0, y_wrapper = 0, scale = 1, isDrag = false;
     var measurementMode = false, measurementSetStartPoint = false, spx = 0, spy = 0, epx = 0, epy = 0;
 
 
+    function getWrapperSize() {
+        return {
+            Height: wrapperElement.offsetHeight * scale,
+            Width: wrapperElement.offsetWidth * scale,
+        }
+    }
+
+    function pxSizeToInch(size) {
+        return {
+            Height: pxToInch(size.Height),
+            Width: pxToInch(size.Width)
+        }
+    }
+
+    function pxToInch(px) {
+        return px * 0.010416667;
+    }
+
+    function measureRealLengthCalculator(size) {
+        let wrapperSize = pxSizeToInch(getWrapperSize());
+        let floorSize = getCurrentFloor().Size;
+        size = pxSizeToInch(size);
+        size.Height= (floorSize.Height*size.Height)/wrapperSize.Height;
+        size.Width= (floorSize.Width*size.Width)/wrapperSize.Width;
+        return size;
+    }
+
+    function measureTextCalculator(dist){
+        // return dist.toFixed(1) + "inch";
+        var val=dist/12;
+        var feat= parseInt(val);
+        var inch= Math.round((val-feat)*10);
+        return `${feat}' ${inch}"`;
+    }
+
+ 
     function writeStat() {
         measurementLine.setAttribute('x1', spx);
         measurementLine.setAttribute('y1', spy);
         measurementLine.setAttribute('x2', epx);
         measurementLine.setAttribute('y2', epy);
-        var dist = Math.sqrt(Math.pow((spx - epx), 2) + Math.pow((spy - epy), 2));
         var lw = epx - spx;
         var lh = epy - spy;
-        measurementText.innerHTML = dist.toFixed(1) + "px";
+        var size = measureRealLengthCalculator({
+            Height: Math.abs(lh),
+            Width: Math.abs(lw)
+        });
+        dist = Math.sqrt(Math.pow(size.Height, 2) + Math.pow(size.Width, 2));
+        measurementText.innerHTML = measureTextCalculator(dist);
+
         if (lw > 0)
             measurementText.setAttribute('x', spx + Math.abs(lw) / 2);
         else
@@ -131,15 +171,15 @@ window.onload = function () {
     function btnFlipClick() {
         setFlip(!getFlip());
         var floor = getCurrentFloor();
-        var isFlip=getFlip();
+        var isFlip = getFlip();
 
-        if (isFlip) 
+        if (isFlip)
             $(floorBg).attr('src', `./assets/img/floors/${floor.Images.Invers}`);
-        else 
+        else
             $(floorBg).attr('src', `./assets/img/floors/${floor.Images.Normal}`);
-        
-        getOptions().forEach(item=>{
-            drawDirectionOption(item,isFlip);
+
+        getOptions().forEach(item => {
+            drawDirectionOption(item, isFlip);
         });
 
         // var val = isFlip ? -scale : scale;
