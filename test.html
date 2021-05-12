@@ -7,6 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <img src="/assets/img/floors/house-1-floor-1-normal.svg" alt="">
+    <h1 id="test"></h1>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        let companyId = urlParams.get('company');
+        companyId=parseInt(companyId);
+        if(companyId===null || isNaN(companyId))
+            window.location.href=window.location.origin;
+            
+        document.getElementById('test').innerText=companyId;
+    </script>
 </body>
 </html>
