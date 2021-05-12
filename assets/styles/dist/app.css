@@ -1,8 +1,8 @@
-@import '/assets/lib/modern-normalize/modern-normalize.min.css';
-@import '/assets/lib/font-awesome/css/all.min.css';
+@import './assets/lib/modern-normalize/modern-normalize.min.css';
+@import './assets/lib/font-awesome/css/all.min.css';
 @import "https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap";
-@import '/assets/lib/twitter-bootstrap/css/bootstrap.min.css';
-@import '/assets/lib/tobii-lightbox/tobii.min.css';
+@import './assets/lib/twitter-bootstrap/css/bootstrap.min.css';
+@import './assets/lib/tobii-lightbox/tobii.min.css';
 * {
   padding: 0;
   margin: 0;
@@ -98,8 +98,8 @@ header .title {
 }
 header .title .btn {
   border-right: 1px solid #E5E5E5;
-  padding: 9px;
-  font-size: 12px;
+  padding: 14px;
+  font-size: 14px;
   cursor: pointer;
 }
 
@@ -315,11 +315,6 @@ main nav ul.menu > li div ul li > span i {
 }
 .editor .controller .btn:hover {
   opacity: 0.8;
-}
-.editor .controller .btn-center,
-.editor .controller .btn-measurements,
-.editor .controller .zoom {
-  margin-bottom: 10px;
 }
 .editor .controller .btn-zoomin {
   margin-bottom: 1px;

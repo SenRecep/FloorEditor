@@ -29,11 +29,6 @@
 .editor .controller .btn:hover {
   opacity: 0.8;
 }
-.editor .controller .btn-center,
-.editor .controller .btn-measurements,
-.editor .controller .zoom {
-  margin-bottom: 10px;
-}
 .editor .controller .btn-zoomin {
   margin-bottom: 1px;
 }

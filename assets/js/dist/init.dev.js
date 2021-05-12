@@ -219,7 +219,7 @@ $(document).ready(function _callee() {
           tobii = new Tobii({
             counter: false,
             zoom: false,
-            captions: false
+            captions: true
           });
           tobii.on("open", function () {
             if (tobii.slidesIndex() == 0) {

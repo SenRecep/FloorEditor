@@ -206,7 +206,7 @@ $(document).ready(async function () {
     const tobii = new Tobii({
         counter: false,
         zoom: false,
-        captions: false
+        captions: true
     });
 
     tobii.on("open", function () {
