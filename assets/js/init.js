@@ -91,8 +91,15 @@ function changeFloor() {
     drawEstimate();
 }
 
-function floorDraw(floor) {
-    $(floorBg).attr('src', `./assets/img/floors/${floor.Images.Normal}`);
+function floorDraw(floor) { 
+    if(getFlip())
+    {
+        $(floorBg).attr('src', `./assets/img/floors/${floor.Images.Invers}`);
+    }
+    else{
+        $(floorBg).attr('src', `./assets/img/floors/${floor.Images.Normal}`);
+    }
+    
 }
 
 function changeOption() {

@@ -13,7 +13,8 @@ function setOptions(val) {
 }
 
 function setFlip(val) {
-    localStorage.setItem("Flip", JSON.stringify(val));
+    let index =getCurrentFloor().Id;
+    localStorage.setItem(`Flip-${index}`, JSON.stringify(val));
 }
 
 
@@ -32,5 +33,6 @@ function getOptions() {
 }
 
 function getFlip() {
-    return JSON.parse(localStorage.getItem("Flip"));
+    let index =getCurrentFloor().Id;
+    return JSON.parse(localStorage.getItem(`Flip-${index}`));
 }

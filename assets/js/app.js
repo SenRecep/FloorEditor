@@ -169,10 +169,10 @@ window.onload = function () {
         zoom(false);
     }
     function btnFlipClick() {
+
         setFlip(!getFlip());
         var floor = getCurrentFloor();
         var isFlip = getFlip();
-
         if (isFlip)
             $(floorBg).attr('src', `./assets/img/floors/${floor.Images.Invers}`);
         else

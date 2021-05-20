@@ -13,7 +13,8 @@ function setOptions(val) {
 }
 
 function setFlip(val) {
-  localStorage.setItem("Flip", JSON.stringify(val));
+  var index = getCurrentFloor().Id;
+  localStorage.setItem("Flip-".concat(index), JSON.stringify(val));
 }
 
 function getCurrentHouse() {
@@ -29,5 +30,6 @@ function getOptions() {
 }
 
 function getFlip() {
-  return JSON.parse(localStorage.getItem("Flip"));
+  var index = getCurrentFloor().Id;
+  return JSON.parse(localStorage.getItem("Flip-".concat(index)));
 }

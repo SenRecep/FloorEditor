@@ -95,7 +95,11 @@ function changeFloor() {
 }
 
 function floorDraw(floor) {
-  $(floorBg).attr('src', "./assets/img/floors/".concat(floor.Images.Normal));
+  if (getFlip()) {
+    $(floorBg).attr('src', "./assets/img/floors/".concat(floor.Images.Invers));
+  } else {
+    $(floorBg).attr('src', "./assets/img/floors/".concat(floor.Images.Normal));
+  }
 }
 
 function changeOption() {
