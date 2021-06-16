@@ -6,16 +6,16 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var fetchApi =
+var FetchApi =
 /*#__PURE__*/
 function () {
-  function fetchApi(config) {
-    _classCallCheck(this, fetchApi);
+  function FetchApi(config) {
+    _classCallCheck(this, FetchApi);
 
     this.config = config;
   }
 
-  _createClass(fetchApi, [{
+  _createClass(FetchApi, [{
     key: "requestByUrl",
     value: function requestByUrl(url) {
       var result;
@@ -110,7 +110,7 @@ function () {
     }
   }]);
 
-  return fetchApi;
+  return FetchApi;
 }();
 
 var GenericHttpService =

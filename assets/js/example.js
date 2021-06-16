@@ -1,32 +1,32 @@
-const fetchapi = new fetchApi({
-    baseUrl: "http://localhost:3000"
+const fetchapi = new FetchApi({
+    baseUrl: "https://housing-web-app-backend.herokuapp.com/api/v1"
 });
-const companyService = new GenericHttpService("company", fetchapi);
-const houseService= new GenericHttpService("house",fetchapi);
+const userService= new GenericHttpService("user/login",fetchapi);
+const companyService= new GenericHttpService("company",fetchapi);
 
 window.onload = async () => {
-    let companies = await companyService.GetAll();
-    console.log(companies);
-    // let newCompany = await companyService.Post({ name: "Abc", logo: "abc.png" });
-    // console.log(newCompany);
+   let loginResponse= await userService.Post({
+       userName:"opus.visuals.1",
+       password:"Password122"
+   });
+   console.log(loginResponse);
 
-    // var updateCompany= companies[0];
-    // let updateResult= await companyService.Patch(updateCompany.id,{name:"Test"});
-    // console.log(updateResult);
+   let company =await companyService.Get(loginResponse.companyId);
+   console.log(company);
 
-    //  var updateCompany= companies[0];
-    // updateCompany.name="Cba";
-    // let updateResult= await companyService.Put(updateCompany.id,updateCompany);
-    // console.log(updateResult);
-
-    //  var deleteResult= await companyService.Delete(companies[2].id);
-    //  console.log(deleteResult);
-    
-    // var houses=await companyService.GetAllSub(companies[0].id,"houses");
-    // console.log(houses);
-    // var house= await houseService.Get(houses[0].id);
-    // console.log(house);
-    // var floors= await houseService.GetAllSub(houses[0].id,"floors");
-    // console.log(floors);
+   let localStorageItem= {
+       user:{
+           id:loginResponse.id,
+           userName:loginResponse.userName,
+           companyId:loginResponse.companyId
+       },
+       company:{
+        id:company.id,
+        name:company.name,
+        logo:company.logo
+       }
+    }
+   window.localStorage.setItem("LoginUser",JSON.stringify(localStorageItem));
+   console.log(JSON.parse(window.localStorage.getItem("LoginUser")));
 };
 

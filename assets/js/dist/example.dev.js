@@ -1,41 +1,48 @@
 "use strict";
 
-var fetchapi = new fetchApi({
-  baseUrl: "http://localhost:3000"
+var fetchapi = new FetchApi({
+  baseUrl: "https://housing-web-app-backend.herokuapp.com/api/v1"
 });
+var userService = new GenericHttpService("user/login", fetchapi);
 var companyService = new GenericHttpService("company", fetchapi);
-var houseService = new GenericHttpService("house", fetchapi);
 
 window.onload = function _callee() {
-  var companies;
+  var loginResponse, company, localStorageItem;
   return regeneratorRuntime.async(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
           _context.next = 2;
-          return regeneratorRuntime.awrap(companyService.GetAll());
+          return regeneratorRuntime.awrap(userService.Post({
+            userName: "opus.visuals.1",
+            password: "Password122"
+          }));
 
         case 2:
-          companies = _context.sent;
-          console.log(companies); // let newCompany = await companyService.Post({ name: "Abc", logo: "abc.png" });
-          // console.log(newCompany);
-          // var updateCompany= companies[0];
-          // let updateResult= await companyService.Patch(updateCompany.id,{name:"Test"});
-          // console.log(updateResult);
-          //  var updateCompany= companies[0];
-          // updateCompany.name="Cba";
-          // let updateResult= await companyService.Put(updateCompany.id,updateCompany);
-          // console.log(updateResult);
-          //  var deleteResult= await companyService.Delete(companies[2].id);
-          //  console.log(deleteResult);
-          // var houses=await companyService.GetAllSub(companies[0].id,"houses");
-          // console.log(houses);
-          // var house= await houseService.Get(houses[0].id);
-          // console.log(house);
-          // var floors= await houseService.GetAllSub(houses[0].id,"floors");
-          // console.log(floors);
+          loginResponse = _context.sent;
+          console.log(loginResponse);
+          _context.next = 6;
+          return regeneratorRuntime.awrap(companyService.Get(loginResponse.companyId));
 
-        case 4:
+        case 6:
+          company = _context.sent;
+          console.log(company);
+          localStorageItem = {
+            user: {
+              id: loginResponse.id,
+              userName: loginResponse.userName,
+              companyId: loginResponse.companyId
+            },
+            company: {
+              id: company.id,
+              name: company.name,
+              logo: company.logo
+            }
+          };
+          window.localStorage.setItem("LoginUser", JSON.stringify(localStorageItem));
+          console.log(JSON.parse(window.localStorage.getItem("LoginUser")));
+
+        case 11:
         case "end":
           return _context.stop();
       }

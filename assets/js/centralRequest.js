@@ -1,4 +1,4 @@
-class fetchApi {
+class FetchApi {
     constructor(config) {
         this.config = config;
     }
@@ -13,7 +13,6 @@ class fetchApi {
             });
         return result;
     }
-
 
     async requestByConfig(url, request) {
         url = `${this.config.baseUrl}/${url}`;
@@ -31,10 +30,12 @@ class fetchApi {
     async requestByBody(url, method, body) {
         url = `${this.config.baseUrl}/${url}`;
         let request = new Request(url, {
-            method: method, headers: {
+            method: method,
+            headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
-            }, body: JSON.stringify(body)
+            }, 
+            body: JSON.stringify(body)
         });
         var result = await fetch(request)
             .then(response => {
