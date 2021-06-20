@@ -26,6 +26,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
+    <link rel="stylesheet" href="../assets/css/dist/addoption.css">
     <style>
         .form-check-input {
             position: absolute;
@@ -235,58 +236,19 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Option Create</h4>
-                                <form id="formOptionCreate">
-                                    <div class="d-flex justify-content-center mb-3">
-                                        <img class="img-fluid  img-thumbnail" style="max-height: 90px;"
-                                            src="../../assets/img/houses/house1.jpg" alt="house1">
-                                    </div>
-                                    <div class="form-row mb-3">
-                                        <label for="elevation">Elevation</label>
-                                        <select class="custom-select" id="elevation" name="elevation">
-                                            <option value="1"> House 1</option>
-                                            <option value="2"> House 2</option>
-                                            <option value="3"> House 3</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-row mb-3">
-                                        <label for="floor">Floor</label>
-                                        <select class="custom-select" id="floor" name="floor">
-                                            <option value="1"> Floor 1</option>
-                                            <option value="2"> Floor 2</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-row mb-3">
-                                        <label for="optionName">Option Name</label>
-                                        <input type="text" class="form-control" placeholder="Option Name"
-                                            id="optionName" name="optionName">
-                                    </div>
-
-                                    <div class="form-row mb-3">
-                                        <label for="optionNormal">Option Normal Image</label>
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" name="optionNormal"
-                                                id="optionNormal">
-                                            <label class="custom-file-label" for="optionNormal">Choose
-                                                Option Normal Image</label>
+                                <div class="d-flex justify-content-center">
+                                    <button id="save" class="btn btn-primary">Next</button>
+                                </div>
+                                <div class="wrapper-container">
+                                    <div id="wrapper" class="wrapper">
+                                        <img class="floor"
+                                            src="../../assets/img/floors/house-1-floor-1-normal.svg" alt="">
+                                        <div id="testitem" class="item"></div>
+                                        <div id="item" class="resize-drag" >
+                                            <img src="../../assets/img/Options/house-1-floor-1-option-1-normal.svg">
                                         </div>
                                     </div>
-
-                                    <div class="form-row mb-3">
-                                        <label for="optionInverse">Option Inverse Image</label>
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" name="optionInverse"
-                                                id="optionInverse">
-                                            <label class="custom-file-label" for="optionInverse">Choose
-                                                Option Inverse Image</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="text-center">
-                                        <button type="submit" onclick="window.location='../../Admin/html/DragDropOption.html'" class="btn btn-success">Create Drag Drop
-                                            Option</button>
-                                    </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -342,6 +304,30 @@
     <script src="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="../assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
     <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
+    <script type="module" src="../assets/js/addoption.js"></script>
+    <script>
+        window.onload = () => {
+            const save = document.getElementById("save");
+            const floor=document.querySelector(".floor");
+            const item= document.querySelector("#item");
+            const img= document.querySelector("#item img");
+            let state=true;
+            save.addEventListener("click",function(){
+                if(state){
+                    floor.setAttribute("src","../../assets/img/floors/house-1-floor-1-invers.svg");
+                    img.setAttribute("src","../../assets/img/Options/house-1-floor-1-option-1-invers.svg");
+                    state=false;
+                    save.innerText="Save";
+                    item.setAttribute("data-x",0);
+                    item.setAttribute("data-y",0);
+                    item.setAttribute('style', "");
+                    return;
+                }
+                window.location="../html/Option.html";
+            });
+        };
+    </script>
+
 </body>
 
 </html>

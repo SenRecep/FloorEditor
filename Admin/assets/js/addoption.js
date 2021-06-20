@@ -22,9 +22,8 @@ interact('.resize-drag')
 
                 target.style.transform = 'translate(' + x + 'px,' + y + 'px)'
 
-                target.setAttribute('data-x', x);
-                target.setAttribute('data-y', y);
-                target.textContent = Math.round(event.rect.width) + '\u00D7' + Math.round(event.rect.height)
+                target.setAttribute('data-x', x)
+                target.setAttribute('data-y', y)
             }
         },
         modifiers: [
@@ -35,7 +34,7 @@ interact('.resize-drag')
 
             // minimum size
             interact.modifiers.restrictSize({
-                min: { width: 100, height: 50 }
+                min: { width: 0, height: 0 }
             })
         ],
 
@@ -92,47 +91,23 @@ function dragMoveListener(event) {
 // this function is used later in the resizing and gesture demos
 window.dragMoveListener = dragMoveListener
 
-var item = document.getElementById('item');
-var testitem = document.getElementById('testitem');
-var wrapper= document.getElementById('wrapper');
-
+const item = document.getElementById('item');
+const wrapper= document.getElementById('wrapper');
 
 document.getElementById('save').addEventListener('click', function () {
     var height = item.style.height;
     var width = item.style.width;
     var x = item.dataset.x;
     var y = item.dataset.y;
-
     var left= x/wrapper.offsetWidth*100;
     var top= y/wrapper.offsetHeight*100;
-
-    testitem.style.left = `${left}%`;
-    testitem.style.top = `${top}%`;
-
-
-
-   
-
-    testitem.style.height = height;
-    testitem.style.width = width;
-
-    console.clear();
-
-
-    console.log({
-       left: testitem.style.left,
-        top:testitem.style.top
-    });
-
-    console.log({
-        h:wrapper.offsetHeight,
-        w:wrapper.offsetWidth
-    });
-
     console.log({
         height,
         width,
+        left,
+        top,
         x,
         y
     });
+
 });
