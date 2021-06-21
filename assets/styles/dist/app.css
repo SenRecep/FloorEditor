@@ -37,6 +37,26 @@ main {
   user-select: none;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 :root {
   --TURQUOISE:#1ABC9C;
   --GREENSEA:#16A085;
@@ -121,6 +141,9 @@ li.c-dropdown div.c-dropdown-menu {
 }
 li.c-dropdown div.c-dropdown-menu ul {
   list-style: none;
+  max-height: 30vh;
+  overflow-x: none;
+  overflow-y: auto;
 }
 
 main nav {
@@ -152,7 +175,7 @@ main nav ul.menu > li > a p {
   text-transform: uppercase;
 }
 main nav ul.menu > li div {
-  width: 305px;
+  width: 333px;
 }
 main nav ul.menu > li div div.header {
   background-color: var(--MIDNIGHTBLUE);
@@ -362,7 +385,7 @@ main nav ul.menu > li div ul li > span i {
   height: auto;
 }
 .editor .wrapper .floor .options .option-item img {
-  height: auto;
+  height: 100%;
   width: 100%;
 }
 .editor #measurements-container {

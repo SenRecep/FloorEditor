@@ -185,58 +185,356 @@
                 "Options": [
                     {
                         "Id": 5,
-                        "Name": "Ex Outdoor living",
+                        "Name": "BEDROOM 4 WITH BATH",
                         "Normal":{
-                            "Image":"house-1-floor-1-option-1-normal.svg",
+                            "Image":"house-1-floor-4-option-normal-1.svg",
                             "Location":{
-                                "Top":"12.32%",
+                                "Top":"0%",
                                 "Left":"auto",
-                                "Right":"5.5%",
+                                "Right":"27.4%",
                                 "Bottom":"auto"
                             }
                         },
                         "Invers":{
-                            "Image":"house-1-floor-1-option-1-invers.svg",
+                            "Image":"house-1-floor-4-option-normal-1.svg",
                             "Location":{
-                                "Top":"12.32%",
-                                "Left":"7.7%",
-                                "Right":"auto",
+                                "Top":"0%",
+                                "Left":"auto",
+                                "Right":"27.4%",
                                 "Bottom":"auto"
                             }
                         },
                         "Size":{
-                            "Height":"auto",
-                            "Width":"11%"
+                            "Height":"60%",
+                            "Width":"15.6%"
                         },
                         "Estimate": 25000
                     },
                     {
                         "Id": 6,
-                        "Name": "With bathtub",
+                        "Name": "TUB SHOWER AT OWNER",
                         "Normal":{
-                            "Image":"house-1-floor-1-option-2-normal.svg",
+                            "Image":"house-1-floor-4-option-normal-2.svg",
                             "Location":{
-                                "Top":"auto",
-                                "Left":"56.4%",
+                                "Top":"0%",
+                                "Left":"24.6%",
                                 "Right":"auto",
-                                "Bottom":"26.5%"
+                                "Bottom":"auto"
                             }
                         },
                         "Invers":{
-                            "Image":"house-1-floor-1-option-2-invers.svg",
+                            "Image":"house-1-floor-4-option-normal-2.svg",
                             "Location":{
-                                "Top":"auto",
-                                "Left":"39%",
-                                "Right":"0",
-                                "Bottom":"26.5%"
+                                "Top":"0%",
+                                "Left":"24.6%",
+                                "Right":"auto",
+                                "Bottom":"auto"
                             }
                         },
                         "Size":{
                             "Height":"auto",
-                            "Width":"6.8%"
+                            "Width":"17.8%"
+                        },
+                        "Estimate": 25000
+                    },
+                    {
+                        "Id": 7,
+                        "Name": "BEDROOM 5 WITH BATH",
+                        "Normal":{
+                            "Image":"house-1-floor-4-option-normal-3.svg",
+                            "Location":{
+                                "Top":"0%",
+                                "Left":"56.4%",
+                                "Right":"17.4%",
+                                "Bottom":"0"
+                            }
+                        },
+                        "Invers":{
+                            "Image":"house-1-floor-4-option-normal-3.svg",
+                            "Location":{
+                                "Top":"0%",
+                                "Left":"56.4%",
+                                "Right":"17.4%",
+                                "Bottom":"0"
+                            }
+                        },
+                        "Size":{
+                            "Height":"42%",
+                            "Width":"25.4%"
+                        },
+                        "Estimate": 25000
+                    },
+                    {
+                        "Id": 8,
+                        "Name": "Flex Space",
+                        "Normal":{
+                            "Image":"house-1-floor-4-option-normal-4.svg",
+                            "Location":{
+                                "Top":"25.7%",
+                                "Left":"auto",
+                                "Right":"25%",
+                                "Bottom":"auto"
+                            }
+                        },
+                        "Invers":{
+                            "Image":"house-1-floor-4-option-normal-4.svg",
+                            "Location":{
+                                "Top":"25.7%",
+                                "Left":"auto",
+                                "Right":"25%",
+                                "Bottom":"auto"
+                            }
+                        },
+                        "Size":{
+                            "Height":"auto",
+                            "Width":"21.3%"
+                        },
+                        "Estimate": 25000
+                    },
+                    {
+                        "Id": 9,
+                        "Name": "Outdoor living",
+                        "Normal":{
+                            "Image":"house-1-floor-4-option-normal-5.svg",
+                            "Location":{
+                                "Top":"auto",
+                                "Left":"0",
+                                "Right":"auto",
+                                "Bottom":"-0.5%"
+                            }
+                        },
+                        "Invers":{
+                            "Image":"house-1-floor-4-option-normal-5.svg",
+                            "Location":{
+                                "Top":"auto",
+                                "Left":"0",
+                                "Right":"auto",
+                                "Bottom":"-0.5%"
+                            }
+                        },
+                        "Size":{
+                            "Height":"auto",
+                            "Width":"9.8%"
+                        },
+                        "Estimate": 25000
+                    },
+                    {
+                        "Id": 10,
+                        "Name": "PARTIAL FLOOR PLAN ELEVATION",
+                        "Normal":{
+                            "Image":"house-1-floor-4-option-normal-6.svg",
+                            "Location":{
+                                "Top":"auto",
+                                "Left":"auto",
+                                "Right":"0",
+                                "Bottom":"auto"
+                            }
+                        },
+                        "Invers":{
+                            "Image":"house-1-floor-4-option-normal-6.svg",
+                            "Location":{
+                                "Top":"auto",
+                                "Left":"auto",
+                                "Right":"0",
+                                "Bottom":"auto"
+                            }
+                        },
+                        "Size":{
+                            "Height":"100%",
+                            "Width":"10%"
+                        },
+                        "Estimate": 25000
+                    },
+                    {
+                        "Id": 11,
+                        "Name": "Mud Bench",
+                        "Normal":{
+                            "Image":"house-1-floor-4-option-normal-7.svg",
+                            "Location":{
+                                "Top":"29.9%",
+                                "Left":"49.4%",
+                                "Right":"auto",
+                                "Bottom":"auto"
+                            }
+                        },
+                        "Invers":{
+                            "Image":"house-1-floor-4-option-normal-7.svg",
+                            "Location":{
+                                "Top":"29.9%",
+                                "Left":"49.4%",
+                                "Right":"auto",
+                                "Bottom":"auto"
+                            }
+                        },
+                        "Size":{
+                            "Height":"auto",
+                            "Width":" 9.5%"
+                        },
+                        "Estimate": 25000
+                    },
+                    {
+                        "Id": 12,
+                        "Name": "Faux Beams",
+                        "Normal":{
+                            "Image":"house-1-floor-4-option-normal-8.svg",
+                            "Location":{
+                                "Top":"37.5%",
+                                "Left":"21.8%",
+                                "Right":"auto",
+                                "Bottom":"auto"
+                            }
+                        },
+                        "Invers":{
+                            "Image":"house-1-floor-4-option-normal-8.svg",
+                            "Location":{
+                                "Top":"37.5%",
+                                "Left":"21.8%",
+                                "Right":"auto",
+                                "Bottom":"auto"
+                            }
+                        },
+                        "Size":{
+                            "Height":"auto",
+                            "Width":" 27%"
+                        },
+                        "Estimate": 25000
+                    },
+                    {
+                        "Id": 13,
+                        "Name": "Fireplace",
+                        "Normal":{
+                            "Image":"house-1-floor-4-option-normal-9.svg",
+                            "Location":{
+                                "Top":"27.5%",
+                                "Left":"40.4%",
+                                "Right":"auto",
+                                "Bottom":"auto"
+                            }
+                        },
+                        "Invers":{
+                            "Image":"house-1-floor-4-option-normal-9.svg",
+                            "Location":{
+                                "Top":"27.5%",
+                                "Left":"40.4%",
+                                "Right":"auto",
+                                "Bottom":"auto"
+                            }
+                        },
+                        "Size":{
+                            "Height":"auto",
+                            "Width":" 8.5%"
+                        },
+                        "Estimate": 25000
+                    },
+                    {
+                        "Id": 14,
+                        "Name": "Kitchen Components",
+                        "Normal":{
+                            "Image":"house-1-floor-4-option-normal-10.svg",
+                            "Location":{
+                                "Top":"76.7%",
+                                "Left":"35.9%",
+                                "Right":"auto",
+                                "Bottom":"auto"
+                            }
+                        },
+                        "Invers":{
+                            "Image":"house-1-floor-4-option-normal-10.svg",
+                            "Location":{
+                                "Top":"76.7%",
+                                "Left":"35.9%",
+                                "Right":"auto",
+                                "Bottom":"auto"
+                            }
+                        },
+                        "Size":{
+                            "Height":"auto",
+                            "Width":" 13.1%"
+                        },
+                        "Estimate": 25000
+                    },
+                    {
+                        "Id": 15,
+                        "Name": "Laundry Components",
+                        "Normal":{
+                            "Image":"house-1-floor-4-option-normal-11.svg",
+                            "Location":{
+                                "Top":"0.6%",
+                                "Left":"49.5%",
+                                "Right":"auto",
+                                "Bottom":"auto"
+                            }
+                        },
+                        "Invers":{
+                            "Image":"house-1-floor-4-option-normal-11.svg",
+                            "Location":{
+                                "Top":"0.6%",
+                                "Left":"49.5%",
+                                "Right":"auto",
+                                "Bottom":"auto"
+                            }
+                        },
+                        "Size":{
+                            "Height":"auto",
+                            "Width":" 7%"
+                        },
+                        "Estimate": 25000
+                    },
+                    {
+                        "Id": 16,
+                        "Name": "Window and Door at Owner",
+                        "Normal":{
+                            "Image":"house-1-floor-4-option-normal-12.svg",
+                            "Location":{
+                                "Top":"-1%",
+                                "Left":"3%",
+                                "Right":"auto",
+                                "Bottom":"auto"
+                            }
+                        },
+                        "Invers":{
+                            "Image":"house-1-floor-4-option-normal-12.svg",
+                            "Location":{
+                                "Top":"-1%",
+                                "Left":"3%",
+                                "Right":"auto",
+                                "Bottom":"auto"
+                            }
+                        },
+                        "Size":{
+                            "Height":"auto",
+                            "Width":" 16%"
+                        },
+                        "Estimate": 25000
+                    },
+                    {
+                        "Id": 17,
+                        "Name": "WIndow at Bath2",
+                        "Normal":{
+                            "Image":"house-1-floor-4-option-normal-13.svg",
+                            "Location":{
+                                "Top":"auto",
+                                "Left":"70%",
+                                "Right":"auto",
+                                "Bottom":"-1%"
+                            }
+                        },
+                        "Invers":{
+                            "Image":"house-1-floor-4-option-normal-13.svg",
+                            "Location":{
+                                "Top":"auto",
+                                "Left":"70%",
+                                "Right":"auto",
+                                "Bottom":"-1%"
+                            }
+                        },
+                        "Size":{
+                            "Height":"auto",
+                            "Width":" 5%"
                         },
                         "Estimate": 25000
                     }
+
                 ]
             }
         ]

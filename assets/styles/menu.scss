@@ -25,6 +25,9 @@ li.c-dropdown {
 
         ul {
             list-style: none;
+            max-height: 30vh;
+            overflow-x: none;
+            overflow-y: auto;
         }
     }
 }
@@ -65,7 +68,7 @@ main {
                 }
 
                 div {
-                    width: 305px;
+                    width: 333px;
 
                     div.header {
                         $headerHeight: 40px;

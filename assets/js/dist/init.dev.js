@@ -137,7 +137,7 @@ function drawDirectionOption(option, isFlip) {
   var element = $("#option-item-".concat(option.Id))[0];
   var img = $(element).children()[0];
   var prop = isFlip ? "Invers" : "Normal";
-  img.setAttribute('src', "/assets/img/Options/".concat(option[prop].Image));
+  img.setAttribute('src', "./assets/img/Options/".concat(option[prop].Image));
   element.style.position = "absolute";
   element.style.top = option[prop].Location.Top;
   element.style.left = option[prop].Location.Left;

@@ -80,7 +80,7 @@
   height: auto;
 }
 .editor .wrapper .floor .options .option-item img {
-  height: auto;
+  height: 100%;
   width: 100%;
 }
 .editor #measurements-container {
