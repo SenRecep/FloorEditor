@@ -236,6 +236,7 @@
                         <div class="card">
                             <div class="card-body"> 
                                 <button type="button"
+                                    onclick="window.location='../html/CreateFloor.html'"
                                     class="btn waves-effect waves-light btn-rounded btn-outline-success mb-3">Create Floor</button> 
 
                                 <div class="table-responsive">
@@ -268,33 +269,28 @@
                                                 </td>
                                                 <td>Floor 1</td>
                                                 <td>House 1</td>
-                                                <td><img width="150"src="http://www.flooreditor.somee.com/assets/img/floors/house-1-floor-1-normal.svg"/></td>
-                                                <td><img width="150"src="http://www.flooreditor.somee.com/assets/img/floors/house-1-floor-1-invers.svg"/></td>
+                                                <td><img width="150"src="../../assets/img/floors/house-1-floor-1-normal.svg"/></td>
+                                                <td><img width="150"src="../../assets/img/floors/house-1-floor-1-invers.svg"/></td>
                                                 <td>  
-                                                    
-                                                        <button type="button" onclick="DeleteUser(1)" class="btn btn-danger btn-rounded"><i class="fas fa-trash"></i> </button>
-                                                        <a class="btn btn-success btn-rounded" href="./EditFloor.html"><i class="fas fa-edit"></i> </a>
-                                                        <button type="button" onclick="DeleteUser(1)" class="btn btn-info btn-rounded"><i class="fas fa-info"></i> </button>
-
-                                                    
+                                                    <button type="button" class="btn btn-danger btn-rounded"
+                                                    data-toggle="modal" data-target="#danger-header-modal"><i
+                                                        class="fas fa-trash"></i></button>
+                                                    <a class="btn btn-success btn-rounded" href="./EditFloor.html"><i
+                                                            class="fas fa-edit"></i> </a>
+                                                    <a class="btn btn-info btn-rounded" href="./EditFloor.html"><i
+                                                            class="fas fa-info"></i> </a>
                                                 </td> 
                                             </tr>
                                            
                                             
                                         </tbody>
 
-
-
-
-
                                     </table>
 
                                     <button type="button"
-                                    class="btn waves-effect waves-light btn-rounded btn-outline-danger">Delete Selected <i class="fas fa-trash"></i></button> 
-
-
-
-
+                                    data-toggle="modal" data-target="#danger-header-modal"
+                                        class="btn waves-effect waves-light btn-rounded btn-outline-danger">Delete
+                                        Selected <i class="fas fa-trash"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -325,6 +321,26 @@
         <!-- End Page wrapper  -->
         <!-- ============================================================== -->
     </div>
+
+    <div id="danger-header-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="danger-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-danger">
+                    <h4 class="modal-title" id="danger-header-modalLabel">Are You Sure?</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <h5 class="mt-0">Floor Delete</h5>
+                    Do you want to delete the floor 
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
     <!-- ============================================================== -->
     <!-- End Wrapper -->
     <!-- ============================================================== -->

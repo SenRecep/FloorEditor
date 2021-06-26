@@ -185,13 +185,13 @@
                 "Options": [
                     {
                         "Id": 5,
-                        "Name": "BEDROOM 4 WITH BATH",
+                        "Name": "BEDROOM 4 WITH BATH 3",
                         "Normal":{
                             "Image":"house-1-floor-4-option-normal-1.svg",
                             "Location":{
                                 "Top":"0%",
                                 "Left":"auto",
-                                "Right":"27.4%",
+                                "Right":"27.0%",
                                 "Bottom":"auto"
                             }
                         },
@@ -200,13 +200,13 @@
                             "Location":{
                                 "Top":"0%",
                                 "Left":"auto",
-                                "Right":"27.4%",
+                                "Right":"27.0%",
                                 "Bottom":"auto"
                             }
                         },
                         "Size":{
-                            "Height":"60%",
-                            "Width":"15.6%"
+                            "Height":"auto",
+                            "Width":"24.2%"
                         },
                         "Estimate": 25000
                     },
@@ -216,8 +216,8 @@
                         "Normal":{
                             "Image":"house-1-floor-4-option-normal-2.svg",
                             "Location":{
-                                "Top":"0%",
-                                "Left":"24.6%",
+                                "Top":"1%",
+                                "Left":"25.5%",
                                 "Right":"auto",
                                 "Bottom":"auto"
                             }
@@ -225,54 +225,54 @@
                         "Invers":{
                             "Image":"house-1-floor-4-option-normal-2.svg",
                             "Location":{
-                                "Top":"0%",
-                                "Left":"24.6%",
+                                "Top":"1%",
+                                "Left":"25.5%",
                                 "Right":"auto",
                                 "Bottom":"auto"
                             }
                         },
                         "Size":{
                             "Height":"auto",
-                            "Width":"17.8%"
+                            "Width":"16.5%"
                         },
                         "Estimate": 25000
                     },
                     {
                         "Id": 7,
-                        "Name": "BEDROOM 5 WITH BATH",
+                        "Name": "BEDROOM 5 WITH BATH 4",
                         "Normal":{
                             "Image":"house-1-floor-4-option-normal-3.svg",
                             "Location":{
                                 "Top":"0%",
-                                "Left":"56.4%",
-                                "Right":"17.4%",
-                                "Bottom":"0"
+                                "Left":"34.13%",
+                                "Right":"auto",
+                                "Bottom":"auto"
                             }
                         },
                         "Invers":{
                             "Image":"house-1-floor-4-option-normal-3.svg",
                             "Location":{
                                 "Top":"0%",
-                                "Left":"56.4%",
-                                "Right":"17.4%",
-                                "Bottom":"0"
+                                "Left":"34.13%",
+                                "Right":"auto",
+                                "Bottom":"auto"
                             }
                         },
                         "Size":{
-                            "Height":"42%",
-                            "Width":"25.4%"
+                            "Height":"auto",
+                            "Width":"38.7%"
                         },
                         "Estimate": 25000
                     },
                     {
                         "Id": 8,
-                        "Name": "Flex Space",
+                        "Name": "Flex With Stair",
                         "Normal":{
                             "Image":"house-1-floor-4-option-normal-4.svg",
                             "Location":{
-                                "Top":"25.7%",
+                                "Top":"25.4%",
                                 "Left":"auto",
-                                "Right":"25%",
+                                "Right":"24.69%",
                                 "Bottom":"auto"
                             }
                         },
@@ -293,34 +293,34 @@
                     },
                     {
                         "Id": 9,
-                        "Name": "Outdoor living",
+                        "Name": "Extended Outdoor Living",
                         "Normal":{
                             "Image":"house-1-floor-4-option-normal-5.svg",
                             "Location":{
                                 "Top":"auto",
-                                "Left":"0",
+                                "Left":"auto",
                                 "Right":"auto",
-                                "Bottom":"-0.5%"
+                                "Bottom":"0%"
                             }
                         },
                         "Invers":{
                             "Image":"house-1-floor-4-option-normal-5.svg",
                             "Location":{
                                 "Top":"auto",
-                                "Left":"0",
+                                "Left":"auto",
                                 "Right":"auto",
-                                "Bottom":"-0.5%"
+                                "Bottom":"0%"
                             }
                         },
                         "Size":{
                             "Height":"auto",
-                            "Width":"9.8%"
+                            "Width":"9.6%"
                         },
                         "Estimate": 25000
                     },
                     {
                         "Id": 10,
-                        "Name": "PARTIAL FLOOR PLAN ELEVATION",
+                        "Name": "Partial Floor Plan Elevation B",
                         "Normal":{
                             "Image":"house-1-floor-4-option-normal-6.svg",
                             "Location":{

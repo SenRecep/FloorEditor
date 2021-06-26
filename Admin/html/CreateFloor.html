@@ -205,7 +205,7 @@
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
-                                    <li class="breadcrumb-item"><a href="index.html">Option</a>
+                                    <li class="breadcrumb-item"><a href="index.html"> Edit Elevation </a>
                                     </li>
                                 </ol>
                             </nav>
@@ -234,71 +234,97 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <div class="card">
-                            <div class="card-body"> 
-                                <button type="button"
-                                    onclick="window.location='./AddOption.html'"
-                                    class="btn waves-effect waves-light btn-rounded btn-outline-success mb-3">Create Option</button> 
+                            <div class="card-body">
+                                <h4 class="card-title">Add Floor</h4>
+                                <form action="#">
+                                    <div class="form-body"> 
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label for="floorName">Floor Name</label>
+                                                <input type="text" class="form-control" placeholder="Floor Name"
+                                                    id="floorName" name="floorName">
+                                            </div>    
+                                        </div>  
+                                        <div class="row">
 
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead class="bg-primary text-white">
-                                            <tr>
-                                                <th>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                                        <label class="custom-control-label" for="customCheck1">Check all</label>
-                                                    </div>
-                                                </th>
-                                                <th>Floor Name </th>
-                                                <th>Elevation Name </th>
-                                                <th>Image Normal</th>
-                                                <th>Image Inverse</th>
-                                                <th>Status</th> 
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                                        <label class="custom-control-label" for="customCheck1"></label>
-                                                    </div>
+                                            <div class="col-md-6">
+                                                <div class="form-row mb-3">
+                                                    <label for="elevation">Elevation</label>
+                                                    <select class="custom-select" id="elevation" name="elevation">
+                                                        <option value="1"> House 1</option>
+                                                        <option value="2"> House 2</option>
+                                                        <option value="3"> House 3</option>
+                                                    </select>
+                                                </div>
+                                            </div>
 
-
-                                                </td>
-                                                <td>Floor 1</td>
-                                                <td>House 1</td>
-                                                <td><img width="80"src="../../assets/img/Options/house-1-floor-1-option-1-normal.svg"/></td>
-                                                <td><img width="80"src="../../assets/img/Options/house-1-floor-1-option-1-invers.svg"/></td>
-                                                <td>  
-                                                    
-                                                    <button type="button" class="btn btn-danger btn-rounded"
-                                                    data-toggle="modal" data-target="#danger-header-modal"><i
-                                                        class="fas fa-trash"></i></button>
-                                                        <a class="btn btn-success btn-rounded" href="./EditOption.html"><i class="fas fa-edit"></i> </a>
-                                                        <a class="btn btn-info btn-rounded" href="./EditOption.html"><i class="fas fa-info"></i> </a>
-                                                </td> 
-                                            </tr>
+                                        </div>
+                                       
+                                        <div class="row">
                                            
-                                            
-                                        </tbody>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                     
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                                        <label class="custom-file-label" for="inputGroupFile01">Choose Floor Image</label>
+                                                    </div>
+                                                
+                                                </div>
+                                                 
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <img class="img-thumbnail"
+                                                    src="http://www.flooreditor.somee.com/assets/img/floors/house-1-floor-1-normal.svg" style="width: 25%;"alt="house 1">
+                                            </div>
+                                        </div>
 
-
-
-
-
-                                    </table>
-
-                                    <button type="button"
-                                    data-toggle="modal" data-target="#danger-header-modal"
-                                        class="btn waves-effect waves-light btn-rounded btn-outline-danger">Delete
-                                        Selected <i class="fas fa-trash"></i></button>
-
-
-
-
-                                </div>
+                                        <div class="row">
+                                           
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                     
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                                        <label class="custom-file-label" for="inputGroupFile01">Choose Floor Image Inverse</label>
+                                                    </div>
+                                                
+                                                </div>
+                                                 
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <img class="img-thumbnail"
+                                                    src="http://www.flooreditor.somee.com/assets/img/floors/house-1-floor-1-invers.svg"  style="width: 25%;"alt="house 1">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label for="floorWidth">Real Width(inch)</label>
+                                                <input type="number" class="form-control" placeholder="Real Width(inch)"
+                                                    id="floorWidth" name="floorWidth">
+                                            </div>    
+                                        </div> 
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label for="floorHeight">Real Height(inch)</label>
+                                                <input type="number" class="form-control" placeholder="Real Height(inch)"
+                                                    id="floorHeight" name="floorHeight">
+                                            </div>    
+                                        </div> 
+                                    
+                                        
+                                    </div>
+                                    <div class="form-actions">
+                                        <div class="text-right">
+                                            <button type="submit" class="btn btn-success">Save</button>
+                                            <button type="reset" class="btn btn-dark">Reset</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -328,26 +354,6 @@
         <!-- End Page wrapper  -->
         <!-- ============================================================== -->
     </div>
-
-    <div id="danger-header-modal" class="modal fade" tabindex="-1" role="dialog"
-        aria-labelledby="danger-header-modalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header modal-colored-header bg-danger">
-                    <h4 class="modal-title" id="danger-header-modalLabel">Are You Sure?</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                </div>
-                <div class="modal-body">
-                    <h5 class="mt-0">Floor Delete</h5>
-                    Do you want to delete the floor 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
     <!-- ============================================================== -->
     <!-- End Wrapper -->
     <!-- ============================================================== -->

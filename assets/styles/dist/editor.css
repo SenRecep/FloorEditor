@@ -15,7 +15,7 @@
   top: 10%;
   display: flex;
   flex-direction: column;
-  z-index: 3;
+  z-index: 4;
 }
 .editor .controller .btn {
   width: 54px;
@@ -87,7 +87,10 @@
   height: 100%;
   width: 100%;
   visibility: hidden;
-  z-index: 5;
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .editor #measurements {
   stroke: var(--WETASPHALT);
@@ -96,5 +99,4 @@
 .editor #measurementsText {
   stroke: var(--SILVER);
   font-size: 20px;
-  z-index: 10;
 }
