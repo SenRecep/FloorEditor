@@ -15,8 +15,6 @@
     <link href="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
     <!-- Custom CSS -->
     <link href="../dist/css/style.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/dist/ui/trumbowyg.css">
-        <link rel="stylesheet" href="/dist/plugins/colors/ui/trumbowyg.colors.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -126,13 +124,13 @@
                                 <img src="../assets/images/tricoast_logo-2 (1).png" alt="user"
                                     width="120">
                                 <span class="ml-2 d-none d-lg-inline-block"><span
-                                        class="text-dark">TRİCOAST</span> <i data-feather="chevron-down"
+                                        class="text-dark" id="userName"></span> <i data-feather="chevron-down"
                                         class="svg-icon"></i></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
                                 
                                 
-                                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="power"
+                                <a class="dropdown-item" href="login.html"><i data-feather="power"
                                         class="svg-icon mr-2 ml-1"></i>
                                     Logout</a>
                                    
@@ -180,7 +178,7 @@
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="Documentation.html"
                                 aria-expanded="false"><i data-feather="edit-3" class="feather-icon"></i><span
                                     class="hide-menu">Documentation</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="Logout.html"
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="login.html"
                                 aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
                                     class="hide-menu">Logout</span></a></li>
                     </ul>
@@ -205,7 +203,7 @@
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
-                                    <li class="breadcrumb-item"><a href="index.html">Option</a>
+                                    <li class="breadcrumb-item"><a href="index.html"> Add Elevation </a>
                                     </li>
                                 </ol>
                             </nav>
@@ -234,71 +232,94 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <div class="card">
-                            <div class="card-body"> 
-                                <button type="button"
-                                    onclick="window.location='./AddOption.html'"
-                                    class="btn waves-effect waves-light btn-rounded btn-outline-success mb-3">Create Option</button> 
+                            <div class="card-body">
+                                <h4 class="card-title">Add Floor</h4>
+                                <form action="#">
+                                    <div class="form-body"> 
+                                        <div class="row">
 
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead class="bg-primary text-white">
-                                            <tr>
-                                                <th>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                                        <label class="custom-control-label" for="customCheck1">Check all</label>
-                                                    </div>
-                                                </th>
-                                                <th>Floor Name </th>
-                                                <th>Elevation Name </th>
-                                                <th>Image Normal</th>
-                                                <th>Image Inverse</th>
-                                                <th>Status</th> 
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                                        <label class="custom-control-label" for="customCheck1"></label>
-                                                    </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder="Elevation Name">
+                                                </div>
+                                               
+                                            </div>
 
+                                        </div>  
+                                        <div class="row">
 
-                                                </td>
-                                                <td>Floor 1</td>
-                                                <td>House 1</td>
-                                                <td><img width="80"src="../../assets/img/Options/house-1-floor-1-option-1-normal.svg"/></td>
-                                                <td><img width="80"src="../../assets/img/Options/house-1-floor-1-option-1-invers.svg"/></td>
-                                                <td>  
-                                                    
-                                                    <button type="button" class="btn btn-danger btn-rounded"
-                                                    data-toggle="modal" data-target="#danger-header-modal"><i
-                                                        class="fas fa-trash"></i></button>
-                                                        <a class="btn btn-success btn-rounded" href="./EditOption.html"><i class="fas fa-edit"></i> </a>
-                                                        <a class="btn btn-info btn-rounded" href="./EditOption.html"><i class="fas fa-info"></i> </a>
-                                                </td> 
-                                            </tr>
+                                            <div class="col-md-6">
+                                                <div class="form-group mb-4">
+                                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Select Elevation</label>
+                                                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                                        <option selected="">Choose...</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                       
+                                        <div class="row">
                                            
-                                            
-                                        </tbody>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                     
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                                        <label class="custom-file-label" for="inputGroupFile01">Choose Floor Image</label>
+                                                    </div>
+                                                
+                                                </div>
+                                                 
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                           
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                     
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                                        <label class="custom-file-label" for="inputGroupFile01">Choose Floor Image Inverse</label>
+                                                    </div>
+                                                
+                                                </div>
+                                                 
+                                            </div>
+                                        </div>
+                                        <div class="row">
 
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder="Real Width(inch)">
+                                                </div>
+                                               
+                                            </div>
 
+                                        </div>
+                                        <div class="row">
 
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder="Real Height(inch)">
+                                                </div>
+                                               
+                                            </div>
 
-
-                                    </table>
-
-                                    <button type="button"
-                                    data-toggle="modal" data-target="#danger-header-modal"
-                                        class="btn waves-effect waves-light btn-rounded btn-outline-danger">Delete
-                                        Selected <i class="fas fa-trash"></i></button>
-
-
-
-
-                                </div>
+                                        </div>
+                                    
+                                        
+                                    </div>
+                                    <div class="form-actions">
+                                        <div class="text-right">
+                                            <button type="submit" class="btn btn-success">Create</button>
+                                            <button type="reset" class="btn btn-dark">Reset</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -328,52 +349,21 @@
         <!-- End Page wrapper  -->
         <!-- ============================================================== -->
     </div>
-
-    <div id="danger-header-modal" class="modal fade" tabindex="-1" role="dialog"
-        aria-labelledby="danger-header-modalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header modal-colored-header bg-danger">
-                    <h4 class="modal-title" id="danger-header-modalLabel">Are You Sure?</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                </div>
-                <div class="modal-body">
-                    <h5 class="mt-0">Floor Delete</h5>
-                    Do you want to delete the floor 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
     <!-- ============================================================== -->
     <!-- End Wrapper -->
     <!-- ============================================================== -->
     <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
     <!-- ============================================================== -->
     <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
     <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- apps -->
-    <!-- apps -->
     <script src="../dist/js/app-style-switcher.js"></script>
     <script src="../dist/js/feather.min.js"></script>
     <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../assets/extra-libs/sparkline/sparkline.js"></script>
     <script src="../dist/js/sidebarmenu.js"></script>
-    <!--Custom JavaScript -->
     <script src="../dist/js/custom.min.js"></script>
-    <!--This page JavaScript -->
-    <script src="../assets/extra-libs/c3/d3.min.js"></script>
-    <script src="../assets/extra-libs/c3/c3.min.js"></script>
-    <script src="../assets/libs/chartist/dist/chartist.min.js"></script>
-    <script src="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-    <script src="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
-    <script src="../assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
+    <script src="../assets/extra-libs/prism/prism.js"></script>
     <script src="../../assets/js/storage.js" ></script>
     <script src="../../assets/js/loginCheck.js" ></script>
 

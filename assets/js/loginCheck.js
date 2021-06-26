@@ -1,8 +1,8 @@
 window.onload=function(){
-    const loginUser= getLoginUser();
-    if(loginUser){
+    if(checkLoginUser()!='undefined'){
+        const loginUser= getLoginUser();
         document.getElementById("userName").innerHTML=`${loginUser.user.userName} ${loginUser.company.name}`;
         return;
     }
-    window.location="../../Admin/html/login.html";
+    window.location="../../Admin/pages/login.html";
 }

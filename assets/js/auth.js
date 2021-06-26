@@ -7,6 +7,9 @@ const companyService= new GenericHttpService(endpoints.COMPANY,fetchapi);
 const signInButton=document.getElementById("signIn");
 const signInPageUserName=document.getElementById("signInPageUserName");
 const signInPagePassword=document.getElementById("signInPagePassword");
+
+clearLoginUser();
+
 signInButton.addEventListener("click",async (e)=>{
     e.preventDefault();
     let loginResponse= await userService.PostAsync({
@@ -41,5 +44,5 @@ signInButton.addEventListener("click",async (e)=>{
         }
      }
     setLoginUser(localStorageItem);
-    window.location="../../Admin/html/index.html";
+    window.location="../../Admin/pages/index.html";
 });

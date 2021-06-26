@@ -15,9 +15,6 @@
     <link href="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
     <!-- Custom CSS -->
     <link href="../dist/css/style.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/dist/ui/trumbowyg.css">
-    <link rel="stylesheet" href="/dist/plugins/colors/ui/trumbowyg.colors.css">
-    <link rel="stylesheet" href="../Editor/assets/lib/trumbowyg/trumbowyg.min.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -25,13 +22,15 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-    <style>
-        .form-check-input {
-            position: absolute;
-            margin-top: .3rem;
-            margin-left: -.9rem;
-        }
-    </style>
+<style> 
+
+.form-check-input {
+    position: absolute;
+    margin-top: .3rem;
+    margin-left: -.9rem;
+}
+
+</style>
 
 </head>
 
@@ -101,12 +100,12 @@
                     <!-- ============================================================== -->
                     <ul class="navbar-nav float-left mr-auto ml-3 pl-1">
                         <!-- Notification -->
-
+                         
                         <!-- End Notification -->
                         <!-- ============================================================== -->
                         <!-- create new -->
                         <!-- ============================================================== -->
-
+                        
                     </ul>
                     <!-- ============================================================== -->
                     <!-- Right side toggle and nav items -->
@@ -115,24 +114,26 @@
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-
+                        
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
-                                <img src="../assets/images/tricoast_logo-2 (1).png" alt="user" width="120">
-                                <span class="ml-2 d-none d-lg-inline-block"><span class="text-dark">TRİCOAST</span> <i
-                                        data-feather="chevron-down" class="svg-icon"></i></span>
+                                <img src="../assets/images/tricoast_logo-2 (1).png" alt="user"
+                                    width="120">
+                                <span class="ml-2 d-none d-lg-inline-block"><span
+                                        class="text-dark" id="userName"></span> <i data-feather="chevron-down"
+                                        class="svg-icon"></i></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-
-
-                                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="power"
+                                
+                                
+                                <a class="dropdown-item" href="login.html"><i data-feather="power"
                                         class="svg-icon mr-2 ml-1"></i>
                                     Logout</a>
-
+                                   
                             </div>
                         </li>
                         <!-- ============================================================== -->
@@ -156,29 +157,28 @@
                     <ul id="sidebarnav">
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="index.html"
                                 aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
-                                    class="hide-menu">Dashboard</span></a></li>
-
-
-                        <li class="sidebar-item" id="subscribe"> <a class="sidebar-link sidebar-link" id="subscribe"
-                                href="subscribe.html" aria-expanded="false"><i data-feather="bell"
-                                    class="feather-icon"></i><span class="hide-menu">Subscribers</span></a>
-                        </li>
-
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="Elevation.html"
-                                aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
-                                    class="hide-menu">Elevation</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="Floor.html"
+                                    class="hide-menu">Dashboard</span></a></li> 
+                     
+                        
+                    <li class="sidebar-item" id="subscribe"> <a class="sidebar-link sidebar-link" id="subscribe" href="subscribe.html"
+                        aria-expanded="false"><i data-feather="bell" class="feather-icon"></i><span
+                            class="hide-menu">Subscribers</span></a></li>
+                       
+                          <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="Elevation.html"
+                        aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
+                            class="hide-menu">Elevation</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="Floor.html"
                                 aria-expanded="false"><i data-feather="layers" class="feather-icon"></i><span
                                     class="hide-menu">Floor</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="Option.html"
-                                aria-expanded="false"><i data-feather="sliders" class="feather-icon"></i><span
-                                    class="hide-menu">Option</span></a></li>
+                                    <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="Option.html"
+                                        aria-expanded="false"><i data-feather="sliders" class="feather-icon"></i><span
+                                            class="hide-menu">Option</span></a></li>
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">Extra</span></li>
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="Documentation.html"
                                 aria-expanded="false"><i data-feather="edit-3" class="feather-icon"></i><span
                                     class="hide-menu">Documentation</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="Logout.html"
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="login.html"
                                 aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
                                     class="hide-menu">Logout</span></a></li>
                     </ul>
@@ -199,17 +199,17 @@
             <!-- ============================================================== -->
             <div class="page-breadcrumb">
                 <div class="row">
-                    <div class="col-7 align-self-center">
+                    <div class="col-7 align-self-center"> 
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
-                                    <li class="breadcrumb-item"><a href="index.html">Subscribe</a>
+                                    <li class="breadcrumb-item"><a href="index.html">Floor</a>
                                     </li>
                                 </ol>
                             </nav>
                         </div>
                     </div>
-
+                    
                 </div>
             </div>
             <!-- ============================================================== -->
@@ -222,54 +222,7 @@
                 <!-- *************************************************************** -->
                 <!-- Start First Cards -->
                 <!-- *************************************************************** -->
-
-                <div class="row">
-                    <div class="col-lg-12 col-md-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Mail Editor</h4>
-                                <textarea id="editor">
-                                    <table cellpadding="0" cellspacing="0" width="100%" align="center" bgcolor="#ebebeb">
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <table width="900" border="0" cellpadding="0" cellspacing="0" align="center">
-                                                        <tbody>
-                                                            <tr>
-                                                                <td colspan="3"><img style="display:block" border="0" src="https://www.petroteks.com/Admin/assets/images/mailpage1.png" width="900" height="400" alt="" tabindex="0"></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><img style="display:block" border="0" src="https://www.petroteks.com/Admin/assets/images/solcizg.png" width="125" height="400" alt="" class="CToWUd"></td>
-                                                                <td width="650" height="400" bgcolor="#FFFFFF" align="center">
-                                                                    <font face="Helvetica Neue, Helvetica, Arial" color="#1b4772" size="5"><strong><span class="il">Floor Editor</span> Subscription</strong></font>
-                                                                    <br>
-                                                                    <br>
-                                                                    <font face="Helvetica Neue, Helvetica, Arial" color="#333333"></font>
-                                                                    <p style="line-height:23px">
-                                                                        <font face="Helvetica Neue, Helvetica, Arial" color="#333333"><span class="il">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</font></p>
-                                                                    <br>
-                                                                    <br>
-                                                                    <br>
-                                                                    <a href="#m_-5161798783556842402_" style="text-decoration:none"><img style="display:block" border="0" src="https://www.petroteks.com/Admin/assets/images/btn1.png" width="250" height="75" class="CToWUd"></a>
-                                                                </td>
-                                                                <td><img style="display:block" border="0" src="https://www.petroteks.com/Admin/assets/images/sagcizg.png" width="125" height="400" alt="" class="CToWUd"></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td colspan="3"><img style="display:block" border="0" src="https://www.petroteks.com/Admin/assets/images/altcizg.png" width="900" height="175" alt="" class="CToWUd a6T" tabindex="0"> </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
+                
                 <!-- *************************************************************** -->
                 <!-- End First Cards -->
                 <!-- *************************************************************** -->
@@ -279,8 +232,10 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Primary Table</h4>
+                            <div class="card-body"> 
+                                <button type="button"
+                                    onclick="window.location='../pages/CreateFloor.html'"
+                                    class="btn waves-effect waves-light btn-rounded btn-outline-success mb-3">Create Floor</button> 
 
                                 <div class="table-responsive">
                                     <table class="table">
@@ -288,88 +243,61 @@
                                             <tr>
                                                 <th>
                                                     <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input"
-                                                            id="customCheck1">
-                                                        <label class="custom-control-label" for="customCheck1">Check
-                                                            all</label>
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                        <label class="custom-control-label" for="customCheck1">Check all</label>
                                                     </div>
                                                 </th>
-                                                <th>Mail</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Phone</th>
+                                                <th>Floor Name </th>
+                                                <th>Elevation Name </th>
+                                                <th>Image Normal</th>
+                                                <th>Image Inverse</th>
+                                                <th>Status</th> 
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>
-
+                                                    
                                                     <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input"
-                                                            id="customCheck1">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
                                                         <label class="custom-control-label" for="customCheck1"></label>
                                                     </div>
 
 
                                                 </td>
-                                                <td>johneichmann@tricoast.com</td>
-                                                <td>John</td>
-                                                <td>Eichmann</td>
-                                                <td>05076652367</td>
+                                                <td>Floor 1</td>
+                                                <td>House 1</td>
+                                                <td><img width="150"src="../../assets/img/floors/house-1-floor-1-normal.svg"/></td>
+                                                <td><img width="150"src="../../assets/img/floors/house-1-floor-1-invers.svg"/></td>
+                                                <td>  
+                                                    <button type="button" class="btn btn-danger btn-rounded"
+                                                    data-toggle="modal" data-target="#danger-header-modal"><i
+                                                        class="fas fa-trash"></i></button>
+                                                    <a class="btn btn-success btn-rounded" href="./EditFloor.html"><i
+                                                            class="fas fa-edit"></i> </a>
+                                                    <a class="btn btn-info btn-rounded" href="./EditFloor.html"><i
+                                                            class="fas fa-info"></i> </a>
+                                                </td> 
                                             </tr>
-                                            <tr>
-                                                <td>
-
-
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input"
-                                                            id="customCheck1">
-                                                        <label class="custom-control-label" for="customCheck1"></label>
-                                                    </div>
-                                                </td>
-                                                <td>johndoe@tricoast.com</td>
-                                                <td>John</td>
-                                                <td>Doe</td>
-                                                <td>05076652367</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input"
-                                                            id="customCheck1">
-                                                        <label class="custom-control-label" for="customCheck1"></label>
-                                                    </div>
-                                                </td>
-                                                <td>nigam@tricoast.com</td>
-                                                <td>nigam</td>
-                                                <td>Eichmann</td>
-                                                <td>05076652367</td>
-                                            </tr>
+                                           
+                                            
                                         </tbody>
-
-
-
-
 
                                     </table>
 
                                     <button type="button"
-                                        class="btn waves-effect waves-light btn-rounded btn-outline-success">Send
-                                        Mail
-                                        Selected</button>
-
-
-
-
+                                    data-toggle="modal" data-target="#danger-header-modal"
+                                        class="btn waves-effect waves-light btn-rounded btn-outline-danger">Delete
+                                        Selected <i class="fas fa-trash"></i></button>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
-
+                
+                   
+                
                 </div>
-
+               
                 <!-- *************************************************************** -->
                 <!-- End Top Leader Table -->
                 <!-- *************************************************************** -->
@@ -381,7 +309,7 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center text-muted">
-                All Rights Reserved by opusvisual.
+                All Rights Reserved by opusvisual.  
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
@@ -391,37 +319,45 @@
         <!-- End Page wrapper  -->
         <!-- ============================================================== -->
     </div>
+
+    <div id="danger-header-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="danger-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-danger">
+                    <h4 class="modal-title" id="danger-header-modalLabel">Are You Sure?</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <h5 class="mt-0">Floor Delete</h5>
+                    Do you want to delete the floor 
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
     <!-- ============================================================== -->
     <!-- End Wrapper -->
     <!-- ============================================================== -->
     <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
     <!-- ============================================================== -->
     <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
     <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- apps -->
-    <!-- apps -->
     <script src="../dist/js/app-style-switcher.js"></script>
     <script src="../dist/js/feather.min.js"></script>
     <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../assets/extra-libs/sparkline/sparkline.js"></script>
     <script src="../dist/js/sidebarmenu.js"></script>
-    <!--Custom JavaScript -->
     <script src="../dist/js/custom.min.js"></script>
-    <!--This page JavaScript -->
-    <script src="../assets/extra-libs/c3/d3.min.js"></script>
-    <script src="../assets/extra-libs/c3/c3.min.js"></script>
-    <script src="../assets/libs/chartist/dist/chartist.min.js"></script>
-    <script src="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-    <script src="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
-    <script src="../assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
-    <script src="../Editor/assets/lib/trumbowyg/trumbowyg.min.js"></script>
-    <script src="../Editor/assets/lib/trumbowyg/trumbowyg.upload.min.js"></script>
-    <script src="../Editor/assets/js/index.js"></script>
+    <script src="../assets/extra-libs/prism/prism.js"></script>
     <script src="../../assets/js/storage.js" ></script>
     <script src="../../assets/js/loginCheck.js" ></script>
+
+    
 </body>
 
 </html>

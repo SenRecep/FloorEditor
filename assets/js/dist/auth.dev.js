@@ -8,6 +8,7 @@ var companyService = new GenericHttpService(endpoints.COMPANY, fetchapi);
 var signInButton = document.getElementById("signIn");
 var signInPageUserName = document.getElementById("signInPageUserName");
 var signInPagePassword = document.getElementById("signInPagePassword");
+clearLoginUser();
 signInButton.addEventListener("click", function _callee(e) {
   var loginResponse, loginData, companyResponse, company, localStorageItem;
   return regeneratorRuntime.async(function _callee$(_context) {
@@ -65,7 +66,7 @@ signInButton.addEventListener("click", function _callee(e) {
             }
           };
           setLoginUser(localStorageItem);
-          window.location = "../../Admin/html/index.html";
+          window.location = "../../Admin/pages/index.html";
 
         case 20:
         case "end":
