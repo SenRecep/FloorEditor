@@ -3,20 +3,20 @@
 var fetchapi = new FetchApi({
   baseUrl: "https://housing-web-app-backend.herokuapp.com/api/v1"
 });
-var userService = new GenericHttpService("user/login", fetchapi);
-var companyService = new GenericHttpService("company", fetchapi);
+var userService = new GenericHttpService(endpoints.LOGIN, fetchapi);
+var companyService = new GenericHttpService(endpoints.COMPANY, fetchapi);
 var signInButton = document.getElementById("signIn");
 var signInPageUserName = document.getElementById("signInPageUserName");
 var signInPagePassword = document.getElementById("signInPagePassword");
 signInButton.addEventListener("click", function _callee(e) {
-  var loginResponse, company, localStorageItem;
+  var loginResponse, loginData, companyResponse, company, localStorageItem;
   return regeneratorRuntime.async(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
           e.preventDefault();
           _context.next = 3;
-          return regeneratorRuntime.awrap(userService.Post({
+          return regeneratorRuntime.awrap(userService.PostAsync({
             userName: signInPageUserName.value,
             password: signInPagePassword.value
           }));
@@ -24,27 +24,39 @@ signInButton.addEventListener("click", function _callee(e) {
         case 3:
           loginResponse = _context.sent;
 
-          if (!loginResponse.msg) {
+          if (loginResponse.isSuccessful) {
             _context.next = 7;
             break;
           }
 
-          alert("Incorrect username or password");
+          alert(ApiError.getErrors(loginResponse.error));
           return _context.abrupt("return");
 
         case 7:
-          console.log(loginResponse);
-          _context.next = 10;
-          return regeneratorRuntime.awrap(companyService.Get(loginResponse.companyId));
+          loginData = loginResponse.data;
+          console.log(loginData);
+          _context.next = 11;
+          return regeneratorRuntime.awrap(companyService.GetAsync(loginData.companyId));
 
-        case 10:
-          company = _context.sent;
+        case 11:
+          companyResponse = _context.sent;
+
+          if (companyResponse.isSuccessful) {
+            _context.next = 15;
+            break;
+          }
+
+          alert(ApiError.getErrors(loginResponse.error));
+          return _context.abrupt("return");
+
+        case 15:
+          company = companyResponse.data;
           console.log(company);
           localStorageItem = {
             user: {
-              id: loginResponse.id,
-              userName: loginResponse.userName,
-              companyId: loginResponse.companyId
+              id: loginData.id,
+              userName: loginData.userName,
+              companyId: loginData.companyId
             },
             company: {
               id: company.id,
@@ -55,7 +67,7 @@ signInButton.addEventListener("click", function _callee(e) {
           setLoginUser(localStorageItem);
           window.location = "../../Admin/html/index.html";
 
-        case 15:
+        case 20:
         case "end":
           return _context.stop();
       }
