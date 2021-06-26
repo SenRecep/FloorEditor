@@ -38,6 +38,6 @@ function getFlip() {
   return JSON.parse(localStorage.getItem("Flip-".concat(index)));
 }
 
-function getLoginUser(val) {
+function getLoginUser() {
   return JSON.parse(localStorage.getItem("LoginUser"));
 }

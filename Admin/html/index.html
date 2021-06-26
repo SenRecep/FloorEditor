@@ -352,14 +352,7 @@
     <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.23.0/langs/tr.min.js" integrity="sha512-+HGzdrYvtA0U9cp5kJad8OpjTvUi6ywZ9z9kXFGiV3EaAR1II5X6lfulUm6/F9GKesHW+jHFfAqwXK0juybvMw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../../assets/js/storage.js" ></script>
-
-    <script>
-        window.onload=function(){
-            const loginUser= getLoginUser();
-            document.getElementById("userName").innerHTML=`${loginUser.user.userName} ${loginUser.company.name}`;
-        };
-    </script>
-
+    <script src="../../assets/js/loginCheck.js" ></script>
 </body>
 
 </html>
