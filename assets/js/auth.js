@@ -35,5 +35,5 @@ signInButton.addEventListener("click",async (e)=>{
         }
      }
     setLoginUser(localStorageItem);
-    window.location="/Admin/html/index.html";
+    window.location="../../Admin/html/index.html";
 });

@@ -1,20 +1,20 @@
 window.onload = function () {
-    var wrapperElement = document.getElementById("wrapper");
-    var editorElement = document.getElementById("editor");
-    var btnCenter = document.getElementsByClassName("btn-center")[0];
-    var btnZoomOut = document.getElementsByClassName("btn-zoomout")[0];
-    var btnZoomIn = document.getElementsByClassName("btn-zoomin")[0];
-    var btnMeasurements = document.getElementsByClassName('btn-measurements')[0];
-    var btnFlip = document.getElementsByClassName("btn-flip")[0];
-    var zoomSatus = document.getElementsByClassName('zoom-satus')[0];
-    var measurementContainer = document.getElementById('measurements-container');
-    var measurementLine = document.getElementById('measurements');
-    var measurementText = document.getElementById('measurementsText');
+    const wrapperElement = document.getElementById("wrapper");
+    const editorElement = document.getElementById("editor");
+    const btnCenter = document.getElementsByClassName("btn-center")[0];
+    const btnZoomOut = document.getElementsByClassName("btn-zoomout")[0];
+    const btnZoomIn = document.getElementsByClassName("btn-zoomin")[0];
+    const btnMeasurements = document.getElementsByClassName('btn-measurements')[0];
+    const btnFlip = document.getElementsByClassName("btn-flip")[0];
+    const zoomSatus = document.getElementsByClassName('zoom-satus')[0];
+    const measurementContainer = document.getElementById('measurements-container');
+    const measurementLine = document.getElementById('measurements');
+    const measurementText = document.getElementById('measurementsText');
 
     const floorBg = $('.floor img')[0];
 
-    var x_cursor = 0, y_cursor = 0, x_wrapper = 0, y_wrapper = 0, scale = 1, isDrag = false;
-    var measurementMode = false, measurementSetStartPoint = false, spx = 0, spy = 0, epx = 0, epy = 0;
+    let x_cursor = 0, y_cursor = 0, x_wrapper = 0, y_wrapper = 0, scale = 1, isDrag = false;
+    let measurementMode = false, measurementSetStartPoint = false, spx = 0, spy = 0, epx = 0, epy = 0;
 
 
     function getWrapperSize() {

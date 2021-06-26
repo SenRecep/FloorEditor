@@ -53,7 +53,7 @@ signInButton.addEventListener("click", function _callee(e) {
             }
           };
           setLoginUser(localStorageItem);
-          window.location = "/opushomes/Admin/html/index.html";
+          window.location = "../../Admin/html/index.html";
 
         case 15:
         case "end":

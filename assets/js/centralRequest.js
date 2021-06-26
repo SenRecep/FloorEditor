@@ -1,3 +1,18 @@
+class ApiError{
+    constructor(errors=[],isShow=false,path=""){
+        this.errors=errors;
+        this.isShow=isShow;
+        this.path=path;
+    }
+}
+class ApiResponse{
+    constructor(data={},statusCode=200,isSuccessful=true,error=new ApiError()){
+        this.data=data;
+        this.statusCode=statusCode;
+        this.isSuccessful=isSuccessful;
+        this.error=error;
+    }
+}
 class FetchApi {
     constructor(config) {
         this.config = config;
@@ -6,6 +21,7 @@ class FetchApi {
         url = `${this.config.baseUrl}/${url}`;
         var result = await fetch(url)
             .then(response => {
+                
                 if (response.ok) return response.json();
                 throw new Error('Something went wrong on api server!');
             }).catch(error => {
@@ -74,3 +90,4 @@ class GenericHttpService {
         return this.fetchApi.requestByBody(this.table, "POST", data);
     }
 }
+

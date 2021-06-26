@@ -1,10 +1,36 @@
 "use strict";
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var ApiError = function ApiError() {
+  var errors = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var isShow = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+  var path = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "";
+
+  _classCallCheck(this, ApiError);
+
+  this.errors = errors;
+  this.isShow = isShow;
+  this.path = path;
+};
+
+var ApiResponse = function ApiResponse() {
+  var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var statusCode = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 200;
+  var isSuccessful = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+  var error = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : new ApiError();
+
+  _classCallCheck(this, ApiResponse);
+
+  this.data = data;
+  this.statusCode = statusCode;
+  this.isSuccessful = isSuccessful;
+  this.error = error;
+};
 
 var FetchApi =
 /*#__PURE__*/
