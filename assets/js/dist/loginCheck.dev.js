@@ -1,11 +1,13 @@
 "use strict";
 
-window.onload = function () {
+(function () {
   if (checkLoginUser() != 'undefined') {
     var loginUser = getLoginUser();
-    document.getElementById("userName").innerHTML = "".concat(loginUser.user.userName, " ").concat(loginUser.company.name);
+    setInterval(function () {
+      document.getElementById("userName").innerHTML = "".concat(loginUser.user.userName, " ").concat(loginUser.company.name);
+    }, 1);
     return;
   }
 
-  window.location = "../../Admin/pages/login.html";
-};
+  window.location = "../../admin/pages/login.html";
+})();

@@ -66,7 +66,7 @@ signInButton.addEventListener("click", function _callee(e) {
             }
           };
           setLoginUser(localStorageItem);
-          window.location = "../../Admin/pages/index.html";
+          window.location = "../../admin/pages/index.html";
 
         case 20:
         case "end":

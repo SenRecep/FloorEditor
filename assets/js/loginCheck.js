@@ -1,8 +1,12 @@
-window.onload=function(){
-    if(checkLoginUser()!='undefined'){
-        const loginUser= getLoginUser();
-        document.getElementById("userName").innerHTML=`${loginUser.user.userName} ${loginUser.company.name}`;
+(() => {
+    if (checkLoginUser() != 'undefined') {
+        const loginUser = getLoginUser();
+        setInterval(()=>{
+            document.getElementById("userName").innerHTML = `${loginUser.user.userName} ${loginUser.company.name}`;
+        },1);
         return;
     }
-    window.location="../../Admin/pages/login.html";
-}
+    window.location = "../../admin/pages/login.html";
+})();
+
+

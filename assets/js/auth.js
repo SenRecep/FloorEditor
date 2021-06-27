@@ -44,5 +44,5 @@ signInButton.addEventListener("click",async (e)=>{
         }
      }
     setLoginUser(localStorageItem);
-    window.location="../../Admin/pages/index.html";
+    window.location="../../admin/pages/index.html";
 });
