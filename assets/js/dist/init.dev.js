@@ -20,7 +20,7 @@ function drawFloorElement(floor) {
 }
 
 function drawOptionElement(option) {
-  return "<li data-hoverevent='true'> <span> <div class=\"custom-control custom-switch\"> <input class=\"custom-control-input\" id=\"option-".concat(option.Id, "\" type=\"checkbox\" value=\"").concat(option.Id, "\" name=\"option\" /> <label for=\"option-").concat(option.Id, "\"class=\"custom-control-label\" >").concat(option.Name, "</label> </div> </span> </li>");
+  return "<li data-hoverevent='true' data-block='false'> <span> <div class=\"custom-control custom-switch\"> <input class=\"custom-control-input\" id=\"option-".concat(option.Id, "\" type=\"checkbox\" value=\"").concat(option.Id, "\" name=\"option\" /> <label for=\"option-").concat(option.Id, "\"class=\"custom-control-label\" >").concat(option.Name, "</label> </div> </span> </li>");
 }
 
 function drawOptionItemElement(option) {
@@ -43,6 +43,12 @@ function drawSlectedHouseFloors() {
 }
 
 function optionHoverEvent() {
+  var isBlock = this.dataset.block == 'true';
+
+  if (isBlock) {
+    return;
+  }
+
   var input = $(this).children().children().children('input')[0];
   $(input).prop("checked", !$(input).prop("checked"));
   $(input).trigger("change");
@@ -58,6 +64,12 @@ function drawSlectedFloorOptions() {
     $('input[type=checkbox][name=option]').change(changeOption);
     $('input[type=checkbox][name=option]').click(function (e) {
       var li = $(this).parent().parent().parent().get(0);
+      var isBlock = li.dataset.block == 'true';
+
+      if (isBlock) {
+        e.preventDefault();
+        return;
+      }
 
       if (this.checked == false) {
         if (li.dataset.hoverevent == 'true') {
@@ -108,6 +120,7 @@ function changeOption() {
   var option = getCurrentFloor().Options.find(function (x) {
     return x.Id == _this2.value;
   });
+  console.log("changeOption");
 
   if (this.checked) {
     var options = getOptions();

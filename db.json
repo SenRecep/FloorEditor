@@ -535,6 +535,12 @@
                         "Estimate": 25000
                     }
 
+                ],
+                "Conflicts":[
+                    {
+                        "Id":5,
+                        "Conflicts":[7]
+                    }
                 ]
             }
         ]

@@ -19,7 +19,7 @@ function drawFloorElement(floor) {
 }
 function drawOptionElement(option) {
 
-    return `<li data-hoverevent='true'> <span> <div class="custom-control custom-switch"> <input class="custom-control-input" id="option-${option.Id}" type="checkbox" value="${option.Id}" name="option" /> <label for="option-${option.Id}"class="custom-control-label" >${option.Name}</label> </div> </span> </li>`;
+    return `<li data-hoverevent='true' data-block='false'> <span> <div class="custom-control custom-switch"> <input class="custom-control-input" id="option-${option.Id}" type="checkbox" value="${option.Id}" name="option" /> <label for="option-${option.Id}"class="custom-control-label" >${option.Name}</label> </div> </span> </li>`;
 }
 
 function drawOptionItemElement(option) {
@@ -42,6 +42,10 @@ function drawSlectedHouseFloors() {
 
 
 function optionHoverEvent() {
+    var isBlock = this.dataset.block == 'true';
+    if (isBlock) {
+        return;
+    }
     let input = $(this).children().children().children('input')[0];
     $(input).prop("checked", !$(input).prop("checked"));
     $(input).trigger("change");
@@ -53,25 +57,31 @@ function drawSlectedFloorOptions() {
         getCurrentFloor().Options.forEach(option => $("#options").append(drawOptionElement(option)));
         $('input[type=checkbox][name=option]').change(changeOption);
         $('input[type=checkbox][name=option]').click(function (e) {
-            var li=  $(this).parent().parent().parent().get(0);
+            var li = $(this).parent().parent().parent().get(0);
+            var isBlock = li.dataset.block == 'true';
+            if (isBlock) {
+                e.preventDefault();
+                return;
+            }
             if (this.checked == false) {
-                if (li.dataset.hoverevent=='true'){
-                   e.preventDefault();
-                    li.dataset.hoverevent='false';
+                if (li.dataset.hoverevent == 'true') {
+                    e.preventDefault();
+                    li.dataset.hoverevent = 'false';
                     $(li).unbind();
-                   
+
                 }
-                else{
-                    $('#options li').on('mouseleave',function(){
-                        li.dataset.hoverevent='true';
+                else {
+                    $('#options li').on('mouseleave', function () {
+                        li.dataset.hoverevent = 'true';
                         $(this).unbind();
                         $(this).hover(optionHoverEvent);
                     });
                 }
-             
+
             }
+
         });
-        
+
         $("#options li").hover(optionHoverEvent);
         $('#menu-options').show();
     }
@@ -91,19 +101,19 @@ function changeFloor() {
     drawEstimate();
 }
 
-function floorDraw(floor) { 
-    if(getFlip())
-    {
+function floorDraw(floor) {
+    if (getFlip()) {
         $(floorBg).attr('src', `./assets/img/floors/${floor.Images.Invers}`);
     }
-    else{
+    else {
         $(floorBg).attr('src', `./assets/img/floors/${floor.Images.Normal}`);
     }
-    
+
 }
 
 function changeOption() {
     var option = getCurrentFloor().Options.find(x => x.Id == this.value);
+    console.log("changeOption");
     if (this.checked) {
 
         var options = getOptions();

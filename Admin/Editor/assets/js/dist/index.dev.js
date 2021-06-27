@@ -1,6 +1,6 @@
 "use strict";
 
-$.trumbowyg.svgPath = '../Editor/assets/lib/trumbowyg/icons.svg';
+$.trumbowyg.svgPath = '../editor/assets/lib/trumbowyg/icons.svg';
 var uploadOptions = {
   serverPath: 'https://api.imgur.com/3/image',
   fileFieldName: 'image',
