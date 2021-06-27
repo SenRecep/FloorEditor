@@ -303,6 +303,10 @@ main nav ul.menu > li div ul li > span i {
   color: var(--MIDNIGHTBLUE);
 }
 
+a[href="http://somee.com"] {
+  display: none;
+}
+
 .editor {
   flex: 1;
   position: relative;
