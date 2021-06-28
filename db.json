@@ -11,63 +11,63 @@
                     "Normal": "house-1-floor-1-normal.svg",
                     "Invers": "house-1-floor-1-invers.svg"
                 },
-                "Size":{
-                    "Height":1200,
-                    "Width":1600
+                "Size": {
+                    "Height": 1200,
+                    "Width": 1600
                 },
                 "Estimate": 225000,
                 "Options": [
                     {
                         "Id": 1,
                         "Name": "Ex Outdoor living",
-                        "Normal":{
-                            "Image":"house-1-floor-1-option-1-normal.svg",
-                            "Location":{
-                                "Top":"12.32%",
-                                "Left":"auto",
-                                "Right":"5.5%",
-                                "Bottom":"auto"
+                        "Normal": {
+                            "Image": "house-1-floor-1-option-1-normal.svg",
+                            "Location": {
+                                "Top": "12.32%",
+                                "Left": "auto",
+                                "Right": "5.5%",
+                                "Bottom": "auto"
                             }
                         },
-                        "Invers":{
-                            "Image":"house-1-floor-1-option-1-invers.svg",
-                            "Location":{
-                                "Top":"12.32%",
-                                "Left":"7.7%",
-                                "Right":"auto",
-                                "Bottom":"auto"
+                        "Invers": {
+                            "Image": "house-1-floor-1-option-1-invers.svg",
+                            "Location": {
+                                "Top": "12.32%",
+                                "Left": "7.7%",
+                                "Right": "auto",
+                                "Bottom": "auto"
                             }
                         },
-                        "Size":{
-                            "Height":"auto",
-                            "Width":"11%"
+                        "Size": {
+                            "Height": "auto",
+                            "Width": "11%"
                         },
                         "Estimate": 25000
                     },
                     {
                         "Id": 2,
                         "Name": "With bathtub",
-                        "Normal":{
-                            "Image":"house-1-floor-1-option-2-normal.svg",
-                            "Location":{
-                                "Top":"auto",
-                                "Left":"56.4%",
-                                "Right":"auto",
-                                "Bottom":"26.5%"
+                        "Normal": {
+                            "Image": "house-1-floor-1-option-2-normal.svg",
+                            "Location": {
+                                "Top": "auto",
+                                "Left": "56.4%",
+                                "Right": "auto",
+                                "Bottom": "26.5%"
                             }
                         },
-                        "Invers":{
-                            "Image":"house-1-floor-1-option-2-invers.svg",
-                            "Location":{
-                                "Top":"auto",
-                                "Left":"39%",
-                                "Right":"0",
-                                "Bottom":"26.5%"
+                        "Invers": {
+                            "Image": "house-1-floor-1-option-2-invers.svg",
+                            "Location": {
+                                "Top": "auto",
+                                "Left": "39%",
+                                "Right": "0",
+                                "Bottom": "26.5%"
                             }
                         },
-                        "Size":{
-                            "Height":"auto",
-                            "Width":"6.8%"
+                        "Size": {
+                            "Height": "auto",
+                            "Width": "6.8%"
                         },
                         "Estimate": 25000
                     }
@@ -80,12 +80,11 @@
                     "Normal": "house-1-floor-2-normal.svg",
                     "Invers": "house-1-floor-2-invers.svg"
                 },
-                "Size":{
-                    "Height":800,
-                    "Width":1000
+                "Size": {
+                    "Height": 800,
+                    "Width": 1000
                 },
                 "Estimate": 225000
-
             }
         ]
     },
@@ -101,63 +100,63 @@
                     "Normal": "house-2-floor-1-normal.svg",
                     "Invers": "house-2-floor-1-invers.svg"
                 },
-                "Size":{
-                    "Height":1200,
-                    "Width":1600
+                "Size": {
+                    "Height": 1200,
+                    "Width": 1600
                 },
                 "Estimate": 175000,
                 "Options": [
                     {
                         "Id": 3,
                         "Name": "Ex Outdoor living",
-                        "Normal":{
-                            "Image":"house-1-floor-1-option-1-normal.svg",
-                            "Location":{
-                                "Top":"12.32%",
-                                "Left":"auto",
-                                "Right":"5.5%",
-                                "Bottom":"auto"
+                        "Normal": {
+                            "Image": "house-1-floor-1-option-1-normal.svg",
+                            "Location": {
+                                "Top": "12.32%",
+                                "Left": "auto",
+                                "Right": "5.5%",
+                                "Bottom": "auto"
                             }
                         },
-                        "Invers":{
-                            "Image":"house-1-floor-1-option-1-invers.svg",
-                            "Location":{
-                                "Top":"12.32%",
-                                "Left":"7.7%",
-                                "Right":"auto",
-                                "Bottom":"auto"
+                        "Invers": {
+                            "Image": "house-1-floor-1-option-1-invers.svg",
+                            "Location": {
+                                "Top": "12.32%",
+                                "Left": "7.7%",
+                                "Right": "auto",
+                                "Bottom": "auto"
                             }
                         },
-                        "Size":{
-                            "Height":"auto",
-                            "Width":"11%"
+                        "Size": {
+                            "Height": "auto",
+                            "Width": "11%"
                         },
                         "Estimate": 25000
                     },
                     {
                         "Id": 4,
                         "Name": "With bathtub",
-                        "Normal":{
-                            "Image":"house-1-floor-1-option-2-normal.svg",
-                            "Location":{
-                                "Top":"auto",
-                                "Left":"56.4%",
-                                "Right":"auto",
-                                "Bottom":"26.5%"
+                        "Normal": {
+                            "Image": "house-1-floor-1-option-2-normal.svg",
+                            "Location": {
+                                "Top": "auto",
+                                "Left": "56.4%",
+                                "Right": "auto",
+                                "Bottom": "26.5%"
                             }
                         },
-                        "Invers":{
-                            "Image":"house-1-floor-1-option-2-invers.svg",
-                            "Location":{
-                                "Top":"auto",
-                                "Left":"39%",
-                                "Right":"0",
-                                "Bottom":"26.5%"
+                        "Invers": {
+                            "Image": "house-1-floor-1-option-2-invers.svg",
+                            "Location": {
+                                "Top": "auto",
+                                "Left": "39%",
+                                "Right": "0",
+                                "Bottom": "26.5%"
                             }
                         },
-                        "Size":{
-                            "Height":"auto",
-                            "Width":"6.8%"
+                        "Size": {
+                            "Height": "auto",
+                            "Width": "6.8%"
                         },
                         "Estimate": 25000
                     }
@@ -177,369 +176,370 @@
                     "Normal": "house-3-floor-1-normal.svg",
                     "Invers": "house-3-floor-1-invers.svg"
                 },
-                "Size":{
-                    "Height":1200,
-                    "Width":1600
+                "Size": {
+                    "Height": 1200,
+                    "Width": 1600
                 },
                 "Estimate": 175000,
                 "Options": [
                     {
                         "Id": 5,
                         "Name": "BEDROOM 4 WITH BATH 3",
-                        "Normal":{
-                            "Image":"house-1-floor-4-option-normal-1.svg",
-                            "Location":{
-                                "Top":"0%",
-                                "Left":"auto",
-                                "Right":"27.0%",
-                                "Bottom":"auto"
+                        "Normal": {
+                            "Image": "house-1-floor-4-option-normal-1.svg",
+                            "Location": {
+                                "Top": "0%",
+                                "Left": "auto",
+                                "Right": "27.0%",
+                                "Bottom": "auto"
                             }
                         },
-                        "Invers":{
-                            "Image":"house-1-floor-4-option-normal-1.svg",
-                            "Location":{
-                                "Top":"0%",
-                                "Left":"auto",
-                                "Right":"27.0%",
-                                "Bottom":"auto"
+                        "Invers": {
+                            "Image": "house-1-floor-4-option-normal-1.svg",
+                            "Location": {
+                                "Top": "0%",
+                                "Left": "auto",
+                                "Right": "27.0%",
+                                "Bottom": "auto"
                             }
                         },
-                        "Size":{
-                            "Height":"auto",
-                            "Width":"24.2%"
+                        "Size": {
+                            "Height": "auto",
+                            "Width": "24.2%"
                         },
                         "Estimate": 25000
                     },
                     {
                         "Id": 6,
                         "Name": "TUB SHOWER AT OWNER",
-                        "Normal":{
-                            "Image":"house-1-floor-4-option-normal-2.svg",
-                            "Location":{
-                                "Top":"1%",
-                                "Left":"25.5%",
-                                "Right":"auto",
-                                "Bottom":"auto"
+                        "Normal": {
+                            "Image": "house-1-floor-4-option-normal-2.svg",
+                            "Location": {
+                                "Top": "1%",
+                                "Left": "25.5%",
+                                "Right": "auto",
+                                "Bottom": "auto"
                             }
                         },
-                        "Invers":{
-                            "Image":"house-1-floor-4-option-normal-2.svg",
-                            "Location":{
-                                "Top":"1%",
-                                "Left":"25.5%",
-                                "Right":"auto",
-                                "Bottom":"auto"
+                        "Invers": {
+                            "Image": "house-1-floor-4-option-normal-2.svg",
+                            "Location": {
+                                "Top": "1%",
+                                "Left": "25.5%",
+                                "Right": "auto",
+                                "Bottom": "auto"
                             }
                         },
-                        "Size":{
-                            "Height":"auto",
-                            "Width":"16.5%"
+                        "Size": {
+                            "Height": "auto",
+                            "Width": "16.5%"
                         },
                         "Estimate": 25000
                     },
                     {
                         "Id": 7,
                         "Name": "BEDROOM 5 WITH BATH 4",
-                        "Normal":{
-                            "Image":"house-1-floor-4-option-normal-3.svg",
-                            "Location":{
-                                "Top":"0%",
-                                "Left":"34.13%",
-                                "Right":"auto",
-                                "Bottom":"auto"
+                        "Normal": {
+                            "Image": "house-1-floor-4-option-normal-3.svg",
+                            "Location": {
+                                "Top": "0%",
+                                "Left": "34.13%",
+                                "Right": "auto",
+                                "Bottom": "auto"
                             }
                         },
-                        "Invers":{
-                            "Image":"house-1-floor-4-option-normal-3.svg",
-                            "Location":{
-                                "Top":"0%",
-                                "Left":"34.13%",
-                                "Right":"auto",
-                                "Bottom":"auto"
+                        "Invers": {
+                            "Image": "house-1-floor-4-option-normal-3.svg",
+                            "Location": {
+                                "Top": "0%",
+                                "Left": "34.13%",
+                                "Right": "auto",
+                                "Bottom": "auto"
                             }
                         },
-                        "Size":{
-                            "Height":"auto",
-                            "Width":"38.7%"
+                        "Size": {
+                            "Height": "auto",
+                            "Width": "38.7%"
                         },
                         "Estimate": 25000
                     },
                     {
                         "Id": 8,
                         "Name": "Flex With Stair",
-                        "Normal":{
-                            "Image":"house-1-floor-4-option-normal-4.svg",
-                            "Location":{
-                                "Top":"25.4%",
-                                "Left":"auto",
-                                "Right":"24.69%",
-                                "Bottom":"auto"
+                        "Normal": {
+                            "Image": "house-1-floor-4-option-normal-4.svg",
+                            "Location": {
+                                "Top": "25.4%",
+                                "Left": "auto",
+                                "Right": "24.69%",
+                                "Bottom": "auto"
                             }
                         },
-                        "Invers":{
-                            "Image":"house-1-floor-4-option-normal-4.svg",
-                            "Location":{
-                                "Top":"25.7%",
-                                "Left":"auto",
-                                "Right":"25%",
-                                "Bottom":"auto"
+                        "Invers": {
+                            "Image": "house-1-floor-4-option-normal-4.svg",
+                            "Location": {
+                                "Top": "25.7%",
+                                "Left": "auto",
+                                "Right": "25%",
+                                "Bottom": "auto"
                             }
                         },
-                        "Size":{
-                            "Height":"auto",
-                            "Width":"21.3%"
+                        "Size": {
+                            "Height": "auto",
+                            "Width": "21.3%"
                         },
                         "Estimate": 25000
                     },
                     {
                         "Id": 9,
                         "Name": "Extended Outdoor Living",
-                        "Normal":{
-                            "Image":"house-1-floor-4-option-normal-5.svg",
-                            "Location":{
-                                "Top":"auto",
-                                "Left":"auto",
-                                "Right":"auto",
-                                "Bottom":"0%"
+                        "Normal": {
+                            "Image": "house-1-floor-4-option-normal-5.svg",
+                            "Location": {
+                                "Top": "auto",
+                                "Left": "auto",
+                                "Right": "auto",
+                                "Bottom": "0%"
                             }
                         },
-                        "Invers":{
-                            "Image":"house-1-floor-4-option-normal-5.svg",
-                            "Location":{
-                                "Top":"auto",
-                                "Left":"auto",
-                                "Right":"auto",
-                                "Bottom":"0%"
+                        "Invers": {
+                            "Image": "house-1-floor-4-option-normal-5.svg",
+                            "Location": {
+                                "Top": "auto",
+                                "Left": "auto",
+                                "Right": "auto",
+                                "Bottom": "0%"
                             }
                         },
-                        "Size":{
-                            "Height":"auto",
-                            "Width":"9.6%"
+                        "Size": {
+                            "Height": "auto",
+                            "Width": "9.6%"
                         },
                         "Estimate": 25000
                     },
                     {
                         "Id": 10,
                         "Name": "Partial Floor Plan Elevation B",
-                        "Normal":{
-                            "Image":"house-1-floor-4-option-normal-6.svg",
-                            "Location":{
-                                "Top":"auto",
-                                "Left":"auto",
-                                "Right":"0",
-                                "Bottom":"auto"
+                        "Normal": {
+                            "Image": "house-1-floor-4-option-normal-6.svg",
+                            "Location": {
+                                "Top": "auto",
+                                "Left": "auto",
+                                "Right": "0",
+                                "Bottom": "auto"
                             }
                         },
-                        "Invers":{
-                            "Image":"house-1-floor-4-option-normal-6.svg",
-                            "Location":{
-                                "Top":"auto",
-                                "Left":"auto",
-                                "Right":"0",
-                                "Bottom":"auto"
+                        "Invers": {
+                            "Image": "house-1-floor-4-option-normal-6.svg",
+                            "Location": {
+                                "Top": "auto",
+                                "Left": "auto",
+                                "Right": "0",
+                                "Bottom": "auto"
                             }
                         },
-                        "Size":{
-                            "Height":"100%",
-                            "Width":"10%"
+                        "Size": {
+                            "Height": "100%",
+                            "Width": "10%"
                         },
                         "Estimate": 25000
                     },
                     {
                         "Id": 11,
                         "Name": "Mud Bench",
-                        "Normal":{
-                            "Image":"house-1-floor-4-option-normal-7.svg",
-                            "Location":{
-                                "Top":"29.9%",
-                                "Left":"49.4%",
-                                "Right":"auto",
-                                "Bottom":"auto"
+                        "Normal": {
+                            "Image": "house-1-floor-4-option-normal-7.svg",
+                            "Location": {
+                                "Top": "29.9%",
+                                "Left": "49.4%",
+                                "Right": "auto",
+                                "Bottom": "auto"
                             }
                         },
-                        "Invers":{
-                            "Image":"house-1-floor-4-option-normal-7.svg",
-                            "Location":{
-                                "Top":"29.9%",
-                                "Left":"49.4%",
-                                "Right":"auto",
-                                "Bottom":"auto"
+                        "Invers": {
+                            "Image": "house-1-floor-4-option-normal-7.svg",
+                            "Location": {
+                                "Top": "29.9%",
+                                "Left": "49.4%",
+                                "Right": "auto",
+                                "Bottom": "auto"
                             }
                         },
-                        "Size":{
-                            "Height":"auto",
-                            "Width":" 9.5%"
+                        "Size": {
+                            "Height": "auto",
+                            "Width": " 9.5%"
                         },
                         "Estimate": 25000
                     },
                     {
                         "Id": 12,
                         "Name": "Faux Beams",
-                        "Normal":{
-                            "Image":"house-1-floor-4-option-normal-8.svg",
-                            "Location":{
-                                "Top":"37.5%",
-                                "Left":"21.8%",
-                                "Right":"auto",
-                                "Bottom":"auto"
+                        "Normal": {
+                            "Image": "house-1-floor-4-option-normal-8.svg",
+                            "Location": {
+                                "Top": "37.5%",
+                                "Left": "21.8%",
+                                "Right": "auto",
+                                "Bottom": "auto"
                             }
                         },
-                        "Invers":{
-                            "Image":"house-1-floor-4-option-normal-8.svg",
-                            "Location":{
-                                "Top":"37.5%",
-                                "Left":"21.8%",
-                                "Right":"auto",
-                                "Bottom":"auto"
+                        "Invers": {
+                            "Image": "house-1-floor-4-option-normal-8.svg",
+                            "Location": {
+                                "Top": "37.5%",
+                                "Left": "21.8%",
+                                "Right": "auto",
+                                "Bottom": "auto"
                             }
                         },
-                        "Size":{
-                            "Height":"auto",
-                            "Width":" 27%"
+                        "Size": {
+                            "Height": "auto",
+                            "Width": " 27%"
                         },
                         "Estimate": 25000
                     },
                     {
                         "Id": 13,
                         "Name": "Fireplace",
-                        "Normal":{
-                            "Image":"house-1-floor-4-option-normal-9.svg",
-                            "Location":{
-                                "Top":"27.5%",
-                                "Left":"40.4%",
-                                "Right":"auto",
-                                "Bottom":"auto"
+                        "Normal": {
+                            "Image": "house-1-floor-4-option-normal-9.svg",
+                            "Location": {
+                                "Top": "27.5%",
+                                "Left": "40.4%",
+                                "Right": "auto",
+                                "Bottom": "auto"
                             }
                         },
-                        "Invers":{
-                            "Image":"house-1-floor-4-option-normal-9.svg",
-                            "Location":{
-                                "Top":"27.5%",
-                                "Left":"40.4%",
-                                "Right":"auto",
-                                "Bottom":"auto"
+                        "Invers": {
+                            "Image": "house-1-floor-4-option-normal-9.svg",
+                            "Location": {
+                                "Top": "27.5%",
+                                "Left": "40.4%",
+                                "Right": "auto",
+                                "Bottom": "auto"
                             }
                         },
-                        "Size":{
-                            "Height":"auto",
-                            "Width":" 8.5%"
+                        "Size": {
+                            "Height": "auto",
+                            "Width": " 8.5%"
                         },
                         "Estimate": 25000
                     },
                     {
                         "Id": 14,
                         "Name": "Kitchen Components",
-                        "Normal":{
-                            "Image":"house-1-floor-4-option-normal-10.svg",
-                            "Location":{
-                                "Top":"76.7%",
-                                "Left":"35.9%",
-                                "Right":"auto",
-                                "Bottom":"auto"
+                        "Normal": {
+                            "Image": "house-1-floor-4-option-normal-10.svg",
+                            "Location": {
+                                "Top": "76.7%",
+                                "Left": "35.9%",
+                                "Right": "auto",
+                                "Bottom": "auto"
                             }
                         },
-                        "Invers":{
-                            "Image":"house-1-floor-4-option-normal-10.svg",
-                            "Location":{
-                                "Top":"76.7%",
-                                "Left":"35.9%",
-                                "Right":"auto",
-                                "Bottom":"auto"
+                        "Invers": {
+                            "Image": "house-1-floor-4-option-normal-10.svg",
+                            "Location": {
+                                "Top": "76.7%",
+                                "Left": "35.9%",
+                                "Right": "auto",
+                                "Bottom": "auto"
                             }
                         },
-                        "Size":{
-                            "Height":"auto",
-                            "Width":" 13.1%"
+                        "Size": {
+                            "Height": "auto",
+                            "Width": " 13.1%"
                         },
                         "Estimate": 25000
                     },
                     {
                         "Id": 15,
                         "Name": "Laundry Components",
-                        "Normal":{
-                            "Image":"house-1-floor-4-option-normal-11.svg",
-                            "Location":{
-                                "Top":"0.6%",
-                                "Left":"49.5%",
-                                "Right":"auto",
-                                "Bottom":"auto"
+                        "Normal": {
+                            "Image": "house-1-floor-4-option-normal-11.svg",
+                            "Location": {
+                                "Top": "0.6%",
+                                "Left": "49.5%",
+                                "Right": "auto",
+                                "Bottom": "auto"
                             }
                         },
-                        "Invers":{
-                            "Image":"house-1-floor-4-option-normal-11.svg",
-                            "Location":{
-                                "Top":"0.6%",
-                                "Left":"49.5%",
-                                "Right":"auto",
-                                "Bottom":"auto"
+                        "Invers": {
+                            "Image": "house-1-floor-4-option-normal-11.svg",
+                            "Location": {
+                                "Top": "0.6%",
+                                "Left": "49.5%",
+                                "Right": "auto",
+                                "Bottom": "auto"
                             }
                         },
-                        "Size":{
-                            "Height":"auto",
-                            "Width":" 7%"
+                        "Size": {
+                            "Height": "auto",
+                            "Width": " 7%"
                         },
                         "Estimate": 25000
                     },
                     {
                         "Id": 16,
                         "Name": "Window and Door at Owner",
-                        "Normal":{
-                            "Image":"house-1-floor-4-option-normal-12.svg",
-                            "Location":{
-                                "Top":"-1%",
-                                "Left":"3%",
-                                "Right":"auto",
-                                "Bottom":"auto"
+                        "Normal": {
+                            "Image": "house-1-floor-4-option-normal-12.svg",
+                            "Location": {
+                                "Top": "-1%",
+                                "Left": "3%",
+                                "Right": "auto",
+                                "Bottom": "auto"
                             }
                         },
-                        "Invers":{
-                            "Image":"house-1-floor-4-option-normal-12.svg",
-                            "Location":{
-                                "Top":"-1%",
-                                "Left":"3%",
-                                "Right":"auto",
-                                "Bottom":"auto"
+                        "Invers": {
+                            "Image": "house-1-floor-4-option-normal-12.svg",
+                            "Location": {
+                                "Top": "-1%",
+                                "Left": "3%",
+                                "Right": "auto",
+                                "Bottom": "auto"
                             }
                         },
-                        "Size":{
-                            "Height":"auto",
-                            "Width":" 16%"
+                        "Size": {
+                            "Height": "auto",
+                            "Width": " 16%"
                         },
                         "Estimate": 25000
                     },
                     {
                         "Id": 17,
                         "Name": "WIndow at Bath2",
-                        "Normal":{
-                            "Image":"house-1-floor-4-option-normal-13.svg",
-                            "Location":{
-                                "Top":"auto",
-                                "Left":"70%",
-                                "Right":"auto",
-                                "Bottom":"-1%"
+                        "Normal": {
+                            "Image": "house-1-floor-4-option-normal-13.svg",
+                            "Location": {
+                                "Top": "auto",
+                                "Left": "70%",
+                                "Right": "auto",
+                                "Bottom": "-1%"
                             }
                         },
-                        "Invers":{
-                            "Image":"house-1-floor-4-option-normal-13.svg",
-                            "Location":{
-                                "Top":"auto",
-                                "Left":"70%",
-                                "Right":"auto",
-                                "Bottom":"-1%"
+                        "Invers": {
+                            "Image": "house-1-floor-4-option-normal-13.svg",
+                            "Location": {
+                                "Top": "auto",
+                                "Left": "70%",
+                                "Right": "auto",
+                                "Bottom": "-1%"
                             }
                         },
-                        "Size":{
-                            "Height":"auto",
-                            "Width":" 5%"
+                        "Size": {
+                            "Height": "auto",
+                            "Width": " 5%"
                         },
                         "Estimate": 25000
                     }
-
                 ],
-                "Conflicts":[
+                "Conflicts": [
                     {
-                        "Id":5,
-                        "Conflicts":[7]
+                        "Id": 5,
+                        "Conflicts": [
+                            7
+                        ]
                     }
                 ]
             }

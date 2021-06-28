@@ -1,11 +1,12 @@
 "use strict";
 
 (function () {
-  if (checkLoginUser() != 'undefined') {
+  if (checkLoginUser() != 'undefined' && checkLoginUser() != null) {
     var loginUser = getLoginUser();
-    setInterval(function () {
+    console.log(loginUser);
+    setTimeout(function () {
       document.getElementById("userName").innerHTML = "".concat(loginUser.user.userName, " ").concat(loginUser.company.name);
-    }, 1);
+    }, 10);
     return;
   }
 

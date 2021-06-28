@@ -1,252 +1,293 @@
-[
-    {
-        "Id":1,
-        "Name":"ABC",
-        "Password":"Password12*",
-        "Logo":"company-1.png",
-        "Houses":[
-            {
-                "Id": 1,
-                "Name": "House 1",
-                "Image": "house1.jpg",
-                "Floors": [
-                    {
-                        "Id": 1,
-                        "Name": "First Floor",
-                        "Images": {
-                            "Normal": "house-1-floor-1-normal.svg",
-                            "Invers": "house-1-floor-1-invers.svg"
-                        },
-                        "Size":{
-                            "Height":1200,
-                            "Width":1600
-                        },
-                        "Estimate": 225000,
-                        "Options": [
-                            {
-                                "Id": 1,
-                                "Name": "Ex Outdoor living",
-                                "Normal":{
-                                    "Image":"house-1-floor-1-option-1-normal.svg",
-                                    "Location":{
-                                        "Top":"12.32%",
-                                        "Left":"auto",
-                                        "Right":"5.5%",
-                                        "Bottom":"auto"
-                                    }
-                                },
-                                "Invers":{
-                                    "Image":"house-1-floor-1-option-1-invers.svg",
-                                    "Location":{
-                                        "Top":"12.32%",
-                                        "Left":"7.7%",
-                                        "Right":"auto",
-                                        "Bottom":"auto"
-                                    }
-                                },
-                                "Size":{
-                                    "Height":"auto",
-                                    "Width":"11%"
-                                },
-                                "Estimate": 25000
-                            },
-                            {
-                                "Id": 2,
-                                "Name": "With bathtub",
-                                "Normal":{
-                                    "Image":"house-1-floor-1-option-2-normal.svg",
-                                    "Location":{
-                                        "Top":"auto",
-                                        "Left":"56.4%",
-                                        "Right":"auto",
-                                        "Bottom":"26.5%"
-                                    }
-                                },
-                                "Invers":{
-                                    "Image":"house-1-floor-1-option-2-invers.svg",
-                                    "Location":{
-                                        "Top":"auto",
-                                        "Left":"39%",
-                                        "Right":"0",
-                                        "Bottom":"26.5%"
-                                    }
-                                },
-                                "Size":{
-                                    "Height":"auto",
-                                    "Width":"6.8%"
-                                },
-                                "Estimate": 25000
-                            }
-                        ]
-                    },
-                    {
-                        "Id": 2,
-                        "Name": "Second Floor",
-                        "Images": {
-                            "Normal": "house-1-floor-2-normal.svg",
-                            "Invers": "house-1-floor-2-invers.svg"
-                        },
-                        "Size":{
-                            "Height":800,
-                            "Width":1000
-                        },
-                        "Estimate": 225000
-        
-                    }
-                ]
-            },
-            {
-                "Id": 2,
-                "Name": "House 2",
-                "Image": "house2.jpg",
-                "Floors": [
-                    {
-                        "Id": 3,
-                        "Name": "First Floor",
-                        "Images": {
-                            "Normal": "house-2-floor-1-normal.svg",
-                            "Invers": "house-2-floor-1-invers.svg"
-                        },
-                        "Size":{
-                            "Height":1200,
-                            "Width":1600
-                        },
-                        "Estimate": 175000,
-                        "Options": [
-                            {
-                                "Id": 3,
-                                "Name": "Ex Outdoor living",
-                                "Normal":{
-                                    "Image":"house-1-floor-1-option-1-normal.svg",
-                                    "Location":{
-                                        "Top":"12.32%",
-                                        "Left":"auto",
-                                        "Right":"5.5%",
-                                        "Bottom":"auto"
-                                    }
-                                },
-                                "Invers":{
-                                    "Image":"house-1-floor-1-option-1-invers.svg",
-                                    "Location":{
-                                        "Top":"12.32%",
-                                        "Left":"7.7%",
-                                        "Right":"auto",
-                                        "Bottom":"auto"
-                                    }
-                                },
-                                "Size":{
-                                    "Height":"auto",
-                                    "Width":"11%"
-                                },
-                                "Estimate": 25000
-                            },
-                            {
-                                "Id": 4,
-                                "Name": "With bathtub",
-                                "Normal":{
-                                    "Image":"house-1-floor-1-option-2-normal.svg",
-                                    "Location":{
-                                        "Top":"auto",
-                                        "Left":"56.4%",
-                                        "Right":"auto",
-                                        "Bottom":"26.5%"
-                                    }
-                                },
-                                "Invers":{
-                                    "Image":"house-1-floor-1-option-2-invers.svg",
-                                    "Location":{
-                                        "Top":"auto",
-                                        "Left":"39%",
-                                        "Right":"0",
-                                        "Bottom":"26.5%"
-                                    }
-                                },
-                                "Size":{
-                                    "Height":"auto",
-                                    "Width":"6.8%"
-                                },
-                                "Estimate": 25000
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "Id": 3,
-                "Name": "House 3",
-                "Image": "house3.jpg",
-                "Floors": [
-                    {
-                        "Id": 4,
-                        "Name": "First Floor",
-                        "Images": {
-                            "Normal": "house-3-floor-1-normal.svg",
-                            "Invers": "house-3-floor-1-invers.svg"
-                        },
-                        "Size":{
-                            "Height":1200,
-                            "Width":1600
-                        },
-                        "Estimate": 175000,
-                        "Options": [
-                            {
-                                "Id": 5,
-                                "Name": "Ex Outdoor living",
-                                "Normal":{
-                                    "Image":"house-1-floor-1-option-1-normal.svg",
-                                    "Location":{
-                                        "Top":"12.32%",
-                                        "Left":"auto",
-                                        "Right":"5.5%",
-                                        "Bottom":"auto"
-                                    }
-                                },
-                                "Invers":{
-                                    "Image":"house-1-floor-1-option-1-invers.svg",
-                                    "Location":{
-                                        "Top":"12.32%",
-                                        "Left":"7.7%",
-                                        "Right":"auto",
-                                        "Bottom":"auto"
-                                    }
-                                },
-                                "Size":{
-                                    "Height":"auto",
-                                    "Width":"11%"
-                                },
-                                "Estimate": 25000
-                            },
-                            {
-                                "Id": 6,
-                                "Name": "With bathtub",
-                                "Normal":{
-                                    "Image":"house-1-floor-1-option-2-normal.svg",
-                                    "Location":{
-                                        "Top":"auto",
-                                        "Left":"56.4%",
-                                        "Right":"auto",
-                                        "Bottom":"26.5%"
-                                    }
-                                },
-                                "Invers":{
-                                    "Image":"house-1-floor-1-option-2-invers.svg",
-                                    "Location":{
-                                        "Top":"auto",
-                                        "Left":"39%",
-                                        "Right":"0",
-                                        "Bottom":"26.5%"
-                                    }
-                                },
-                                "Size":{
-                                    "Height":"auto",
-                                    "Width":"6.8%"
-                                },
-                                "Estimate": 25000
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    }
-]
+{
+    "company": [
+      {
+        "id": 1,
+        "name": "Test1",
+        "logo": "company-1.png"
+      },
+      {
+        "name": "Test",
+        "logo": "abc.png",
+        "id": 2
+      },
+      {
+        "name": "Abc",
+        "logo": "abc.png",
+        "id": 3
+      },
+      {
+        "name": "Berat",
+        "logo": "berat.png",
+        "id": 4
+      }
+    ],
+    "user": [
+      {
+        "id": 1,
+        "userName": "ABC",
+        "password": "Password12*",
+        "companyId": 1
+      },
+      {
+        "id": 2,
+        "userName": "CBA",
+        "password": "Password12*",
+        "companyId": 1
+      }
+    ],
+    "house": [
+      {
+        "id": 1,
+        "name": "House 1",
+        "image": "house1.jpg",
+        "companyId": 1
+      },
+      {
+        "id": 2,
+        "name": "House 2",
+        "image": "house2.jpg",
+        "companyId": 1
+      },
+      {
+        "id": 3,
+        "name": "House 3",
+        "image": "house3.jpg",
+        "companyId": 1
+      }
+    ],
+    "floor": [
+      {
+        "id": 1,
+        "name": "First Floor",
+        "images": {
+          "normal": "house-1-floor-1-normal.svg",
+          "invers": "house-1-floor-1-invers.svg"
+        },
+        "size": {
+          "height": 1200,
+          "width": 1600
+        },
+        "estimate": 225000,
+        "houseId": 1
+      },
+      {
+        "id": 2,
+        "name": "Second Floor",
+        "images": {
+          "normal": "house-1-floor-2-normal.svg",
+          "invers": "house-1-floor-2-invers.svg"
+        },
+        "size": {
+          "height": 800,
+          "width": 1000
+        },
+        "estimate": 225000,
+        "houseId": 1
+      },
+      {
+        "id": 3,
+        "name": "First Floor",
+        "images": {
+          "normal": "house-2-floor-1-normal.svg",
+          "invers": "house-2-floor-1-invers.svg"
+        },
+        "size": {
+          "height": 1200,
+          "width": 1600
+        },
+        "estimate": 175000,
+        "houseId": 2
+      },
+      {
+        "id": 4,
+        "name": "First Floor",
+        "images": {
+          "normal": "house-3-floor-1-normal.svg",
+          "invers": "house-3-floor-1-invers.svg"
+        },
+        "size": {
+          "height": 1200,
+          "width": 1600
+        },
+        "estimate": 175000,
+        "houseId": 3
+      }
+    ],
+    "option": [
+      {
+        "id": 1,
+        "name": "Ex Outdoor living",
+        "normal": {
+          "image": "house-1-floor-1-option-1-normal.svg",
+          "location": {
+            "top": "12.32%",
+            "left": "auto",
+            "right": "5.5%",
+            "bottom": "auto"
+          }
+        },
+        "invers": {
+          "image": "house-1-floor-1-option-1-invers.svg",
+          "location": {
+            "top": "12.32%",
+            "left": "7.7%",
+            "right": "auto",
+            "bottom": "auto"
+          }
+        },
+        "size": {
+          "height": "auto",
+          "width": "11%"
+        },
+        "estimate": 25000,
+        "floorId": 1
+      },
+      {
+        "id": 2,
+        "name": "With bathtub",
+        "normal": {
+          "image": "house-1-floor-1-option-2-normal.svg",
+          "location": {
+            "top": "auto",
+            "left": "56.4%",
+            "right": "auto",
+            "bottom": "26.5%"
+          }
+        },
+        "invers": {
+          "image": "house-1-floor-1-option-2-invers.svg",
+          "location": {
+            "top": "auto",
+            "left": "39%",
+            "right": "0",
+            "bottom": "26.5%"
+          }
+        },
+        "size": {
+          "height": "auto",
+          "width": "6.8%"
+        },
+        "estimate": 25000,
+        "floorId": 1
+      },
+      {
+        "id": 3,
+        "name": "Ex Outdoor living",
+        "normal": {
+          "image": "house-1-floor-1-option-1-normal.svg",
+          "location": {
+            "top": "12.32%",
+            "left": "auto",
+            "right": "5.5%",
+            "bottom": "auto"
+          }
+        },
+        "invers": {
+          "image": "house-1-floor-1-option-1-invers.svg",
+          "location": {
+            "top": "12.32%",
+            "left": "7.7%",
+            "right": "auto",
+            "bottom": "auto"
+          }
+        },
+        "size": {
+          "height": "auto",
+          "width": "11%"
+        },
+        "estimate": 25000,
+        "floorId": 3
+      },
+      {
+        "id": 4,
+        "name": "With bathtub",
+        "normal": {
+          "image": "house-1-floor-1-option-2-normal.svg",
+          "location": {
+            "top": "auto",
+            "left": "56.4%",
+            "right": "auto",
+            "bottom": "26.5%"
+          }
+        },
+        "invers": {
+          "image": "house-1-floor-1-option-2-invers.svg",
+          "location": {
+            "top": "auto",
+            "left": "39%",
+            "right": "0",
+            "bottom": "26.5%"
+          }
+        },
+        "size": {
+          "height": "auto",
+          "width": "6.8%"
+        },
+        "estimate": 25000,
+        "floorId": 3
+      },
+      {
+        "id": 5,
+        "name": "Ex Outdoor living",
+        "normal": {
+          "image": "house-1-floor-1-option-1-normal.svg",
+          "location": {
+            "top": "12.32%",
+            "left": "auto",
+            "right": "5.5%",
+            "bottom": "auto"
+          }
+        },
+        "invers": {
+          "image": "house-1-floor-1-option-1-invers.svg",
+          "location": {
+            "top": "12.32%",
+            "left": "7.7%",
+            "right": "auto",
+            "bottom": "auto"
+          }
+        },
+        "size": {
+          "height": "auto",
+          "width": "11%"
+        },
+        "estimate": 25000,
+        "floorId": 4
+      },
+      {
+        "id": 6,
+        "name": "With bathtub",
+        "normal": {
+          "image": "house-1-floor-1-option-2-normal.svg",
+          "location": {
+            "top": "auto",
+            "left": "56.4%",
+            "right": "auto",
+            "bottom": "26.5%"
+          }
+        },
+        "invers": {
+          "image": "house-1-floor-1-option-2-invers.svg",
+          "location": {
+            "top": "auto",
+            "left": "39%",
+            "right": "0",
+            "bottom": "26.5%"
+          }
+        },
+        "size": {
+          "height": "auto",
+          "width": "6.8%"
+        },
+        "estimate": 25000,
+        "floorId": 4
+      }
+    ],
+    "client": [
+      {
+        "id": 1,
+        "email": "test1@s.com",
+        "password": "Password12*"
+      }
+    ]
+  }
